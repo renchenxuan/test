@@ -1,46 +1,135 @@
 # AGENTS.md
 
-## Purpose
+## 文档目的
 
-This document provides operating guidelines for autonomous coding agents working in this repository.
+本文件用于约束本仓库内自动化编码代理（Agent）的 Java 开发行为。默认要求：所有代码改动、评审建议与测试行为均需符合本文件。
 
-## Repository Snapshot
+## 文档来源（摘要依据）
 
-- Project is currently minimal (`README.md` exists with basic content).
-- Keep changes small, explicit, and easy to review.
+- 规范名称：Java编码规范
+- 拟制：彭敏
+- 版本：V1.0
+- 日期：2022/11/01
 
-## Agent Workflow
+> 说明：本文件是对原始规范的执行型总结，目标是让 Agent 能快速落地，而不是替代完整版正文。
 
-1. Understand the user request and inspect relevant files before editing.
-2. Prefer minimal diffs that solve the requested task directly.
-3. Validate changes locally when feasible.
-4. Commit with clear messages describing intent and scope.
-5. Push branch updates and keep PR description aligned with actual changes.
+## 1. 适用范围
 
-## Editing Rules
+- 适用于本仓库所有 Java 代码（生产代码、测试代码、脚本型 Java 工具）。
+- 未明确事项遵循“可读性优先、可维护性优先、行为确定性优先”原则。
 
-- Do not rewrite unrelated files.
-- Preserve existing file formatting and style where possible.
-- Add comments only when they improve clarity for non-obvious logic.
-- Avoid adding unnecessary dependencies.
-- If adding dependencies is required, use the project package manager and latest stable version.
+## 2. 强制规则（MUST）
 
-## Verification
+### 2.1 排版规范
 
-- Run the smallest relevant checks first (lint/typecheck/unit tests).
-- If no automated checks exist, perform a reasonable manual sanity review.
-- Report what was verified and any residual risks.
+1. 使用 4 个空格缩进，禁止 TAB。
+2. 大括号 `{}` 与语句同行，且与引用语句左对齐。
+3. 一行只写一条语句，禁止多语句同一行。
+4. `if/for/do/while/switch/case/default` 独占行；`if/for/do/while` 的执行体必须使用 `{}`。
+5. 超过 80 字符的长语句需换行，优先在低优先级运算符处断行，运算符放在新行行首。
+6. 相对独立代码块之间、变量声明之后需要空行。
+7. 二元运算符前后加空格；`.` 前后不加空格；`,` 与 `;` 后加空格。
+8. 关键字与左括号间保留空格：如 `if (...)`、`for (...)`。
 
-## Git & PR Practices
+### 2.2 注释规范
 
-- Work on the current feature branch unless instructed otherwise.
-- Use focused commits (one logical change per commit).
-- Do not force-push unless explicitly requested.
-- Keep PRs as draft by default unless the user asks for ready-for-review.
+1. 有效注释率不低于 30%。
+2. 类、接口、`public/protected` 方法、成员变量必须有注释。
+3. 方法注释必须覆盖：功能、`@param`、`@return`、`@throws/@exception`（如适用）。
+4. 对于方法内显式 `throw` 的异常，必须在注释中说明触发条件与含义。
+5. 注释应紧邻目标代码，缩进保持一致；注释与上方代码之间用空行分隔。
+6. `switch-case` 若故意贯穿（fall-through），必须写清晰注释说明。
+7. 修改代码时必须同步更新注释，失效注释必须删除。
+8. 优先使用中文注释；方法内单行注释使用 `//`。
 
-## Communication
+### 2.3 命名规范
 
-- Be concise, direct, and transparent about what changed.
-- Surface blockers early with concrete options.
-- State assumptions explicitly when requirements are ambiguous.
+1. 包名全小写，采用域名倒置风格（示例：`com.hopewind.xxx`）。
+2. 类名/接口名使用 PascalCase（每个单词首字母大写）。
+3. 方法名、变量名使用 camelCase（首单词小写）。
+4. Getter/Setter/布尔取值方法命名：
+   - `getXxx()`
+   - `setXxx(...)`
+   - `isXxx()`（仅用于 boolean）
+5. 常量必须 `static final`，命名使用全大写下划线分隔（如 `MAX_RETRY_COUNT`）。
+6. 引用实例字段使用 `this.field`；引用静态成员使用 `ClassName.member`。
+
+### 2.4 编码规范
+
+1. 单一职责：一个方法只做一件事，一个类只负责一组高度相关功能。
+2. 明确参数合法性校验责任（调用方或被调用方），默认调用方负责。
+3. 数据类应实现有意义的 `toString()`（父类实现合理时可继承）。
+4. 数据库/IO 等资源必须确保关闭；关闭逻辑必须可证明在异常路径也执行。
+5. 捕获异常后若不向上抛出，必须记录日志（或打印堆栈并说明原因）。
+6. 抛出异常时必须提供清晰错误描述，便于定位。
+7. 禁止混用“错误码 + 异常”处理同一问题；默认优先异常机制。
+8. 禁止魔鬼数字，使用有业务语义的常量代替。
+9. 表达式依赖优先级时必须加括号，避免歧义。
+10. 数组声明统一使用 `int[] a` 风格，禁止 `int a[]`。
+11. 禁止在提交代码中使用 `System.out` / `System.err` 进行调试打印。
+
+## 3. 军规（全部强制）
+
+1. 禁止魔鬼数字，必须使用有意义常量。
+2. 方法功能必须明确，且一个方法只完成一个功能。
+3. 方法参数不能超过 5 个（必要时封装参数对象）。
+4. 方法尽量不返回 `null`：优先异常、特例对象、空集合或空数组。
+5. 数据库/IO 资源必须保证释放，异常路径也必须释放。
+6. 禁止直接 `catch (Exception ex)`，应细分异常类型处理。
+7. `if/else if` 链必须有 `else`；`switch` 必须有 `default`。
+8. 重写 `equals()` 时必须同时重写 `hashCode()`。
+9. 禁止在循环中创建新线程，优先线程池。
+10. 涉及精确计算（如金额）禁止 `float/double`，使用 `BigDecimal` 或整数化方案。
+
+## 4. JTEST 关键检查项（提交前必须自检）
+
+1. `switch` 每个 `case` 必须 `break/return`，且必须有 `default`。
+2. 禁止空的 `for/if/while` 语句体。
+3. 禁止在 `if` 条件中使用 `=` 赋值。
+4. 静态成员必须通过类名访问。
+5. 禁止未使用的局部变量、字段、私有方法、参数。
+6. 静态字段需显式初始化。
+7. 禁止硬编码 `\n`、`\r` 作为换行符。
+8. 避免不必要的类型转换与 `instanceof`。
+9. 禁止调用 `Thread.resume()/suspend()/stop()`。
+10. 控制方法复杂度：单方法中的 `if/while/for/switch` 数量应受控（建议 < 10）。
+
+## 5. 建议规则（SHOULD）
+
+1. 类成员布局建议：`public` 字段 -> `protected` 字段 -> `private` 字段 -> `public` 方法 -> `protected` 方法 -> `private` 方法。
+2. 减少重复代码，重复逻辑应抽取为可复用方法。
+3. 对复杂逻辑写“意图注释”，说明为什么这么做，而不是复述代码。
+4. 集合、`StringBuilder` 等尽量设置初始容量。
+5. 关系紧密的代码尽量相邻放置，避免过度跳转。
+6. 避免技巧性写法，优先易读、可维护实现。
+
+## 6. 复杂度与规模阈值（建议）
+
+- 继承层次：<= 5
+- 类总行数：<= 1000
+- 类属性数：<= 10
+- 类方法数：<= 20
+- 方法参数：<= 5
+- 方法行数：<= 30（代码行建议 <= 20）
+- `return` 数量：建议 1
+- 注释率：30% ~ 50%
+
+## 7. Agent 执行清单（每次改动前后）
+
+### 开发前
+
+1. 明确变更点是否涉及命名、异常、资源释放、精确计算。
+2. 评估是否会引入魔鬼数字、超参数方法、分支遗漏。
+
+### 开发中
+
+1. 严格按 4 空格缩进与括号风格书写。
+2. 新增 `public/protected` 方法时补全 JavaDoc。
+3. `switch` 默认补 `default`；`if/else if` 链补 `else`。
+
+### 提交前
+
+1. 执行格式、编译、测试与静态检查（如项目已配置）。
+2. 自检“军规十条”与 JTEST 关键项。
+3. 确认无调试打印、无失效注释、无明显命名违规。
 
