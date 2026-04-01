@@ -1,0 +1,1735 @@
+app:
+  description: ''
+  icon: 9f4fa967-339f-4491-aaf5-b5b6edbccb32
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 【AI智能客服与售后助手】禾望云Api
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: yangyaofei/vllm:0.1.5@3eecf807d9767f40eb757ff70720291aa6055e9e1803893b4c93b61a5d4d4319
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1754877432933-source-1757142825674-target
+      source: '1754877432933'
+      sourceHandle: source
+      target: '1757142825674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1757142825674-true-1757144188142-target
+      source: '1757142825674'
+      sourceHandle: 'true'
+      target: '1757144188142'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1757142825674-1a40427e-7052-4663-9508-d88b81faaf25-1757144190272-target
+      source: '1757142825674'
+      sourceHandle: 1a40427e-7052-4663-9508-d88b81faaf25
+      target: '1757144190272'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1757142825674-5a7df32c-6cb7-4d99-81ce-9638e7212ce7-1757386514043-target
+      source: '1757142825674'
+      sourceHandle: 5a7df32c-6cb7-4d99-81ce-9638e7212ce7
+      target: '1757386514043'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1757142825674-59ce5887-ced2-405d-a155-3ecd35f8e5ec-1757386897988-target
+      source: '1757142825674'
+      sourceHandle: 59ce5887-ced2-405d-a155-3ecd35f8e5ec
+      target: '1757386897988'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: code
+      id: 1757386514043-source-1757388060183-target
+      selected: false
+      source: '1757386514043'
+      sourceHandle: source
+      target: '1757388060183'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: code
+      id: 1757144188142-source-17573986573340-target
+      selected: false
+      source: '1757144188142'
+      sourceHandle: source
+      target: '17573986573340'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: code
+      id: 1757144190272-source-17573986579340-target
+      selected: false
+      source: '1757144190272'
+      sourceHandle: source
+      target: '17573986579340'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1757388060183-source-1757399134287-target
+      selected: false
+      source: '1757388060183'
+      sourceHandle: source
+      target: '1757399134287'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 17573986573340-source-1757399134287-target
+      selected: false
+      source: '17573986573340'
+      sourceHandle: source
+      target: '1757399134287'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 17573986579340-source-1757399134287-target
+      selected: false
+      source: '17573986579340'
+      sourceHandle: source
+      target: '1757399134287'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: code
+      id: 1757386897988-source-1757402105803-target
+      source: '1757386897988'
+      sourceHandle: source
+      target: '1757402105803'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1757402105803-source-1757399134287-target
+      source: '1757402105803'
+      sourceHandle: source
+      target: '1757399134287'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: end
+      id: 1757399190152-source-1757145679681-target
+      selected: false
+      source: '1757399190152'
+      sourceHandle: source
+      target: '1757145679681'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: http-request
+      id: 1757399134287-source-1757399190152-target
+      selected: false
+      source: '1757399134287'
+      sourceHandle: source
+      target: '1757399190152'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - default: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlSWQiOiIxNjgxNjU0MjgwMzI5MTgzMjM0IiwidGVuYW50SWQiOiIwMDAwMDEiLCJyb2xlS0VZIjoiUk9MRV9URU5BTlRfTUFOQUdFUiIsInVzZXJOYW1lIjoiYWRtaW4iLCJleHAiOjE3NTk3MzM0OTAsInVzZXJJZCI6IjEifQ.sJGZ4Ew8BPt74UtQOxPaZmQK2Rd_vAfcx_SEPD5PhJ4
+          label: ics_token
+          max_length: 99999
+          options: []
+          required: true
+          type: paragraph
+          variable: ics_token
+        - default: '1'
+          label: ics_userId
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: ics_userId
+        - label: ics_api_type
+          max_length: 48
+          options:
+          - queryHwPlantInfo
+          - queryHwDeviceInfo
+          - queryHwAlarmInfo
+          - queryHwWorkOrderInfo
+          required: true
+          type: select
+          variable: ics_api_type
+        - default: 'False'
+          label: ics_api_query_detail
+          max_length: 48
+          options:
+          - 'True'
+          - 'False'
+          required: false
+          type: select
+          variable: ics_is_query_api_detail
+        - label: ics_question
+          max_length: 4800
+          options: []
+          required: true
+          type: paragraph
+          variable: ics_question
+      height: 213
+      id: '1754877432933'
+      position:
+        x: 31.738803967284298
+        y: 179.71991865951787
+      positionAbsolute:
+        x: 31.738803967284298
+        y: 179.71991865951787
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 32267f03-52d0-4698-a326-dbd3bb434ca6
+            value: queryHwPlantInfo
+            varType: string
+            variable_selector:
+            - '1754877432933'
+            - ics_api_type
+          id: 'true'
+          logical_operator: and
+        - case_id: 1a40427e-7052-4663-9508-d88b81faaf25
+          conditions:
+          - comparison_operator: contains
+            id: 002baa98-a1ef-4a8d-aeab-f77bedcd1210
+            value: queryHwDeviceInfo
+            varType: string
+            variable_selector:
+            - '1754877432933'
+            - ics_api_type
+          id: 1a40427e-7052-4663-9508-d88b81faaf25
+          logical_operator: and
+        - case_id: 5a7df32c-6cb7-4d99-81ce-9638e7212ce7
+          conditions:
+          - comparison_operator: contains
+            id: dc8580a3-2e6b-461b-9876-e792444c5d38
+            value: queryHwAlarmInfo
+            varType: string
+            variable_selector:
+            - '1754877432933'
+            - ics_api_type
+          id: 5a7df32c-6cb7-4d99-81ce-9638e7212ce7
+          logical_operator: and
+        - case_id: 59ce5887-ced2-405d-a155-3ecd35f8e5ec
+          conditions:
+          - comparison_operator: contains
+            id: 434345e2-82c5-4bc7-a4f5-1d288f4c3f8a
+            value: queryHwWorkOrderInfo
+            varType: string
+            variable_selector:
+            - '1754877432933'
+            - ics_api_type
+          id: 59ce5887-ced2-405d-a155-3ecd35f8e5ec
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 268
+      id: '1757142825674'
+      position:
+        x: 31.738803967284298
+        y: 411.5119022042862
+      positionAbsolute:
+        x: 31.738803967284298
+        y: 411.5119022042862
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        instruction: '通过用户输入信息，获取出电站查询信息
+
+          networkStart、networkEnd 时间格式为 YYYY-HH-mm  若未完善时间格式请补全时间
+
+          statusList 电站状态用list进行存储  如 同时进行接入中、正常查询  输出 ["0", "100"]
+
+          kwpMax 数值需大于 kwpMin
+
+          当出现已满发小时最低、满发小时最高、装机容量最低、装机容量最高、并网时间最早、并网时间最晚时  对应 sort 字段及 order 字段得同时变化，例如使用满发小时最低排序时  sort
+          对应 full_hour；order 对应 ASC
+
+
+          /no_think'
+        model:
+          completion_params:
+            enable_thinking: false
+            temperature: 0.1
+            top_p: 0.1
+          mode: chat
+          name: DeepSeek-R1
+          provider: yangyaofei/vllm/vllm
+        parameters:
+        - description: "是否安装防逆流标识 \n0： 否\n1： 是\t            "
+          name: backflowPreventionFlag
+          options: []
+          required: false
+          type: string
+        - description: 最大装机容量
+          name: kwpMax
+          options: []
+          required: false
+          type: string
+        - description: 最小装机容量
+          name: kwpMin
+          options: []
+          required: false
+          type: string
+        - description: 并网日期结束
+          name: networkEnd
+          options: []
+          required: false
+          type: string
+        - description: 并网日期开始
+          name: networkStart
+          options: []
+          required: false
+          type: string
+        - description: "并网类型 \n1：全额上网 \n2：自发自用余电上网 \n3：自发自用无馈网 \n4：离网"
+          name: networkType
+          options: []
+          required: false
+          type: string
+        - description: '排序
+
+            ASC： 低
+
+            DESC： 高'
+          name: order
+          options: []
+          required: false
+          type: string
+        - description: 页数
+          name: pageNo
+          options: []
+          required: false
+          type: number
+        - description: 条数
+          name: pageSize
+          options: []
+          required: false
+          type: number
+        - description: 电站名称
+          name: plantName
+          options: []
+          required: false
+          type: string
+        - description: "电站类型 \n1：户用光伏 \n2：户用储能 \n3：工商业光伏\n4：工商业储能\n5：工商业光储\n6：地面光伏\n\
+            7：地面储能\n8：移动式电源"
+          name: powerPlantType
+          options: []
+          required: false
+          type: string
+        - description: '是否查询访客 1：我管理的电站  2：可访问的电站 '
+          name: shareList
+          options: []
+          required: false
+          type: array[string]
+        - description: '排序字段
+
+            full_hour： 满发小时
+
+            user_kwp： 装机容量
+
+            network_time： 并网时间'
+          name: sort
+          options: []
+          required: false
+          type: string
+        - description: '电站状态List
+
+            0：接入中
+
+            100：正常
+
+            400：报警
+
+            600：离线'
+          name: statusList
+          options: []
+          required: false
+          type: array[string]
+        query:
+        - '1754877432933'
+        - ics_question
+        reasoning_mode: prompt
+        selected: false
+        title: 电站列表参数提取器
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1757144188142'
+      position:
+        x: 373.9719552346721
+        y: 179.71991865951787
+      positionAbsolute:
+        x: 373.9719552346721
+        y: 179.71991865951787
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        instruction: '通过用户输入信息，获取出电站查询信息
+
+
+          /no_think'
+        model:
+          completion_params:
+            enable_thinking: false
+            temperature: 0.1
+            top_p: 0.1
+          mode: chat
+          name: DeepSeek-R1
+          provider: yangyaofei/vllm/vllm
+        parameters:
+        - description: 激活时间结束
+          name: activateTimeEnd
+          options: []
+          required: false
+          type: string
+        - description: 激活时间起始
+          name: activateTimeStart
+          options: []
+          required: false
+          type: string
+        - description: 705的固件版本（4G）
+          name: cmSysVersion
+          options: []
+          required: false
+          type: string
+        - description: 705的固件版本（4G）集合
+          name: cmSysVersionList
+          options: []
+          required: false
+          type: string
+        - description: 通讯模块类型
+          name: commModuleType
+          options: []
+          required: false
+          type: string
+        - description: 接入时间结束
+          name: createdTimeEnd
+          options: []
+          required: false
+          type: string
+        - description: 接入时间起始
+          name: createdTimeStart
+          options: []
+          required: false
+          type: string
+        - description: 定制直传标识
+          name: customizeDirectPassIdent
+          options: []
+          required: false
+          type: string
+        - description: 数据来源（厂商）
+          name: dataSourceCode
+          options: []
+          required: false
+          type: string
+        - description: 数据来源集合，用于适配益邦设备查询特殊判断
+          name: dataSourceList
+          options: []
+          required: false
+          type: string
+        - description: 设备机型
+          name: deviceModel
+          options: []
+          required: false
+          type: string
+        - description: 设备名称
+          name: deviceName
+          options: []
+          required: false
+          type: string
+        - description: 设备状态
+          name: deviceStatus
+          options: []
+          required: false
+          type: number
+        - description: 设备类型
+          name: deviceType
+          options: []
+          required: false
+          type: string
+        - description: 流量到期时间起始
+          name: expirationTimeEnd
+          options: []
+          required: false
+          type: string
+        - description: 流量到期时间起始
+          name: expirationTimeStart
+          options: []
+          required: false
+          type: string
+        - description: 厂商类型 0：未确认 1：安网  2：天喻  3：广和通 4:讯东 -1：无对应厂商
+          name: firmType
+          options: []
+          required: false
+          type: string
+        - description: 流量卡状态
+          name: flowCardStatus
+          options: []
+          required: false
+          type: number
+        - description: 网关流量状态
+          name: flowStatusList
+          options: []
+          required: false
+          type: string
+        - description: 电信运营商类型
+          name: gprsIspType
+          options: []
+          required: false
+          type: string
+        - description: 所查询月份
+          name: gprsMonth
+          options: []
+          required: false
+          type: string
+        - description: 网卡id
+          name: iccId
+          options: []
+          required: false
+          type: string
+        - description: 设备id集合
+          name: idList
+          options: []
+          required: false
+          type: string
+        - description: 锁定状态：1锁定 0未锁定
+          name: lockingStatus
+          options: []
+          required: false
+          type: string
+        - description: 厂家
+          name: manufacturerCode
+          options: []
+          required: false
+          type: string
+        - description: 厂商id
+          name: manufacturerId
+          options: []
+          required: false
+          type: string
+        - description: 最大额定功率
+          name: maxRatedPower
+          options: []
+          required: false
+          type: string
+        - description: 最小额定功率
+          name: minRatedPower
+          options: []
+          required: false
+          type: string
+        - description: 页数
+          name: pageNo
+          options: []
+          required: false
+          type: number
+        - description: 条数
+          name: pageSize
+          options: []
+          required: false
+          type: number
+        - description: 参数版本DC-AC
+          name: paramVersionDcac
+          options: []
+          required: false
+          type: string
+        - description: 参数版本DC-AC集合
+          name: paramVersionDcacList
+          options: []
+          required: false
+          type: string
+        - description: 软件版本DC-DC
+          name: paramVersionDcdc
+          options: []
+          required: false
+          type: string
+        - description: 软件版本DC-DC集合
+          name: paramVersionDcdcList
+          options: []
+          required: false
+          type: string
+        - description: 设备系列
+          name: parentCode
+          options: []
+          required: false
+          type: string
+        - description: 设备软件平台库版本 集合
+          name: platformVersionList
+          options: []
+          required: false
+          type: string
+        - description: pn号
+          name: pn
+          options: []
+          required: false
+          type: string
+        - description: 设备PN列表
+          name: pnList
+          options: []
+          required: false
+          type: string
+        - description: 所属电站
+          name: powerPlantName
+          options: []
+          required: false
+          type: string
+        - description: 产品编码
+          name: productCode
+          options: []
+          required: false
+          type: string
+        - description: 产品编码
+          name: productCodeList
+          options: []
+          required: false
+          type: string
+        - description: 产品型号编码
+          name: productModelCode
+          options: []
+          required: false
+          type: string
+        - description: 产品类型编码
+          name: productTypeCode
+          options: []
+          required: false
+          type: string
+        - description: sn号
+          name: sn
+          options: []
+          required: false
+          type: string
+        - description: 设备SN列表
+          name: snList
+          options: []
+          required: false
+          type: string
+        - description: snOrDeviceName-app查询使用
+          name: snOrDeviceName
+          options: []
+          required: false
+          type: string
+        - description: sn前缀
+          name: snPrefixList
+          options: []
+          required: false
+          type: string
+        - description: 软件版本_FPGA）
+          name: softwareVersionFpga
+          options: []
+          required: false
+          type: string
+        - description: 软件版本_FPGA）集合
+          name: softwareVersionFpgaList
+          options: []
+          required: false
+          type: string
+        - description: 软件版本DC-AC
+          name: sysVersionDcac
+          options: []
+          required: false
+          type: string
+        - description: 软件版本DC-AC集合
+          name: sysVersionDcacList
+          options: []
+          required: false
+          type: string
+        - description: 软件版本DC-DC
+          name: sysVersionDcdc
+          options: []
+          required: false
+          type: string
+        - description: 软件版本DC-DC集合
+          name: sysVersionDcdcList
+          options: []
+          required: false
+          type: string
+        query:
+        - '1754877432933'
+        - ics_question
+        reasoning_mode: prompt
+        selected: false
+        title: 设备列表参数提取器
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1757144190272'
+      position:
+        x: 373.9719552346721
+        y: 319.208289099346
+      positionAbsolute:
+        x: 373.9719552346721
+        y: 319.208289099346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757399190152'
+          - body
+          value_type: string
+          variable: result
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757145679681'
+      position:
+        x: 1329.8790147339107
+        y: 335.47432030071144
+      positionAbsolute:
+        x: 1329.8790147339107
+        y: 335.47432030071144
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        instruction: '通过用户输入信息，获取出报警查询信息
+
+          timeStart、timeEnd 时间格式为 YYYY-HH-mm  若未完善时间格式请补全时间
+
+
+          /no_think'
+        model:
+          completion_params:
+            enable_thinking: false
+            temperature: 0.7
+          mode: chat
+          name: DeepSeek-R1
+          provider: yangyaofei/vllm/vllm
+        parameters:
+        - description: 故障码或报警代码
+          name: alarmCode
+          options: []
+          required: false
+          type: string
+        - description: "故障等级或报警等级\n0：提示 \n1：一般 \n2：严重"
+          name: alarmGrade
+          options: []
+          required: false
+          type: array[string]
+        - description: '故障来源或报警来源
+
+            2021： 逆变器三相组串逆变器逆变侧
+
+            2022： 逆变器三相组串逆变器升压测
+
+            2023： 逆变器三相组串逆变器光伏侧
+
+            2024： 逆变器三相组串逆变器电网侧
+
+            2025： 逆变器三相组串逆变器系统侧
+
+            2061： 逆变器单相组串逆变器逆变侧
+
+            2062： 逆变器单相组串逆变器升压测
+
+            2063： 逆变器单相组串逆变器光伏侧
+
+            2064： 逆变器单相组串逆变器电网侧
+
+            2201： 储能三相光储一体机交流测
+
+            2202： 储能三相光储一体机直流侧
+
+            2203： 储能三相光储一体机电网测
+
+            2204： 储能三相光储一体机电池测
+
+            2091： PCS组串式PCS交流侧
+
+            2092： PCS组串式PCS电网侧
+
+            3021： PCS集中式PCS控制器'
+          name: alarmSource
+          options: []
+          required: false
+          type: string
+        - description: 设备型号
+          name: deviceModel
+          options: []
+          required: false
+          type: string
+        - description: 设备名称
+          name: deviceName
+          options: []
+          required: false
+          type: string
+        - description: "忽略状态：\n0：未处理 \n1：已处理\n2：已忽略"
+          name: ignoreStatus
+          options: []
+          required: false
+          type: string
+        - description: 页数
+          name: pageNo
+          options: []
+          required: false
+          type: number
+        - description: 条数
+          name: pageSize
+          options: []
+          required: false
+          type: number
+        - description: '产品系列或设备系列
+
+            Inverter：逆变器
+
+            PCS：储能
+
+            EMS_PCS：PCS'
+          name: parentProductTypeCode
+          options: []
+          required: false
+          type: string
+        - description: 设备PN
+          name: pn
+          options: []
+          required: false
+          type: string
+        - description: 所属电站名称
+          name: powerStationName
+          options: []
+          required: false
+          type: string
+        - description: '产品类型
+
+            202： 三相组串逆变器
+
+            206： 单相组串逆变器
+
+            220： 三相光储一体机
+
+            209： 组串式PCS
+
+            302： 集中式PCS'
+          name: productTypeCode
+          options: []
+          required: false
+          type: string
+        - description: 设备SN
+          name: sn
+          options: []
+          required: false
+          type: string
+        - description: 发生时间结束
+          name: timeEnd
+          options: []
+          required: false
+          type: string
+        - description: 发生时间开始
+          name: timeStart
+          options: []
+          required: false
+          type: string
+        - description: '故障类型或报警类型
+
+            1： 告警
+
+            2： 故障'
+          name: alarmType
+          required: false
+          type: string
+        query:
+        - '1754877432933'
+        - ics_question
+        reasoning_mode: prompt
+        selected: false
+        title: 报警列表参数提取器
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1757386514043'
+      position:
+        x: 373.9719552346721
+        y: 446.208289099346
+      positionAbsolute:
+        x: 373.9719552346721
+        y: 446.208289099346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        instruction: '通过用户输入信息，获取出工单查询信息
+
+          createdTimeStart、createdTimeEnd、deadlineStart、deadlineEnd 时间格式为 YYYY-HH-mm  若未完善时间格式请补全时间
+
+
+          /no_think'
+        model:
+          completion_params:
+            enable_thinking: false
+            temperature: 0.7
+          mode: chat
+          name: DeepSeek-R1
+          provider: yangyaofei/vllm/vllm
+        parameters:
+        - description: 创建人名称
+          name: createdName
+          options: []
+          required: false
+          type: string
+        - description: 创建时间结束
+          name: createdTimeEnd
+          options: []
+          required: false
+          type: string
+        - description: 创建时间开始
+          name: createdTimeStart
+          options: []
+          required: false
+          type: string
+        - description: 截止时间结束或计划完成时间结束
+          name: deadlineEnd
+          options: []
+          required: false
+          type: string
+        - description: 截止时间开始或计划完成时间开始
+          name: deadlineStart
+          options: []
+          required: false
+          type: string
+        - description: 工单编号
+          name: id
+          options: []
+          required: false
+          type: string
+        - description: '问题分类
+
+            1： 设备问题
+
+            2： 监控软件
+
+            3： 其他建议
+
+            4： 散热异常'
+          name: orderType
+          options: []
+          required: false
+          type: string
+        - description: 页数
+          name: pageNo
+          options: []
+          required: false
+          type: number
+        - description: 条数
+          name: pageSize
+          options: []
+          required: false
+          type: number
+        - description: 设备PN
+          name: pn
+          options: []
+          required: false
+          type: string
+        - description: 电站名称
+          name: powerPlantName
+          options: []
+          required: false
+          type: string
+        - description: '处理方式
+
+            1： 整机更换
+
+            2： 部件更换/维修
+
+            3： 软件升级
+
+            4： 误报
+
+            5： 重复报
+
+            6： 故障已恢复，无需处理
+
+            7： 现场处理
+
+            8： 固件升级
+
+            9： 参数下发
+
+            '
+          name: processingMethod
+          options: []
+          required: false
+          type: string
+        - description: 'Tab页标志：
+
+            0： 用户权限内全部
+
+            1： 我创建的
+
+            2： 抄送我的
+
+            3： 我的待办
+
+            4： 我的已办'
+          name: roleTabMark
+          options: []
+          required: false
+          type: string
+        - description: 设备SN
+          name: sn
+          options: []
+          required: false
+          type: string
+        - description: 排序字段
+          name: sort
+          options: []
+          required: false
+          type: string
+        - description: '工单状态
+
+            1： 待分配
+
+            2： 处理中
+
+            3： 待验证
+
+            4： 已关闭
+
+            5： 待提交
+
+            '
+          name: status
+          options: []
+          required: false
+          type: string
+        - description: 工单标题
+          name: title
+          options: []
+          required: false
+          type: string
+        - description: '工单类型
+
+            1： 故障运维工单
+
+            2： 意见反馈工单'
+          name: type
+          options: []
+          required: false
+          type: string
+        query:
+        - '1754877432933'
+        - ics_question
+        reasoning_mode: prompt
+        selected: false
+        title: 工单列表参数提取器
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1757386897988'
+      position:
+        x: 373.9719552346721
+        y: 592.552787470845
+      positionAbsolute:
+        x: 373.9719552346721
+        y: 592.552787470845
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\nfunction main({alarmCode, alarmGrade, alarmSource, deviceModel, deviceName,\
+          \ ignoreStatus, pageNo, pageSize, parentProductTypeCode, pn, powerStationName,\
+          \ productTypeCode, sn, timeEnd, timeStart, alarmType}) {\n    return {\n\
+          \        url: '/device/devAlarm/getAlarmPage',\n        permissioncode:\
+          \ 'HopecloudAlarmEventPage',\n        bodyJson: JSON.stringify({\n     \
+          \       alarmCode, alarmGrade, alarmSource, deviceModel, deviceName, ignoreStatus,\
+          \ parentProductTypeCode, pn, powerStationName, productTypeCode, sn, timeEnd,\
+          \ timeStart, alarmType,\n            pageNo: pageNo || \"1\",\n        \
+          \    pageSize: pageSize || \"20\",\n        })\n    }\n}\n"
+        code_language: javascript
+        desc: ''
+        outputs:
+          bodyJson:
+            children: null
+            type: string
+          permissioncode:
+            children: null
+            type: string
+          url:
+            children: null
+            type: string
+        selected: false
+        title: 报警列表请求参数合并
+        type: code
+        variables:
+        - value_selector:
+          - '1757386514043'
+          - alarmCode
+          value_type: string
+          variable: alarmCode
+        - value_selector:
+          - '1757386514043'
+          - alarmGrade
+          value_type: array[string]
+          variable: alarmGrade
+        - value_selector:
+          - '1757386514043'
+          - alarmSource
+          value_type: number
+          variable: alarmSource
+        - value_selector:
+          - '1757386514043'
+          - deviceModel
+          value_type: string
+          variable: deviceModel
+        - value_selector:
+          - '1757386514043'
+          - deviceName
+          value_type: string
+          variable: deviceName
+        - value_selector:
+          - '1757386514043'
+          - ignoreStatus
+          value_type: number
+          variable: ignoreStatus
+        - value_selector:
+          - '1757386514043'
+          - pageNo
+          value_type: number
+          variable: pageNo
+        - value_selector:
+          - '1757386514043'
+          - pageSize
+          value_type: number
+          variable: pageSize
+        - value_selector:
+          - '1757386514043'
+          - parentProductTypeCode
+          value_type: string
+          variable: parentProductTypeCode
+        - value_selector:
+          - '1757386514043'
+          - pn
+          value_type: string
+          variable: pn
+        - value_selector:
+          - '1757386514043'
+          - powerStationName
+          value_type: string
+          variable: powerStationName
+        - value_selector:
+          - '1757386514043'
+          - productTypeCode
+          value_type: string
+          variable: productTypeCode
+        - value_selector:
+          - '1757386514043'
+          - sn
+          value_type: string
+          variable: sn
+        - value_selector:
+          - '1757386514043'
+          - timeEnd
+          value_type: string
+          variable: timeEnd
+        - value_selector:
+          - '1757386514043'
+          - timeStart
+          value_type: string
+          variable: timeStart
+        - value_selector:
+          - '1757386514043'
+          - alarmType
+          value_type: string
+          variable: alarmType
+      height: 52
+      id: '1757388060183'
+      position:
+        x: 689.860076145662
+        y: 446.208289099346
+      positionAbsolute:
+        x: 689.860076145662
+        y: 446.208289099346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\nfunction main({backflowPreventionFlag, kwpMax, kwpMin, networkEnd,\
+          \ networkStart, networkType, order, pageNo, pageSize, plantName, powerPlantType,\
+          \ shareList, sort, statusList}) {\n    return {\n        url: '/device/plantPowerPlantModel/getPlantMatrix',\n\
+          \        permissioncode: 'HopecloudAlarmEventPage',\n        bodyJson: JSON.stringify({\n\
+          \            backflowPreventionFlag, kwpMax, kwpMin, networkEnd, networkStart,\
+          \ networkType, order, plantName, powerPlantType, shareList, sort, statusList,\n\
+          \            pageNo: pageNo || \"1\",\n            pageSize: pageSize ||\
+          \ \"20\",\n        })\n    }\n}\n"
+        code_language: javascript
+        desc: ''
+        outputs:
+          bodyJson:
+            children: null
+            type: string
+          permissioncode:
+            children: null
+            type: string
+          url:
+            children: null
+            type: string
+        selected: false
+        title: 电站列表请求参数合并
+        type: code
+        variables:
+        - value_selector:
+          - '1757144188142'
+          - backflowPreventionFlag
+          value_type: string
+          variable: backflowPreventionFlag
+        - value_selector:
+          - '1757144188142'
+          - kwpMax
+          value_type: string
+          variable: kwpMax
+        - value_selector:
+          - '1757144188142'
+          - kwpMin
+          value_type: string
+          variable: kwpMin
+        - value_selector:
+          - '1757144188142'
+          - networkEnd
+          value_type: string
+          variable: networkEnd
+        - value_selector:
+          - '1757144188142'
+          - networkStart
+          value_type: string
+          variable: networkStart
+        - value_selector:
+          - '1757144188142'
+          - networkType
+          value_type: string
+          variable: networkType
+        - value_selector:
+          - '1757144188142'
+          - order
+          value_type: string
+          variable: order
+        - value_selector:
+          - '1757144188142'
+          - pageNo
+          value_type: number
+          variable: pageNo
+        - value_selector:
+          - '1757144188142'
+          - pageSize
+          value_type: number
+          variable: pageSize
+        - value_selector:
+          - '1757144188142'
+          - plantName
+          value_type: string
+          variable: plantName
+        - value_selector:
+          - '1757144188142'
+          - powerPlantType
+          value_type: string
+          variable: powerPlantType
+        - value_selector:
+          - '1757144188142'
+          - shareList
+          value_type: array[string]
+          variable: shareList
+        - value_selector:
+          - '1757144188142'
+          - sort
+          value_type: string
+          variable: sort
+        - value_selector:
+          - '1757144188142'
+          - statusList
+          value_type: array[string]
+          variable: statusList
+      height: 52
+      id: '17573986573340'
+      position:
+        x: 689.860076145662
+        y: 179.71991865951787
+      positionAbsolute:
+        x: 689.860076145662
+        y: 179.71991865951787
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\nfunction main({pageNo, pageSize,deviceName,sn,pn}) {\n    return\
+          \ {\n        url: '/device/devDeviceModel/devicePage',\n        permissioncode:\
+          \ 'HopecloudAlarmEventPage',\n        bodyJson: JSON.stringify({\n     \
+          \       deviceName,sn,pn,\n            pageNo: pageNo || \"1\",\n      \
+          \      pageSize: pageSize || \"20\",\n            parentCode: \"Inverter\"\
+          \n        })\n    }\n}\n"
+        code_language: javascript
+        desc: ''
+        outputs:
+          bodyJson:
+            children: null
+            type: string
+          permissioncode:
+            children: null
+            type: string
+          url:
+            children: null
+            type: string
+        selected: false
+        title: 设备列表请求参数合并
+        type: code
+        variables:
+        - value_selector:
+          - '1757144190272'
+          - pageNo
+          value_type: number
+          variable: pageNo
+        - value_selector:
+          - '1757144190272'
+          - pageSize
+          value_type: number
+          variable: pageSize
+        - value_selector:
+          - '1757144190272'
+          - deviceName
+          value_type: string
+          variable: deviceName
+        - value_selector:
+          - '1757144190272'
+          - sn
+          value_type: string
+          variable: sn
+        - value_selector:
+          - '1757144190272'
+          - pn
+          value_type: string
+          variable: pn
+      height: 52
+      id: '17573986579340'
+      position:
+        x: 689.860076145662
+        y: 319.208289099346
+      positionAbsolute:
+        x: 689.860076145662
+        y: 319.208289099346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        advanced_settings:
+          group_enabled: true
+          groups:
+          - groupId: ff3eb1b0-23e6-4f0e-92ba-3d991489c05a
+            group_name: url
+            output_type: string
+            variables:
+            - - '1757388060183'
+              - url
+            - - '1757402105803'
+              - url
+            - - '17573986579340'
+              - url
+            - - '17573986573340'
+              - url
+          - groupId: 0bbd4826-e9bf-4ece-8ef2-34366fca2d7c
+            group_name: permissioncode
+            output_type: string
+            variables:
+            - - '1757388060183'
+              - permissioncode
+            - - '1757402105803'
+              - permissioncode
+            - - '17573986579340'
+              - permissioncode
+            - - '17573986573340'
+              - permissioncode
+          - groupId: 6a031712-3da5-4bda-ab5c-0cb94ac2434b
+            group_name: bodyJson
+            output_type: string
+            variables:
+            - - '1757388060183'
+              - bodyJson
+            - - '1757402105803'
+              - bodyJson
+            - - '17573986579340'
+              - bodyJson
+            - - '17573986573340'
+              - bodyJson
+        desc: ''
+        output_type: string
+        selected: false
+        title: 变量聚合器
+        type: variable-aggregator
+        variables:
+        - []
+      height: 450
+      id: '1757399134287'
+      position:
+        x: 1017.3460263287294
+        y: 179.71991865951787
+      positionAbsolute:
+        x: 1017.3460263287294
+        y: 179.71991865951787
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-547
+            key: ''
+            type: text
+            value: '{{#1757399134287.bodyJson.output#}}'
+          type: json
+        desc: ''
+        headers: 'requestHost:uat.hopewindcloud.com
+
+          lang:zh_CN
+
+          tenantId:000001
+
+          appKeyList:APP_PVCLOUD
+
+          appType:web
+
+          Accept:application/json, text/plain, */*
+
+          Content-Type:application/json
+
+          applicationId:1681654280392097797
+
+          grayType:green
+
+          systemTimezone:+08:00
+
+          userId:{{#1754877432933.ics_userId#}}
+
+          token:{{#1754877432933.ics_token#}}
+
+          permissionCode:{{#1757399134287.permissioncode.output#}}'
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: false
+          retry_interval: 100
+        selected: false
+        ssl_verify: false
+        timeout:
+          connect: 10
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+          read: 10
+          write: 10
+        title: HTTP 请求
+        type: http-request
+        url: http://192.168.3.9:8080/api{{#1757399134287.url.output#}}
+        variables: []
+      height: 111
+      id: '1757399190152'
+      position:
+        x: 1329.8790147339107
+        y: 179.71991865951787
+      positionAbsolute:
+        x: 1329.8790147339107
+        y: 179.71991865951787
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\nfunction main({createdName, createdTimeEnd, createdTimeStart, deadlineEnd,\
+          \ deadlineStart, id, orderType, pageNo, pageSize, pn, powerPlantName, processingMethod,\
+          \ roleTabMark, sn, sort, status, title, type}) {\n    return {\n       \
+          \ url: '/manage/flowOrder/page',\n        permissioncode: 'HopecloudAlarmEventPage',\n\
+          \        bodyJson: JSON.stringify({\n            createdName, createdTimeEnd,\
+          \ createdTimeStart, deadlineEnd, deadlineStart, id, orderType, pn, powerPlantName,\
+          \ processingMethod, roleTabMark, sn, sort, status, title, type,\n      \
+          \      pageNo: pageNo || \"1\",\n            pageSize: pageSize || \"20\"\
+          ,\n        })\n    }\n}\n"
+        code_language: javascript
+        desc: ''
+        outputs:
+          bodyJson:
+            children: null
+            type: string
+          permissioncode:
+            children: null
+            type: string
+          url:
+            children: null
+            type: string
+        selected: false
+        title: 工单列表请求参数合并
+        type: code
+        variables:
+        - value_selector:
+          - '1757386897988'
+          - createdName
+          value_type: string
+          variable: createdName
+        - value_selector:
+          - '1757386897988'
+          - createdTimeEnd
+          value_type: string
+          variable: createdTimeEnd
+        - value_selector:
+          - '1757386897988'
+          - createdTimeStart
+          value_type: string
+          variable: createdTimeStart
+        - value_selector:
+          - '1757386897988'
+          - deadlineEnd
+          value_type: string
+          variable: deadlineEnd
+        - value_selector:
+          - '1757386897988'
+          - deadlineStart
+          value_type: string
+          variable: deadlineStart
+        - value_selector:
+          - '1757386897988'
+          - id
+          value_type: string
+          variable: id
+        - value_selector:
+          - '1757386897988'
+          - orderType
+          value_type: string
+          variable: orderType
+        - value_selector:
+          - '1757386897988'
+          - pageNo
+          value_type: number
+          variable: pageNo
+        - value_selector:
+          - '1757386897988'
+          - pageSize
+          value_type: number
+          variable: pageSize
+        - value_selector:
+          - '1757386897988'
+          - pn
+          value_type: string
+          variable: pn
+        - value_selector:
+          - '1757386897988'
+          - powerPlantName
+          value_type: string
+          variable: powerPlantName
+        - value_selector:
+          - '1757386897988'
+          - processingMethod
+          value_type: string
+          variable: processingMethod
+        - value_selector:
+          - '1757386897988'
+          - roleTabMark
+          value_type: string
+          variable: roleTabMark
+        - value_selector:
+          - '1757386897988'
+          - sn
+          value_type: string
+          variable: sn
+        - value_selector:
+          - '1757386897988'
+          - sort
+          value_type: string
+          variable: sort
+        - value_selector:
+          - '1757386897988'
+          - status
+          value_type: string
+          variable: status
+        - value_selector:
+          - '1757386897988'
+          - title
+          value_type: string
+          variable: title
+        - value_selector:
+          - '1757386897988'
+          - type
+          value_type: string
+          variable: type
+      height: 52
+      id: '1757402105803'
+      position:
+        x: 689.860076145662
+        y: 592.552787470845
+      positionAbsolute:
+        x: 689.860076145662
+        y: 592.552787470845
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -1.5757932182813192
+      y: 186.942979833663
+      zoom: 0.6179472358998478
+  rag_pipeline_variables: []

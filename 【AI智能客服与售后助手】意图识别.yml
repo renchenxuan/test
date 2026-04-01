@@ -1,0 +1,769 @@
+app:
+  description: ''
+  icon: 339cd06f-86c0-4d4e-9655-08141c64795d
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 【AI智能客服与售后助手】意图识别
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: yangyaofei/vllm:0.1.5@3eecf807d9767f40eb757ff70720291aa6055e9e1803893b4c93b61a5d4d4319
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: question-classifier
+      id: 1757405702826-false-1757405770736-target
+      selected: false
+      source: '1757405702826'
+      sourceHandle: 'false'
+      target: '1757405770736'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-1-1757407485080-target
+      source: '1757405770736'
+      sourceHandle: '1'
+      target: '1757407485080'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1757405126078-source-1757407575945-target
+      source: '1757405126078'
+      sourceHandle: source
+      target: '1757407575945'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1757407575945-source-1757405702826-target
+      source: '1757407575945'
+      sourceHandle: source
+      target: '1757405702826'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-2-1757407612427-target
+      source: '1757405770736'
+      sourceHandle: '2'
+      target: '1757407612427'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 1757405702826-true-1757407683681-target
+      source: '1757405702826'
+      sourceHandle: 'true'
+      target: '1757407683681'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-1757406824903-1757408978242-target
+      source: '1757405770736'
+      sourceHandle: '1757406824903'
+      target: '1757408978242'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-1757406826086-1757408988505-target
+      source: '1757405770736'
+      sourceHandle: '1757406826086'
+      target: '1757408988505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-1757409006274-1757409016528-target
+      source: '1757405770736'
+      sourceHandle: '1757409006274'
+      target: '1757409016528'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-1757409008420-1757409026476-target
+      source: '1757405770736'
+      sourceHandle: '1757409008420'
+      target: '1757409026476'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-1757409009348-1757409037086-target
+      source: '1757405770736'
+      sourceHandle: '1757409009348'
+      target: '1757409037086'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: end
+      id: 1757405770736-1757409010417-1757409046530-target
+      source: '1757405770736'
+      sourceHandle: '1757409010417'
+      target: '1757409046530'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: ics_intention_type
+          max_length: 256
+          options:
+          - manualService
+          - smallTalk
+          - productIntroduction
+          - hopeCloudGuide
+          - queryHwPlantInfo
+          - queryHwDeviceInfo
+          - queryHwAlarmInfo
+          - queryHwWorkOrderInfo
+          required: false
+          type: text-input
+          variable: ics_intention_type
+        - label: ics_question
+          max_length: 48000
+          options: []
+          required: true
+          type: paragraph
+          variable: ics_question
+        - label: ics_query
+          max_length: 4800
+          options: []
+          required: true
+          type: paragraph
+          variable: ics_query
+      height: 164
+      id: '1757405126078'
+      position:
+        x: 174
+        y: 275
+      positionAbsolute:
+        x: 174
+        y: 275
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 26a78428-eddf-4391-8baf-611d46ca690f
+            value: ''
+            varType: string
+            variable_selector:
+            - '1757405126078'
+            - ics_intention_type
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 124
+      id: '1757405702826'
+      position:
+        x: 787.3392893102448
+        y: 275
+      positionAbsolute:
+        x: 787.3392893102448
+        y: 275
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        classes:
+        - id: '1'
+          name: '光伏设备产品咨询
+
+
+            #### 核心定义
+
+            用户对公司所生产或销售的具体光伏硬件设备、产品线及其相关属性进行咨询的意图。本质是**获取“硬件设备”的信息**。
+
+
+            #### 详细特征与用户问法
+
+            1.  **产品型号与种类查询**
+
+                *   “你们有哪几种型号的组件？”
+
+                *   “介绍一下你们家的户用光伏套装。”
+
+                *   “N型组件和P型组件有什么区别？”
+
+
+            2.  **技术参数与性能**
+
+                *   “这款组件的功率是多少？”
+
+                *   “逆变器的转换效率能达到多少？”
+
+                *   “它的尺寸和重量是多大？”
+
+                *   “工作温度范围是多少？”
+
+
+            4.  **适用场景与方案**
+
+                *   “我家屋顶50平，适合装什么产品？”
+
+                *   “针对工商业屋顶，你们有什么解决方案？”
+
+                *   “这款产品适合用在海边吗？（耐腐蚀性）”
+
+
+            5.  **对比与推荐**
+
+                *   “A系列和B系列哪个更好？”
+
+                *   “你们的产品和XX公司的比有什么优势？”
+
+
+            6.  **资质与认证**
+
+                *   “产品有TÜV认证吗？”
+
+                *   “是否符合国家能源局的标准？”
+
+
+            **关键词/触发词**：`组件`、`逆变器`、`光伏板`、`电池`、`型号`、`功率`、`效率`、`参数`、`规格`、`价格`、`多少钱`、`报价`、`方案`、`套装`、`安装`、`发电量`、`耐候性`、`认证`。
+
+
+            **分类器训练/判断要点**：
+
+            *   核心是围绕**硬件设备**及其**属性**。
+
+            *   与 `禾望云操作查询` 的区分点：如果问题关于如何在App上**查看**这些参数，属于分类2；如果直接问参数**本身**，属于分类1
+
+            '
+        - id: '2'
+          name: '禾望云操作查询
+
+
+            ## 定义与场景
+
+            禾望云是禾望电气打造的能源数字化管理平台，深度融合光伏、储能、充电及用电场景，支持设备监控、智能运维、数据分析与远程控制。
+
+
+            ## 业务描述
+
+            **账户与权限体系**
+
+            支持业主、合作商等多角色账户注册与切换，具备分级权限管理，涵盖账号信息管理、用户管理等功能。
+
+            **电站与设备管理**
+
+            支持电站创建、批量导入、设备添加（逆变器、储能、气象仪等），可实现参数控制、固件升级、IV曲线扫描、校正电量与组串监控等功能。
+
+            **智能运维与诊断**
+
+            提供实时报警推送、工单管理、故障录波、事件记录、健康诊断与离散率分析，支持APP与Web协同处理等功能。
+
+            **数据与报表中心**
+
+            涵盖发电量、收益统计、跨电站对比分析，支持日报、月报及自定义导出，具备数据校正与电量偏离率设置等功能。
+
+            **运营与渠道管理**
+
+            包括订单管理、套餐设置、开票管理、质保查询及子渠道与业主管理等功能。
+
+            **移动端与扩展服务**
+
+            支持扫码登录、APP下单支付、可视化大屏定制及帮助中心等功能。
+
+
+            ## 关键词
+
+            Web、App、账户、密码、权限、管理、充值、配网
+
+
+            ## 分类器训练/判断要点
+
+            判断该意图时根据禾望云定义与场景、业务描述进行衍生判断，若用户意图符合禾望云已有或潜在的功能范围，则认定用户意图为禾望云操作查询意图。'
+        - id: '1757406824903'
+          name: '转人工服务
+
+
+            #### 核心定义
+
+            用户**明确表达**希望与真人客服对话、获取直接联系方式，或对自动化服务表示**不满与挫败**的意图。这是**最高优先级的意图**。
+
+
+            #### 详细特征与用户问法
+
+            1.  **直接要求**
+
+                *   “转人工。”
+
+                *   “找个人工客服过来。”
+
+                *   “给我你们的客服电话。”
+
+
+            2.  **表达不满与升级**
+
+                *   “你根本听不懂我的话！”
+
+                *   “这个问题你解决不了，换个人来。”
+
+                *   “我要投诉！”
+
+
+            3.  **复杂或敏感业务**
+
+                *   “我要签合同，找销售联系我。”
+
+                *   “我的订单要退款，怎么操作？”（涉及财务等敏感复杂操作）
+
+
+            4.  **隐含要求（需结合上下文判断）**
+
+                *   “你是个机器人吧？”（可能预示着不信任，希望找真人）
+
+                *   “算了。”（表达挫败感，可能下一句就要转人工）
+
+
+            **关键词/触发词**：`人工`、`真人`、`客服`、`电话`、`联系方式`、`手机号`、`找人`、`你不行`、`听不懂`、`投诉`、`经理`、`解决不了`。
+
+
+            **分类器训练/判断要点**：
+
+            *   **最高优先级**！一旦识别出该意图的迹象，应立即触发，无需进一步分析。
+
+            *   分类模型对此意图的**召回率**（Recall）要比精确率（Precision）更重要——宁可错杀，不可放过。即使用户只是疑似不满，也应优先转人工，避免用户体验恶化。'
+        - id: '1757406826086'
+          name: "闲聊\n\n#### 核心定义\n用户**无明显目的性**地发起自由对话，主要意图在于社交互动、情感交流或消遣娱乐。这是**低优先级、高灵活性**的意图，需在确保不干扰核心功能的前提下响应\n\
+            \n#### 详细特征与用户问法\n1.  **话题探讨**\n    *   “聊聊梦想/人生”\n    *   “分享对这件事的看法”\n\
+            \n2.  **创意/情感互动**\n    *   “设计一个游戏”\n    *   “发明菜品/编造谎言/解读梦境/讲个笑话“\n \
+            \   *   “你真棒！”（赞美/吐槽/道歉/鼓励）\n    *   “为我[加油/建议]”\n\n3.  **功能指令**\n   \
+            \ *   “翻译/转换/整理文件”\n    *   “用专业语气回答”\n\n4.  **特殊请求/快速指令**\n    *   “扮演一个[角色]”\n\
+            \    *   “分享[冷知识]”\n    *   “问我随机问题”\n\n5.  **相关特定场景**\n    *   “禾望电气怎么样？”\n\
+            \    *   “[公司名称]简介/介绍/行业口碑/市场竞争力/公司评价/投资价值/优缺点”\n    *   “多少钱/[怎么]定价/的价格[怎么样]/和[名称][相比/对比][的]价格[如何]”（和产品/设备无关）\n\
+            \n**关键词/触发词**：`你好`、`谢谢`、`再见`、`抱歉`、`叫什么`、`谁`、`怎么样`、`天气`、`笑话`、`聪明`、`笨`、`喜欢`、`吗（用于疑问句结尾）`。\n\
+            \n**分类器训练/判断要点**：\n*   **最低优先级**必须在确认用户意图不属于任务解决、信息查询、转人工等高优先级类别后，方可进入闲聊模式。"
+        - id: '1757409006274'
+          name: 电站接口查询
+        - id: '1757409008420'
+          name: 设备接口查询
+        - id: '1757409009348'
+          name: 报警接口查询
+        - id: '1757409010417'
+          name: 工单接口查询
+        desc: ''
+        instruction: '### 意图识别主要以**{{#1757405126078.ics_query#}}**进行识别，**{{#1757405126078.ics_question#}}**作为辅助加以识别！！！！'
+        instructions: ''
+        model:
+          completion_params:
+            enable_thinking: false
+            temperature: 0.7
+          mode: chat
+          name: qwen8b
+          provider: yangyaofei/vllm/vllm
+        query_variable_selector:
+        - '1757405126078'
+        - ics_question
+        selected: false
+        title: 问题分类器
+        topics: []
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 398
+      id: '1757405770736'
+      position:
+        x: 1081.5308508593753
+        y: 354.96426413853084
+      positionAbsolute:
+        x: 1081.5308508593753
+        y: 354.96426413853084
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - productIntroduction
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757407485080'
+      position:
+        x: 1430.054641204736
+        y: 693.9866880921736
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 693.9866880921736
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\nfunction main() {\n    return {\n        productIntroduction: 'productIntroduction',\n\
+          \        hopeCloudGuide: 'hopeCloudGuide',\n        manualService: 'manualService',\n\
+          \        smallTalk: 'smallTalk',\n        queryHwPlantInfo: 'queryHwPlantInfo',\n\
+          \        queryHwDeviceInfo: 'queryHwDeviceInfo',\n        queryHwAlarmInfo:\
+          \ 'queryHwAlarmInfo',\n        queryHwWorkOrderInfo: 'queryHwWorkOrderInfo'\n\
+          \    }\n}\n"
+        code_language: javascript
+        desc: 数据赋值
+        outputs:
+          hopeCloudGuide:
+            children: null
+            type: string
+          manualService:
+            children: null
+            type: string
+          productIntroduction:
+            children: null
+            type: string
+          queryHwAlarmInfo:
+            children: null
+            type: string
+          queryHwDeviceInfo:
+            children: null
+            type: string
+          queryHwPlantInfo:
+            children: null
+            type: string
+          queryHwWorkOrderInfo:
+            children: null
+            type: string
+          smallTalk:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行
+        type: code
+        variables: []
+      height: 80
+      id: '1757407575945'
+      position:
+        x: 487.3392893102448
+        y: 275
+      positionAbsolute:
+        x: 487.3392893102448
+        y: 275
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - hopeCloudGuide
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757407612427'
+      position:
+        x: 1430.054641204736
+        y: 1203.7151767461833
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 1203.7151767461833
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757405126078'
+          - ics_intention_type
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757407683681'
+      position:
+        x: 1430.054641204736
+        y: 310.2938996943548
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 310.2938996943548
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - manualService
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757408978242'
+      position:
+        x: 1430.054641204736
+        y: 1680.004285186625
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 1680.004285186625
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - smallTalk
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757408988505'
+      position:
+        x: 1430.054641204736
+        y: 2177.385786259468
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 2177.385786259468
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - queryHwPlantInfo
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757409016528'
+      position:
+        x: 1430.054641204736
+        y: 2436.6174115796275
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 2436.6174115796275
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - queryHwDeviceInfo
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757409026476'
+      position:
+        x: 1430.054641204736
+        y: 2566.180214306822
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 2566.180214306822
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - queryHwAlarmInfo
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757409037086'
+      position:
+        x: 1430.054641204736
+        y: 2704.157927922285
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 2704.157927922285
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1757407575945'
+          - queryHwWorkOrderInfo
+          value_type: string
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1757409046530'
+      position:
+        x: 1430.054641204736
+        y: 2835.182861593763
+      positionAbsolute:
+        x: 1430.054641204736
+        y: 2835.182861593763
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -632.9041233626328
+      y: 188.92762658970798
+      zoom: 0.7578582832551989
+  rag_pipeline_variables: []

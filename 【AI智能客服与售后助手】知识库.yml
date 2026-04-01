@@ -1,0 +1,1396 @@
+app:
+  description: ''
+  icon: ef9987c1-47de-44da-9ffe-41a15bfc4405
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 【AI智能客服与售后助手】知识库
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai_api_compatible:0.0.16@d41b09aca46cdd3876f70b4c91d464c4588fc0bdc844ced6ee426283ead6ce8e
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.1.0@a2dd9bb656a2722292e8936f3287d53ba176cfbbe9b8bfafc596d4a2ddd99eb2
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1754877350629-source-1754991053296-target
+      selected: false
+      source: '1754877350629'
+      sourceHandle: source
+      target: '1754991053296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1754991053296-73f56b69-55ad-4a2b-a433-dc6b16f67b8c-1754990878382-target
+      selected: false
+      source: '1754991053296'
+      sourceHandle: 73f56b69-55ad-4a2b-a433-dc6b16f67b8c
+      target: '1754990878382'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1754991053296-262b75da-648f-4fcd-82ea-47c8519dc293-1754990882798-target
+      selected: false
+      source: '1754991053296'
+      sourceHandle: 262b75da-648f-4fcd-82ea-47c8519dc293
+      target: '1754990882798'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1754991053296-8791a8f9-2cd4-4053-b985-3a9a94ead1a9-1754990885895-target
+      selected: false
+      source: '1754991053296'
+      sourceHandle: 8791a8f9-2cd4-4053-b985-3a9a94ead1a9
+      target: '1754990885895'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1754991053296-4683b580-9ba3-4962-996f-140d89fc5398-1754990889682-target
+      selected: false
+      source: '1754991053296'
+      sourceHandle: 4683b580-9ba3-4962-996f-140d89fc5398
+      target: '1754990889682'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1754991053296-0e9abbc1-0dd7-4ab3-a478-62277a763fdc-1754990893606-target
+      selected: false
+      source: '1754991053296'
+      sourceHandle: 0e9abbc1-0dd7-4ab3-a478-62277a763fdc
+      target: '1754990893606'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: variable-aggregator
+      id: 1754990878382-source-1754991213859-target
+      selected: false
+      source: '1754990878382'
+      sourceHandle: source
+      target: '1754991213859'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: variable-aggregator
+      id: 1754990882798-source-1754991213859-target
+      selected: false
+      source: '1754990882798'
+      sourceHandle: source
+      target: '1754991213859'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: variable-aggregator
+      id: 1754990885895-source-1754991213859-target
+      selected: false
+      source: '1754990885895'
+      sourceHandle: source
+      target: '1754991213859'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: variable-aggregator
+      id: 1754990889682-source-1754991213859-target
+      selected: false
+      source: '1754990889682'
+      sourceHandle: source
+      target: '1754991213859'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: variable-aggregator
+      id: 1754990893606-source-1754991213859-target
+      selected: false
+      source: '1754990893606'
+      sourceHandle: source
+      target: '1754991213859'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-2-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '2'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: end
+      id: 1754991213859-source-1754991278183-target
+      selected: false
+      source: '1754991213859'
+      sourceHandle: source
+      target: '1754991278183'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299164947-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299164947'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299169348-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299169348'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299175227-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299175227'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299179274-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299179274'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299184010-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299184010'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299188571-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299188571'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299195666-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299195666'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299200690-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299200690'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299204745-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299204745'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299211272-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299211272'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299215666-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299215666'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299220665-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299220665'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299224921-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299224921'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299238223-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299238223'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299242642-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299242642'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299247120-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299247120'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299253224-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299253224'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299259434-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299259434'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299263744-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299263744'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299268302-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299268302'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299272626-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299272626'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299277961-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299277961'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299283070-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299283070'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299287391-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299287391'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299291846-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299291846'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1755226298289-1756299295806-1754989250947-target
+      selected: false
+      source: '1755226298289'
+      sourceHandle: '1756299295806'
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1754991053296-true-1756345284328-target
+      selected: false
+      source: '1754991053296'
+      sourceHandle: 'true'
+      target: '1756345284328'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: knowledge-retrieval
+      id: 1757593995297-source-1754989250947-target
+      selected: false
+      source: '1757593995297'
+      sourceHandle: source
+      target: '1754989250947'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1754991053296-true-1757593969105-target
+      selected: false
+      source: '1754991053296'
+      sourceHandle: 'true'
+      target: '1757593969105'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1757641532731-source-1757593995297-target
+      selected: false
+      source: '1757641532731'
+      sourceHandle: source
+      target: '1757593995297'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 1756345284328-source-1757667826083-target
+      selected: false
+      source: '1756345284328'
+      sourceHandle: source
+      target: '1757667826083'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 1754989250947-source-1757667826083-target
+      selected: false
+      source: '1754989250947'
+      sourceHandle: source
+      target: '1757667826083'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1757667826083-source-1754991213859-target
+      selected: false
+      source: '1757667826083'
+      sourceHandle: source
+      target: '1754991213859'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1757593969105-true-1757641532731-target
+      selected: false
+      source: '1757593969105'
+      sourceHandle: 'true'
+      target: '1757641532731'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: question-classifier
+      id: 1757593969105-false-1755226298289-target
+      selected: false
+      source: '1757593969105'
+      sourceHandle: 'false'
+      target: '1755226298289'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: ics_database_type
+          max_length: 48
+          options:
+          - 设备产品介绍
+          - 禾望云手册
+          - 设备技术手册
+          - 客户线上问题
+          - 售后问题
+          - Hopelnsight介绍
+          required: true
+          type: select
+          variable: ics_database_type
+        - label: ics_question
+          max_length: 20000
+          options: []
+          required: true
+          type: paragraph
+          variable: ics_question
+        - label: ics_search
+          max_length: 20000
+          options: []
+          required: true
+          type: paragraph
+          variable: ics_search
+        - label: ics_last_device_model
+          max_length: 48
+          options: []
+          required: false
+          type: text-input
+          variable: ics_last_device_model
+      height: 208
+      id: '1754877350629'
+      position:
+        x: -1643.53829985841
+        y: -120.19775216180986
+      positionAbsolute:
+        x: -1643.53829985841
+        y: -120.19775216180986
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - xewTTz3EF8Trpej/SemyFl910EsPNAJXdpTqolrzJRevi+XWPMMTNt4XRoY3fNgE
+        - pGheUW+rMZshaIwxFBF4zG2aOuSF83hCUskny0sIJLaeITQXH2jip4HbeUn4YgjG
+        desc: ''
+        metadata_filtering_conditions:
+          conditions:
+          - comparison_operator: is
+            id: 9ca8f758-c5d7-4111-93c1-7733ca42f7d2
+            name: hw_device_model
+            value: '{{#1757593995297.text#}}'
+          logical_operator: and
+        metadata_filtering_mode: manual
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+        query_variable_selector:
+        - '1754877350629'
+        - ics_question
+        retrieval_mode: multiple
+        selected: false
+        title: 设备产品介绍
+        type: knowledge-retrieval
+      height: 106
+      id: '1754989250947'
+      position:
+        x: 338.47694291784336
+        y: -445.7022577728044
+      positionAbsolute:
+        x: 338.47694291784336
+        y: -445.7022577728044
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - 0XLLiBiUVGmxYW8X/zyNsYnnk0xDpTcrNbPwhc2WHIXKffxuhDgkg/o3HUeFMdFp
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+        query_variable_selector:
+        - '1754877350629'
+        - ics_search
+        retrieval_mode: multiple
+        selected: false
+        title: 禾望云手册
+        type: knowledge-retrieval
+      height: 106
+      id: '1754990878382'
+      position:
+        x: 338.47694291784336
+        y: -141.87231143700686
+      positionAbsolute:
+        x: 338.47694291784336
+        y: -141.87231143700686
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - jA22jUxnPUBWe7iA4fKbDcid0sPheZkCJtcDmuIPok2ND6jDMLLe2BkdVybErb9W
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+        query_variable_selector:
+        - '1754877350629'
+        - ics_search
+        retrieval_mode: multiple
+        selected: false
+        title: 设备技术手册
+        type: knowledge-retrieval
+      height: 106
+      id: '1754990882798'
+      position:
+        x: 338.47694291784336
+        y: 5.783528718520614
+      positionAbsolute:
+        x: 338.47694291784336
+        y: 5.783528718520614
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - jA22jUxnPUBWe7iA4fKbDcid0sPheZkCJtcDmuIPok2ND6jDMLLe2BkdVybErb9W
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+        query_variable_selector:
+        - '1754877350629'
+        - ics_search
+        retrieval_mode: multiple
+        selected: false
+        title: 客户线上问题
+        type: knowledge-retrieval
+      height: 106
+      id: '1754990885895'
+      position:
+        x: 338.47694291784336
+        y: 156.77440455027187
+      positionAbsolute:
+        x: 338.47694291784336
+        y: 156.77440455027187
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - jA22jUxnPUBWe7iA4fKbDcid0sPheZkCJtcDmuIPok2ND6jDMLLe2BkdVybErb9W
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+        query_variable_selector:
+        - '1754877350629'
+        - ics_search
+        retrieval_mode: multiple
+        selected: false
+        title: 售后问题
+        type: knowledge-retrieval
+      height: 106
+      id: '1754990889682'
+      position:
+        x: 338.47694291784336
+        y: 305.6327462527843
+      positionAbsolute:
+        x: 338.47694291784336
+        y: 305.6327462527843
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - jA22jUxnPUBWe7iA4fKbDcid0sPheZkCJtcDmuIPok2ND6jDMLLe2BkdVybErb9W
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+        query_variable_selector:
+        - '1754877350629'
+        - ics_search
+        retrieval_mode: multiple
+        selected: false
+        title: Hopelnsight介绍
+        type: knowledge-retrieval
+      height: 106
+      id: '1754990893606'
+      position:
+        x: 338.47694291784336
+        y: 462.6640880682932
+      positionAbsolute:
+        x: 338.47694291784336
+        y: 462.6640880682932
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 9277fdd4-7ee1-431a-8c05-dca40c3cf84c
+            value: 设备产品介绍
+            varType: string
+            variable_selector:
+            - '1754877350629'
+            - ics_database_type
+          id: 'true'
+          logical_operator: and
+        - case_id: 73f56b69-55ad-4a2b-a433-dc6b16f67b8c
+          conditions:
+          - comparison_operator: is
+            id: 3ba00347-7fd8-4db6-8414-819a04045fac
+            value: 禾望云手册
+            varType: string
+            variable_selector:
+            - '1754877350629'
+            - ics_database_type
+          id: 73f56b69-55ad-4a2b-a433-dc6b16f67b8c
+          logical_operator: and
+        - case_id: 262b75da-648f-4fcd-82ea-47c8519dc293
+          conditions:
+          - comparison_operator: is
+            id: d2109c56-6a04-4be1-bfaf-379ffdf31e53
+            value: 设备技术手册
+            varType: string
+            variable_selector:
+            - '1754877350629'
+            - ics_database_type
+          id: 262b75da-648f-4fcd-82ea-47c8519dc293
+          logical_operator: and
+        - case_id: 8791a8f9-2cd4-4053-b985-3a9a94ead1a9
+          conditions:
+          - comparison_operator: is
+            id: 121320fb-c022-46b1-815c-40225ebc30fb
+            value: 客户线上问题
+            varType: string
+            variable_selector:
+            - '1754877350629'
+            - ics_database_type
+          id: 8791a8f9-2cd4-4053-b985-3a9a94ead1a9
+          logical_operator: and
+        - case_id: 4683b580-9ba3-4962-996f-140d89fc5398
+          conditions:
+          - comparison_operator: is
+            id: 0cb4fae4-ce35-4046-b8cf-292984835b57
+            value: 售后问题
+            varType: string
+            variable_selector:
+            - '1754877350629'
+            - ics_database_type
+          id: 4683b580-9ba3-4962-996f-140d89fc5398
+          logical_operator: and
+        - case_id: 0e9abbc1-0dd7-4ab3-a478-62277a763fdc
+          conditions:
+          - comparison_operator: is
+            id: b60d0691-55d6-42de-b36b-e06a1d4be579
+            value: Hopelnsight介绍
+            varType: string
+            variable_selector:
+            - '1754877350629'
+            - ics_database_type
+          id: 0e9abbc1-0dd7-4ab3-a478-62277a763fdc
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 455
+      id: '1754991053296'
+      position:
+        x: -1224.2136415693835
+        y: -169.86815163263586
+      positionAbsolute:
+        x: -1224.2136415693835
+        y: -169.86815163263586
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        output_type: array[object]
+        selected: false
+        title: 变量聚合器
+        type: variable-aggregator
+        variables:
+        - - '1754990893606'
+          - result
+        - - '1754990889682'
+          - result
+        - - '1754990885895'
+          - result
+        - - '1754990882798'
+          - result
+        - - '1754990878382'
+          - result
+        - - '1757667826083'
+          - result
+      height: 298
+      id: '1754991213859'
+      position:
+        x: 987.3730289157686
+        y: -141.87231143700686
+      positionAbsolute:
+        x: 987.3730289157686
+        y: -141.87231143700686
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1754991213859'
+          - output
+          value_type: array[object]
+          variable: output
+        - value_selector:
+          - '1757593995297'
+          - text
+          value_type: string
+          variable: device_model
+        selected: false
+        title: 结束
+        type: end
+      height: 143
+      id: '1754991278183'
+      position:
+        x: 1290.039355795016
+        y: 46.30228663327435
+      positionAbsolute:
+        x: 1290.039355795016
+        y: 46.30228663327435
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        classes:
+        - id: '1'
+          name: HSNV系列 (8K, 10K, 12K, 15K, 17K)-D01
+        - id: '2'
+          name: HSNV系列 (40K, 50K)-D01
+        - id: '1756299164947'
+          name: HSNV系列 (30K, 33K, 36K)-D01
+        - id: '1756299169348'
+          name: HSNV系列 (20K, 22K, 25K)-D01
+        - id: '1756299175227'
+          name: HSHV系列 (320K, 350K)-D01
+        - id: '1756299179274'
+          name: hopeSun系列 (40KTL-M, 50KTL-M)
+        - id: '1756299184010'
+          name: hopeSun系列 (3KTL, 4KTL, 5KTL, 6KTL, 8KTL)
+        - id: '1756299188571'
+          name: hopeSun系列 (8KTL, 10KTL, 12KTL, 15KTL, 17KTL, 20KTL, 22KTL, 25KTL,
+            30KTL, 33KTL)
+        - id: '1756299195666'
+          name: hopeSun系列 (60KTL, 70KTL, 75KTL, 80KTL-M)
+        - id: '1756299200690'
+          name: hopeSun系列 (36KTL, 40KTL, 50KTL)
+        - id: '1756299204745'
+          name: HSNV150K系列 D01
+        - id: '1756299211272'
+          name: hopeSun系列 (3KTL, 4KTL, 5KTL, 6KTL, 8KTL)
+        - id: '1756299215666'
+          name: hopeSun系列 (8KTL, 10KTL, 12KTL, 15KTL, 17KTL, 20KTL, 22KTL, 25KTL,
+            30KTL, 33KTL)
+        - id: '1756299220665'
+          name: hopeSun系列 (36KTL, 40KTL, 50KTL)
+        - id: '1756299224921'
+          name: hopeSun系列 (60KTL, 60KTL-M, 70KTL, 70KTL-M, 75KTL, 80KTL-M)
+        - id: '1756299232298'
+          name: HSSP系列 (8K, 10K)-D01
+        - id: '1756299238223'
+          name: HSSP系列 (3K, 4K, 5K, 6K)-D01
+        - id: '1756299242642'
+          name: HSSP系列 (3K, 4K, 5K, 8K, 10K)-D01
+        - id: '1756299247120'
+          name: hopeSunHV系列 (225KTL, 250KTL)
+        - id: '1756299253224'
+          name: hopeSun系列 (100KTL, 110KTL, 125KTL-M, 136KTL-M)
+        - id: '1756299259434'
+          name: hopeSun系列 (100KTL,110KTL,125KTL-M)
+        - id: '1756299263744'
+          name: hopePowerBox系列 D03
+        - id: '1756299268302'
+          name: hopePowerBox系列
+        - id: '1756299272626'
+          name: hopeDongle系列 D02-4G
+        - id: '1756299277961'
+          name: hopeDongle系列 4G
+        - id: '1756299283070'
+          name: hopeComBox系列 3000-D03
+        - id: '1756299287391'
+          name: hopeComBox系列 2000-D03
+        - id: '1756299291846'
+          name: hopeComBox系列 1000-D03
+        - id: '1756299295806'
+          name: hopeComBox系列 1000-D03
+        desc: ''
+        instruction: '按照以下规则，先选系列再选型号
+
+          1.如果用户提到了HSNV、hopeSun、HSSP、hopeSunHV、hopePowerBox、hopeDongle、hopeComBox就选对应系列
+
+          2.如果用户提到了逆变器没提到具体系列，选择HSHV系列，如果没提到型号选HSHV系列 (320K, 350K)-D01
+
+          3.如果用户提到了通信模块、通信棒没提到具体系列，选择hopeDongle系列，如果没提到型号选hopeDongle系列 4G
+
+          4.如果用户提到了数采器、DTU没提到具体系列，选择hopeComBox系列，如果没提到型号选hopeComBox系列 1000-D03
+
+          5.如果以上都不符合选择HSHV系列 (320K, 350K)-D01
+
+          6.知道系列后，如果用户提到了8K, 10K之类的选择系列后的型号
+
+          7.只知道系列，如果用户没提到具体型号，选择每个系列较大的一个型号
+
+
+
+          '
+        instructions: ''
+        model:
+          completion_params:
+            enable_thinking: false
+            temperature: 0.2
+          mode: chat
+          name: qwen3-30b-a3b
+          provider: langgenius/tongyi/tongyi
+        query_variable_selector:
+        - '1754877350629'
+        - ics_question
+        selected: false
+        title: 型号识别
+        topics: []
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 1904
+      id: '1755226298289'
+      position:
+        x: -53.79341346072323
+        y: -2418.9245717597696
+      positionAbsolute:
+        x: -53.79341346072323
+        y: -2418.9245717597696
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        dataset_ids:
+        - XPcVbRIMMxtwgBNkDEqAFHTCsPRZSg6comR79R6+4AiEsolbyLxjPIralD7Lk8HE
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: weighted_score
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+        query_variable_selector:
+        - '1754877350629'
+        - ics_search
+        retrieval_mode: multiple
+        selected: false
+        title: 设备产品介绍（无型号）
+        type: knowledge-retrieval
+      height: 106
+      id: '1756345284328'
+      position:
+        x: 338.47694291784336
+        y: -290.12600397174833
+      positionAbsolute:
+        x: 338.47694291784336
+        y: -290.12600397174833
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: 8af8cf4b-4e44-44f7-834c-5eac3696a06e
+            value: ''
+            varType: string
+            variable_selector:
+            - '1754877350629'
+            - ics_question
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 永远走ELSE
+        type: if-else
+      height: 155
+      id: '1757593969105'
+      position:
+        x: -809.6630395263204
+        y: -474.0986681144531
+      positionAbsolute:
+        x: -809.6630395263204
+        y: -474.0986681144531
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            enable_thinking: false
+            temperature: 0.1
+            top_p: 0.1
+          mode: chat
+          name: qwen3-30b-a3b
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: bb8f8943-4563-491b-8200-56f5f6a9759e
+          role: system
+          text: "您是一位经验丰富的设备售后客服，负责从用户的提问中识别出提问的设备型号，请严格按照**规则**从**设备型号列表**中选择一项输出，不需要markdown格式。\n\
+            \n# **设备型号列表**\n- HSNV系列 (8K, 10K, 12K, 15K, 17K)-D01\n- HSNV系列 (40K,\
+            \ 50K)-D01\n- HSNV系列 (30K, 33K, 36K)-D01\n- HSNV系列 (20K, 22K, 25K)-D01\n\
+            - HSHV系列 (320K, 350K)-D01\n- hopeSun系列 (40KTL-M, 50KTL-M)\n- hopeSun系列\
+            \ (3KTL, 4KTL, 5KTL, 6KTL, 8KTL)\n- hopeSun系列 (8KTL, 10KTL, 12KTL, 15KTL,\
+            \ 17KTL, 20KTL, 22KTL, 25KTL, 30KTL, 33KTL)\n- hopeSun系列 (60KTL, 70KTL,\
+            \ 75KTL, 80KTL-M)\n- hopeSun系列 (36KTL, 40KTL, 50KTL)\n- HSNV150K系列 D01\n\
+            - hopeSun系列 (3KTL, 4KTL, 5KTL, 6KTL, 8KTL)\n- hopeSun系列 (36KTL, 40KTL,\
+            \ 50KTL)\n- hopeSun系列 (60KTL, 60KTL-M, 70KTL, 70KTL-M, 75KTL, 80KTL-M)\n\
+            - HSSP系列 (8K, 10K)-D01\n- HSSP系列 (3K, 4K, 5K, 6K)-D01\n- HSSP系列 (3K, 4K,\
+            \ 5K, 8K, 10K)-D01\n- hopeSunHV系列 (225KTL, 250KTL)\n- hopeSun系列 (100KTL,\
+            \ 110KTL, 125KTL-M, 136KTL-M)\n- hopePowerBox系列 D03\n- hopePowerBox系列\n\
+            - hopeDongle系列 D02-4G\n- hopeDongle系列 4G\n- hopeComBox系列 3000-D03\n- hopeComBox系列\
+            \ 2000-D03\n- hopeComBox系列 1000-D03\n\n# **规则**{{#1757641532731.result#}}\n\
+            1. 如果用户提到了HSNV、hopeSun、HSSP、hopeSunHV、hopePowerBox、hopeDongle、hopeComBox就选对应系列\n\
+            2. 如果用户没提到具体系列但是提到了逆变器\n - 如果可以根据型号判断，请参考第6点\n - 如果不能根据型号判断，选择- HSHV系列\
+            \ (320K, 350K)-D01\n3. 如果用户没提到具体系列但是提到了通信模块、通信棒，选择hopeDongle系列，如果没提到型号选hopeDongle系列\
+            \ 4G\n4. 如果用户没提到具体系列但是提到了数采器、DTU，选择hopeComBox系列，如果没提到型号选hopeComBox系列 1000-D03\n\
+            5. 如果以上都不符合选择HSHV系列 (320K, 350K)-D01\n6. 知道系列后，如果用户提到了8K, 10K之类的选择系列后的型号。\n\
+            \ - 要注意k、kw、ktl是等价的，即8K也代表8kw、8ktl\n7. 只知道系列，如果用户没提到具体型号，选择每个系列较大的一个型号\n\
+            8. 只能选择**设备型号列表**中的一个型号\n9. 请严格按照**规则**输出"
+        - id: b84b8cec-1c03-4449-8699-364d262ad564
+          role: user
+          text: '用户提问：
+
+            {{#1754877350629.ics_question#}}'
+        selected: false
+        title: LLM型号识别
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 110
+      id: '1757593995297'
+      position:
+        x: -53.79341346072323
+        y: -445.7022577728044
+      positionAbsolute:
+        x: -53.79341346072323
+        y: -445.7022577728044
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "def main(ics_last_device_model: str):\n    if not ics_last_device_model:\n\
+          \        return {\n            \"result\": \"\",\n        }\n    else:\n\
+          \        return {\n            \"result\": \"\\n0. 请结合用户上次提到了\" + ics_last_device_model\
+          \ + \"输出型号\",\n        }      \n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 构建多轮型号识别提示词
+        type: code
+        variables:
+        - value_selector:
+          - '1754877350629'
+          - ics_last_device_model
+          value_type: string
+          variable: ics_last_device_model
+      height: 65
+      id: '1757641532731'
+      position:
+        x: -386.01183346415104
+        y: -445.7022577728044
+      positionAbsolute:
+        x: -386.01183346415104
+        y: -445.7022577728044
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\ndef main(arg1, arg2) -> dict:\n    return {\n        \"result\":\
+          \ arg1 + arg2,\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[object]
+        selected: false
+        title: 合并产品介绍知识库
+        type: code
+        variables:
+        - value_selector:
+          - '1756345284328'
+          - result
+          value_type: array[object]
+          variable: arg1
+        - value_selector:
+          - '1754989250947'
+          - result
+          value_type: array[object]
+          variable: arg2
+      height: 65
+      id: '1757667826083'
+      position:
+        x: 718.4862266521483
+        y: -290.12600397174833
+      positionAbsolute:
+        x: 718.4862266521483
+        y: -290.12600397174833
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: 869.453763564394
+      y: 956.4269224060804
+      zoom: 0.6372803087229246
+  rag_pipeline_variables: []
