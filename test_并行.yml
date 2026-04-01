@@ -4765,7 +4765,7 @@ workflow:
     - data:
         code: "def main(main_llm_text: str) -> dict:\n    return {'text': main_llm_text}"
         code_language: python3
-        desc: 直接复用主库改写LLM的输出，省去一次LLM调用
+        desc: 直接使用子意图query_fragment，与主库共享同一查询词
         outputs:
           text:
             children: null
@@ -4775,8 +4775,8 @@ workflow:
         type: code
         variables:
         - value_selector:
-          - '1766576792406'
-          - text
+          - '1766562647925'
+          - query_fragment
           value_type: string
           variable: main_llm_text
         isInIteration: true
