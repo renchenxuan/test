@@ -5579,9 +5579,9 @@ workflow:
               score += min(len(text), MAX_TEXT_LENGTH_FOR_SCORE) / TEXT_LENGTH_DIVISOR
               return score, hits
           
-          def main(primary_results: list, supporting_results: list, query_text: str):
-              primary = _normalize_items(primary_results, 'primary')
-              supporting = _normalize_items(supporting_results, 'supporting')
+          def main(arg1: list, arg2: list, arg3: str):
+              primary = _normalize_items(arg1, 'primary')
+              supporting = _normalize_items(arg2, 'supporting')
               merged = primary + supporting
           
               # 去重（跨主辅）
@@ -5594,7 +5594,7 @@ workflow:
                   seen.add(k)
                   deduped.append(x)
           
-              terms = _extract_terms(query_text)
+              terms = _extract_terms(arg3)
           
               scored = []
               for x in deduped:
