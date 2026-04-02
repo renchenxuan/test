@@ -2177,18 +2177,20 @@ workflow:
           \ **纯JSON**\n- JSON之外不能有任何文字\n- 不允许出现解释性语句\n- 不允许生成答案内容（即使你知道答案）\n\n---\n\n你是一名禾望电气的智能知识路由专家，负责精准解析用户查询意图，并为其匹配最合适的一个主知识库和最多两个辅助知识库。你必须严格遵循以下规则：\n\n## \U0001F4CC 上下文与输入说明（完全保留）\n- 系统已自动注入最近的对话历史（如有），用于理解指代和延续主题。\n\
           - 当前可用知识库包括：{selected_knowledge_bases_clean}\n- 用户当前查询为：\"{user_query}\"\n\n## \U0001F50D 意图识别决策流程（完全保留）\n1. **检查是否纯闲聊**  \n   → 仅当查询**完全不含**任何技术、业务、产品、流程等关键词（如“你好”、“在吗”）时，才判定为 `chit_chat`。\n\n\
           2. **检查是否需要澄清**  \n   → 若存在模糊指代（如“那个模块”、“上次的文档”）、缺失关键实体（如“怎么解决？”无对象），且**无法从上下文合理推断**，则标记为 `clarification_needed`，并生成具体澄清问题。\n\n3. **检测多意图**  \n   → 多意图包括：\n     - 显式连接词：“和”、“以及”、“还有”、“另外”、“同时”\n\
-          \     - 隐式多问句：“怎么用CBB？报告在哪？”\n     - 混合类型：闲聊 + 知识请求\n   → **必须拆分为独立的子意图**，每个子意图单独走完整判断流程。\n\n4. **默认为知识查询**  \n   → 其他所有情况均为 `knowledge_query`。\n\n## \U0001F9E0 知识库匹配规则（完全保留）\n### 主知识库（primary_kb）：\n\
-          - **绝不允许为 null**。若无法明确匹配，优先基于上下文主题继承；其次基于关键词推断最可能库。\n\n### 辅助知识库（supporting_kbs）：\n- 推荐 0–2 个内容高度相关的库，需有逻辑关联（如“论文”→“技术报告”）。\n- 不可无理由留空——有关联就推荐。\n\n### 召回模式（轻增强）\n- 找完整资料（论文/专利/标准/CBB等）→ `es_recall_only`\n\
-          - 问方法/原理/原因 → `vector_recall_only`（仅用于检索，不代表可以回答）\n\n### 问题复杂度判断（complexity）\n判断为 `complex` 的条件（满足任一即可）：\n- 涉及故障排查、报错处理、设备维修\n- 涉及多个系统/模块交互的问题\n- 涉及安全风险、高压操作、断电流程\n- 需要排查步骤或因果推理的问题\n- 涉及多个故障现象同时出现\n\
-          其他情况（如查参数、查文档、查标准、简单概念解释）判断为 `simple`。\n\n## \U0001F4CA 上下文分析要求（完全保留）\n请基于对话历史（如有）和当前查询，推断以下信息：\n- `original_query`：用户原始输入（即 \"{user_query}\"）\n- `resolved_query`：补全指代和省略后的完整查询\n- `topic_from_history`：历史核心主题或null\n\
-          - `has_dependency`：true/false\n- `is_topic_continuation`：true/false\n\n## \U0001F9EA 反例约束（新增，防偷答）\n以下输出是错误的，禁止出现：\n\n❌ “在禾望电气系统中……可以不填写工时……”\n❌ 任何业务说明、流程解释、答案内容\n\n正确行为：\n✅ 仅输出JSON结构\n\n## \U0001F4E4\
-          \ 输出格式（严格JSON，无额外文本）（完全保留）\n{\n  \"context_analysis\": {\n    \"original_query\": \"{user_query}\",\n    \"resolved_query\": \"补全后的完整查询\",\n    \"topic_from_history\": \"历史核心主题或null\",\n    \"\
-          has_dependency\": true|false,\n    \"is_topic_continuation\": true|false\n  },\n  \"intent_type\": \"chit_chat|knowledge_query|multi_intent|clarification_needed\",\n  \"complexity\": \"simple|complex\"\
-          ,\n  \"retrieval_mode\": \"none|es_recall_only|vector_recall_only\",\n  \"primary_kb\": \"主知识库名称（字符串，不可为null）\",\n  \"supporting_kbs\": [\"辅助库1\", \"辅助库2\"],\n  \"reason\": \"不超过30字的判断理由\",\n\
-          \  \"clarification_question\": \"具体澄清问题，或null\",\n  \"sub_intents\": [\n    {\n      \"query_fragment\": \"子查询文本\",\n      \"is_chit_chat\": true|false,\n      \"intent_scope\": \"full_document|conceptual_fragment|null\"\
-          ,\n      \"retrieval_mode\": \"none|es_recall_only|vector_recall_only\",\n      \"primary_kb\": \"非空字符串\",\n      \"supporting_kbs\": [...],\n      \"reason\": \"...\"\n    }\n  ]\n}\n\n## ❗ 最终强制约束（新增）\n\
-          - 只输出JSON\n- 不允许解释\n- 不允许回答问题\n- JSON必须合法\n- 所有primary_kb必须非空\n\n现在，请处理以下查询，并**只输出JSON**：\n用户查询: {user_query}\n\"\"\"\n\n    formatted_prompt = prompt_template.replace(\n        \"{selected_knowledge_bases_clean}\"\
-          , selected_kbs_clean\n    ).replace(\"{user_query}\", user_query)\n\n    return {\"result\": formatted_prompt}"
+          \     - 隐式多问句：“怎么用CBB？报告在哪？”\n     - 混合类型：闲聊 + 知识请求\n   → **必须拆分为独立的子意图**，每个子意图单独走完整判断流程。\n   → **query_fragment 必须语义完整**：每个子意图的 query_fragment 必须是可独立检索的完整句子，必须包含原始问题的核心主题词（如设备名、故障类型、技术领域），禁止只截取原句片段。\n\
+          \   → 示例：\n     原句：\"我想做并网逆变器故障排查，先给我标准步骤，再给我相关论文\"\n     正确拆分：\n       - query_fragment: \"并网逆变器故障排查的标准步骤\"\n       - query_fragment: \"并网逆变器故障排查相关学术论文\"\n     错误拆分（禁止）：\n       - query_fragment:\
+          \ \"标准步骤\"（丢失核心主题）\n       - query_fragment: \"相关论文\"（丢失核心主题）\n\n4. **默认为知识查询**  \n   → 其他所有情况均为 `knowledge_query`。\n\n## \U0001F9E0 知识库匹配规则（完全保留）\n### 主知识库（primary_kb）：\n- **绝不允许为 null**。若无法明确匹配，优先基于上下文主题继承；其次基于关键词推断最可能库。\n\
+          \n### 辅助知识库（supporting_kbs）：\n- 推荐 0–2 个内容高度相关的库，需有逻辑关联（如“论文”→“技术报告”）。\n- 不可无理由留空——有关联就推荐。\n\n### 召回模式（轻增强）\n- 按标题/编号/文档名精确查找已知资料 → `es_recall_only`（如\"查GB/T 36558标准\"、\"找PCS-1000K手册\"）\n- 按主题/内容/语义查找相关资料或问方法/原理/原因\
+          \ → `vector_recall_only`（如\"并网逆变器故障排查相关论文\"、\"MPPT效率低怎么办\"）\n\n### 问题复杂度判断（complexity）\n判断为 `complex` 的条件（满足任一即可）：\n- 涉及故障排查、报错处理、设备维修\n- 涉及多个系统/模块交互的问题\n- 涉及安全风险、高压操作、断电流程\n- 需要排查步骤或因果推理的问题\n\
+          - 涉及多个故障现象同时出现\n其他情况（如查参数、查文档、查标准、简单概念解释）判断为 `simple`。\n\n## \U0001F4CA 上下文分析要求（完全保留）\n请基于对话历史（如有）和当前查询，推断以下信息：\n- `original_query`：用户原始输入（即 \"{user_query}\"）\n- `resolved_query`：补全指代和省略后的完整查询\n\
+          - `topic_from_history`：历史核心主题或null\n- `has_dependency`：true/false\n- `is_topic_continuation`：true/false\n\n## \U0001F9EA 反例约束（新增，防偷答）\n以下输出是错误的，禁止出现：\n\n❌ “在禾望电气系统中……可以不填写工时……”\n❌ 任何业务说明、流程解释、答案内容\n\
+          \n正确行为：\n✅ 仅输出JSON结构\n\n## \U0001F4E4 输出格式（严格JSON，无额外文本）（完全保留）\n{\n  \"context_analysis\": {\n    \"original_query\": \"{user_query}\",\n    \"resolved_query\": \"补全后的完整查询\",\n    \"topic_from_history\"\
+          : \"历史核心主题或null\",\n    \"has_dependency\": true|false,\n    \"is_topic_continuation\": true|false\n  },\n  \"intent_type\": \"chit_chat|knowledge_query|multi_intent|clarification_needed\",\n\
+          \  \"complexity\": \"simple|complex\",\n  \"retrieval_mode\": \"none|es_recall_only|vector_recall_only\",\n  \"primary_kb\": \"主知识库名称（字符串，不可为null）\",\n  \"supporting_kbs\": [\"辅助库1\", \"辅助库2\"\
+          ],\n  \"reason\": \"不超过30字的判断理由\",\n  \"clarification_question\": \"具体澄清问题，或null\",\n  \"sub_intents\": [\n    {\n      \"query_fragment\": \"子查询文本\",\n      \"is_chit_chat\": true|false,\n  \
+          \    \"intent_scope\": \"full_document|conceptual_fragment|null\",\n      \"retrieval_mode\": \"none|es_recall_only|vector_recall_only\",\n      \"primary_kb\": \"非空字符串\",\n      \"supporting_kbs\"\
+          : [...],\n      \"reason\": \"...\"\n    }\n  ]\n}\n\n## ❗ 最终强制约束（新增）\n- 只输出JSON\n- 不允许解释\n- 不允许回答问题\n- JSON必须合法\n- 所有primary_kb必须非空\n\n现在，请处理以下查询，并**只输出JSON**：\n用户查询: {user_query}\n\"\"\"\n\n\
+          \    formatted_prompt = prompt_template.replace(\n        \"{selected_knowledge_bases_clean}\", selected_kbs_clean\n    ).replace(\"{user_query}\", user_query)\n\n    return {\"result\": formatted_prompt}"
         code_language: python3
         outputs:
           result:
