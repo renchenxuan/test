@@ -1669,38 +1669,10 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         sourceType: code
-        targetType: llm
-      id: 1766579029694-source-1766661968545-target
+        targetType: variable-aggregator
+      id: 1766579029694-source-1766632716395-target
       selected: false
       source: '1766579029694'
-      sourceHandle: source
-      target: '1766661968545'
-      targetHandle: target
-      type: custom
-      zIndex: 1002
-    - data:
-        isInIteration: true
-        isInLoop: false
-        iteration_id: '1766561987023'
-        sourceType: llm
-        targetType: code
-      id: 1766661968545-source-1766663294206-target
-      selected: false
-      source: '1766661968545'
-      sourceHandle: source
-      target: '1766663294206'
-      targetHandle: target
-      type: custom
-      zIndex: 1002
-    - data:
-        isInIteration: true
-        isInLoop: false
-        iteration_id: '1766561987023'
-        sourceType: code
-        targetType: variable-aggregator
-      id: 1766663294206-source-1766632716395-target
-      selected: false
-      source: '1766663294206'
       sourceHandle: source
       target: '1766632716395'
       targetHandle: target
@@ -5910,8 +5882,8 @@ workflow:
         variables:
         - - '1766581831340'
           - result
-        - - '1766663294206'
-          - result
+        - - '1766579029694'
+          - evidence_pack
         - - '1766582350681'
           - result
         - - '1766583739687'
@@ -6072,105 +6044,6 @@ workflow:
       targetPosition: left
       type: custom
       width: 242
-    - data:
-        context:
-          enabled: true
-          variable_selector:
-          - '1766579029694'
-          - output
-        isInIteration: true
-        isInLoop: false
-        iteration_id: '1766561987023'
-        model:
-          completion_params:
-            enable_thinking: false
-            temperature: 0.7
-          mode: chat
-          name: GLM-4.6V-Flash
-          provider: yangyaofei/vllm/vllm
-        prompt_template:
-        - id: 42743737-1ee8-430e-b7c4-7eafc9c7b4aa
-          role: system
-          text: '提取支持用户问题的核心内容：
-
-
-            规则：
-
-            - 主资料优先，辅资料补充
-
-            - 保留关键事实、参数、步骤、结论
-
-            - **完整保留所有图片、公式、表格、代码**（原格式）
-
-            - 去除冗余，1200字内
-
-
-            问题：{{#1766576792406.text#}}、{{#1766576863489.text#}}
-
-            主资料：{{#1766579029694.primary_output#}}
-
-            辅资料：{{#1766579029694.supporting_output#}}
-
-
-            提取结果：'
-        - id: 9fff42e7-90b0-4dac-99f6-23b93dd854df
-          role: user
-          text: ''
-        selected: false
-        title: 召回片段提炼LLM
-        type: llm
-        vision:
-          enabled: false
-      height: 88
-      id: '1766661968545'
-      parentId: '1766561987023'
-      position:
-        x: 2931.02659471943
-        y: 304.1526584446883
-      positionAbsolute:
-        x: 5574.5695792268525
-        y: 3522.186656222667
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 242
-      zIndex: 1002
-    - data:
-        code: "def main(arg1: str):\n    end_tag = \"</think>\"\n    idx = arg1.find(end_tag)\n    if idx == -1:\n        extracted = \"\"\n    else:\n        extracted = arg1[idx + len(end_tag):]\n   \
-          \ return {\n        \"result\": extracted\n    }\n"
-        code_language: python3
-        isInIteration: true
-        isInLoop: false
-        iteration_id: '1766561987023'
-        outputs:
-          result:
-            children: null
-            type: string
-        selected: false
-        title: 取出提炼内容
-        type: code
-        variables:
-        - value_selector:
-          - '1766661968545'
-          - text
-          value_type: string
-          variable: arg1
-      height: 52
-      id: '1766663294206'
-      parentId: '1766561987023'
-      position:
-        x: 3183.0265947194307
-        y: 134.15265844468877
-      positionAbsolute:
-        x: 5826.5695792268525
-        y: 3352.1866562226674
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 242
-      zIndex: 1002
     - data:
         code: "import json\n\ndef main(selected_knowledge_bases: str, kb_mapping: str):\n    # 解析 kb_mapping JSON 字符串为 list\n    try:\n        kb_mapping_list = json.loads(kb_mapping)\n    except json.JSONDecodeError\
           \ as e:\n        raise ValueError(\"kb_mapping is not a valid JSON string\") from e\n\n    # 将输入字符串按逗号分割成 ID 列表，并去除空格\n    selected_ids = set(kb.strip() for kb in selected_knowledge_bases.split(',')\
