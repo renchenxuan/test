@@ -1669,10 +1669,38 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         sourceType: code
-        targetType: variable-aggregator
-      id: 1766579029694-source-1766632716395-target
+        targetType: llm
+      id: 1766579029694-source-1766661968545-target
       selected: false
       source: '1766579029694'
+      sourceHandle: source
+      target: '1766661968545'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1766561987023'
+        sourceType: llm
+        targetType: code
+      id: 1766661968545-source-1766663294206-target
+      selected: false
+      source: '1766661968545'
+      sourceHandle: source
+      target: '1766663294206'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1766561987023'
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1766663294206-source-1766632716395-target
+      selected: false
+      source: '1766663294206'
       sourceHandle: source
       target: '1766632716395'
       targetHandle: target
@@ -5882,8 +5910,8 @@ workflow:
         variables:
         - - '1766581831340'
           - result
-        - - '1766579029694'
-          - evidence_pack
+        - - '1766663294206'
+          - result
         - - '1766582350681'
           - result
         - - '1766583739687'
