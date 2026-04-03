@@ -2426,17 +2426,69 @@ workflow:
       type: custom
       width: 242
     - data:
-        code: "import re\n\ndef main(resolved_query: str) -> dict:\n    STOP_WORDS = {\n        '请问', '怎么', '如何', '什么', '为什么', '哪里', '哪个', '哪些',\n        '多少', '几个', '是否', '能否', '可否', '怎样', '何时', '何处',\n\
-          \        '谁', '啥', '咋', '咋样', '咋回事', '怎么回事', '怎么办',\n        '吗', '呢', '吧', '啊', '呀', '了', '的', '地', '得',\n        '嘛', '哦', '噢', '哈', '呐', '嗯', '哇', '唉', '喂',\n        '么', '罢了', '而已', '罢', '矣',\n\
-          \        '这', '那', '这个', '那个', '这些', '那些', '这种', '那种',\n        '这样', '那样', '它', '其', '他', '她', '我', '你', '您',\n        '自己', '本身', '我们', '你们', '他们', '大家',\n        '请', '想', '要', '能', '可以', '应该',\
-          \ '需要', '会',\n        '必须', '得', '可能', '也许', '或许', '大约', '大概',\n        '比较', '一般', '通常', '似乎', '好像',\n        '非常', '特别', '十分', '稍微', '有点', '很', '太', '极',\n        '更', '最', '挺', '蛮', '颇', '甚',\
-          \ '尤其', '格外',\n        '总是', '经常', '偶尔', '有时', '从来', '一直', '始终',\n        '已经', '正在', '将要', '刚刚', '刚才', '马上', '立刻',\n        '帮我', '告诉我', '看看', '查一下', '找一下', '说说',\n        '讲讲', '介绍', '解释', '描述',\
-          \ '说明一下', '分析一下',\n        '看一下', '问一下', '了解一下', '确认一下', '查查',\n        '搞', '弄', '做', '搞定', '处理', '解决',\n        '和', '与', '以及', '还有', '并且', '或者', '但是', '不过',\n        '因为', '所以', '如果', '虽然',\
-          \ '然后', '而且', '而',\n        '不但', '不仅', '即使', '尽管', '无论', '不管',\n        '那么', '因此', '于是', '故而', '进而', '从而',\n        '是', '在', '有', '被', '把', '对', '给', '从', '到',\n        '上', '下', '中', '内',\
-          \ '外', '里', '间', '前', '后',\n        '左', '右', '之', '所', '者', '等', '等等',\n        '一下', '一些', '一点', '一般来说', '总的来说',\n        '具体', '详细', '简单', '快速', '完整', '全部',\n        '目前', '现在', '当前', '最近',\
-          \ '以前', '之前',\n        '关于', '对于', '至于', '按照', '根据', '通过',\n        '进行', '实现', '完成', '开始', '结束',\n        '好', '好的', '行', '行的', '没问题',\n        '谢谢', '感谢', '麻烦', '拜托',\n    }\n    tokens = re.findall(r'[\\\
-          u4e00-\\u9fff]+|[A-Za-z][A-Za-z0-9_.-]*|\\d+\\.?\\d*', resolved_query)\n    filtered = [t for t in tokens if t not in STOP_WORDS and not (len(t) == 1 and re.match(r'[\\u4e00-\\u9fff]', t))]\n\
-          \    cleaned_query = ' '.join(filtered) if filtered else resolved_query\n    return {'cleaned_query': cleaned_query, 'original_query': resolved_query}"
+        code: |
+          import re
+          
+          def main(resolved_query: str) -> dict:
+              STOP_WORDS = {
+                  '请问', '怎么', '如何', '什么', '为什么', '哪里', '哪个', '哪些',
+                  '多少', '几个', '是否', '能否', '可否', '怎样', '何时', '何处',
+                  '谁', '啥', '咋', '咋样', '咋回事', '怎么回事', '怎么办',
+                  '吗', '呢', '吧', '啊', '呀', '了', '的', '地', '得',
+                  '嘛', '哦', '噢', '哈', '呐', '嗯', '哇', '唉', '喂',
+                  '么', '罢了', '而已', '罢', '矣',
+                  '这', '那', '这个', '那个', '这些', '那些', '这种', '那种',
+                  '这样', '那样', '它', '其', '他', '她', '我', '你', '您',
+                  '自己', '本身', '我们', '你们', '他们', '大家',
+                  '请', '想', '要', '能', '可以', '应该', '需要', '会',
+                  '必须', '得', '可能', '也许', '或许', '大约', '大概',
+                  '比较', '一般', '通常', '似乎', '好像',
+                  '非常', '特别', '十分', '稍微', '有点', '很', '太', '极',
+                  '更', '最', '挺', '蛮', '颇', '甚', '尤其', '格外',
+                  '总是', '经常', '偶尔', '有时', '从来', '一直', '始终',
+                  '已经', '正在', '将要', '刚刚', '刚才', '马上', '立刻',
+                  '帮我', '告诉我', '看看', '查一下', '找一下', '说说',
+                  '讲讲', '介绍', '解释', '描述', '说明一下', '分析一下',
+                  '看一下', '问一下', '了解一下', '确认一下', '查查',
+                  '搞', '弄', '做', '搞定', '处理', '解决',
+                  '和', '与', '以及', '还有', '并且', '或者', '但是', '不过',
+                  '因为', '所以', '如果', '虽然', '然后', '而且', '而',
+                  '不但', '不仅', '即使', '尽管', '无论', '不管',
+                  '那么', '因此', '于是', '故而', '进而', '从而',
+                  '是', '在', '有', '被', '把', '对', '给', '从', '到',
+                  '上', '下', '中', '内', '外', '里', '间', '前', '后',
+                  '左', '右', '之', '所', '者', '等', '等等',
+                  '一下', '一些', '一点', '一般来说', '总的来说',
+                  '具体', '详细', '简单', '快速', '完整', '全部',
+                  '目前', '现在', '当前', '最近', '以前', '之前',
+                  '关于', '对于', '至于', '按照', '根据', '通过',
+                  '进行', '实现', '完成', '开始', '结束',
+                  '好', '好的', '行', '行的', '没问题',
+                  '谢谢', '感谢', '麻烦', '拜托',
+              }
+          
+              original_query = str(resolved_query or '').strip()
+              if not original_query:
+                  return {'cleaned_query': '', 'original_query': ''}
+          
+              # 先在原句中清理停用短语，解决“请问风电变流器”这类粘连导致无法命中问题
+              normalized = original_query
+              for sw in sorted(STOP_WORDS, key=len, reverse=True):
+                  if len(sw) <= 1:
+                      continue
+                  normalized = normalized.replace(sw, ' ')
+          
+              tokens = re.findall(r'[一-鿿]+|[A-Za-z][A-Za-z0-9_.-]*|\d+\.?\d*', normalized)
+              filtered = [
+                  t for t in tokens
+                  if t not in STOP_WORDS and not (len(t) == 1 and re.match(r'[一-鿿]', t))
+              ]
+          
+              cleaned_query = ' '.join(filtered).strip()
+              if not cleaned_query:
+                  cleaned_query = original_query
+          
+              return {'cleaned_query': cleaned_query, 'original_query': original_query}
         code_language: python3
         desc: 停用词过滤：150+停用词，去除疑问词/语气词/连接词等噪声
         outputs:
@@ -2485,7 +2537,7 @@ workflow:
             enable_thinking: false
             temperature: 0.1
           mode: chat
-          name: glm4.6falsh
+          name: GLM-4.6V-Flash
           provider: yangyaofei/vllm/vllm
         prompt_template:
         - id: query-opt-llm-001
@@ -2496,7 +2548,7 @@ workflow:
             1. 精确标识提取：识别所有型号（如PCS-1000K）、故障码（如E05）、专业缩写（如MPPT、BMS）、版本号（如V3.2）、标准编号（如GB/T 36558、IEC 61400）、带单位参数（如1000kW）。
 
 
-            2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度的同义词，禁止发散联想。
+            2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度词，禁止发散联想。
 
 
             已过滤查询词：{{#stopword_filter.cleaned_query#}}
@@ -2504,9 +2556,9 @@ workflow:
             原始查询：{{#stopword_filter.original_query#}}
 
 
-            仅输出JSON，禁止其他文字：
+            仅输出单行JSON对象，禁止Markdown、解释、标题或换行。若无法确定，请输出空字段JSON：
 
-            {"exact_terms":"空格分隔的精确标识","synonyms":"空格分隔的同义词","enhanced_query":"原始查询+精确标识+同义词 拼接成的增强检索句"}'
+            {"exact_terms":"空格分隔的精确标识","synonyms":"空格分隔的同义词","enhanced_query":"增强后的检索句；若无增强则输出已过滤查询词"}'
         selected: false
         title: Query优化LLM
         type: llm
@@ -2526,13 +2578,66 @@ workflow:
       type: custom
       width: 242
     - data:
-        code: "import json\n\ndef main(llm_output: str, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:\n    try:\n        text = llm_output.strip()\n        if text.startswith('```'):\n\
-          \            lines = text.split('\\n')\n            text = '\\n'.join(lines[1:-1])\n        result = json.loads(text)\n        exact_terms = result.get('exact_terms', '')\n        synonyms = result.get('synonyms',\
-          \ '')\n        enhanced_query = result.get('enhanced_query', '')\n    except (json.JSONDecodeError, AttributeError):\n        exact_terms = ''\n        synonyms = ''\n        enhanced_query =\
-          \ ''\n\n    if retrieval_mode == 'es_recall_only':\n        parts = []\n        if exact_terms:\n            parts.append(exact_terms)\n        parts.append(cleaned_query)\n        optimized_query\
-          \ = ' '.join(parts).strip()\n    else:\n        if enhanced_query and enhanced_query.strip():\n            optimized_query = enhanced_query\n        else:\n            parts = [original_query]\n\
-          \            if exact_terms:\n                parts.append(exact_terms)\n            if synonyms:\n                parts.append(synonyms)\n            optimized_query = ' '.join(parts).strip()\n\
-          \n    if not optimized_query or not optimized_query.strip():\n        optimized_query = original_query\n\n    return {'optimized_query': optimized_query}"
+        code: |
+          import json
+          import re
+          
+          def main(llm_output: str, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:
+              raw = str(llm_output or '').strip()
+              cleaned_query = str(cleaned_query or '').strip()
+              original_query = str(original_query or '').strip()
+          
+              def normalize_json_text(text: str) -> str:
+                  t = text.strip()
+                  if t.startswith('```'):
+                      t = re.sub(r'^```(?:json)?\s*', '', t)
+                      t = re.sub(r'\s*```$', '', t)
+                  return t.strip()
+          
+              def try_parse_json(text: str):
+                  if not text:
+                      return None
+                  t = normalize_json_text(text)
+                  try:
+                      obj = json.loads(t)
+                      return obj if isinstance(obj, dict) else None
+                  except Exception:
+                      pass
+                  m = re.search(r'\{[\s\S]*\}', t)
+                  if not m:
+                      return None
+                  try:
+                      obj = json.loads(m.group(0))
+                      return obj if isinstance(obj, dict) else None
+                  except Exception:
+                      return None
+          
+              data = try_parse_json(raw) or {}
+              exact_terms = str(data.get('exact_terms', '') or '').strip()
+              synonyms = str(data.get('synonyms', '') or '').strip()
+              enhanced_query = str(data.get('enhanced_query', '') or '').strip()
+          
+              if retrieval_mode == 'es_recall_only':
+                  parts = []
+                  if exact_terms:
+                      parts.append(exact_terms)
+                  parts.append(cleaned_query or original_query)
+                  optimized_query = ' '.join([p for p in parts if p]).strip()
+              else:
+                  if enhanced_query:
+                      optimized_query = enhanced_query
+                  else:
+                      parts = [cleaned_query or original_query]
+                      if exact_terms:
+                          parts.append(exact_terms)
+                      if synonyms:
+                          parts.append(synonyms)
+                      optimized_query = ' '.join([p for p in parts if p]).strip()
+          
+              if not optimized_query:
+                  optimized_query = cleaned_query or original_query
+          
+              return {'optimized_query': optimized_query}
         code_language: python3
         desc: 解析LLM输出，按retrieval_mode组装最终query，解析失败回退到原始查询
         outputs:
@@ -4834,7 +4939,7 @@ workflow:
             1. 精确标识提取：识别所有型号（如PCS-1000K）、故障码（如E05）、专业缩写（如MPPT、BMS）、版本号（如V3.2）、标准编号（如GB/T 36558、IEC 61400）、带单位参数（如1000kW）。
 
 
-            2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度的同义词，禁止发散联想。
+            2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度词，禁止发散联想。
 
 
             已过滤查询词：{{#1766576792406.text#}}
@@ -4842,9 +4947,9 @@ workflow:
             原始查询：{{#1766562647925.query_fragment#}}
 
 
-            仅输出JSON，禁止其他文字：
+            仅输出单行JSON对象，禁止Markdown、解释、标题或换行。若无法确定，请输出空字段JSON：
 
-            {"exact_terms":"空格分隔的精确标识","synonyms":"空格分隔的同义词","enhanced_query":"原始查询+精确标识+同义词 拼接成的增强检索句"}'
+            {"exact_terms":"空格分隔的精确标识","synonyms":"空格分隔的同义词","enhanced_query":"增强后的检索句；若无增强则输出已过滤查询词"}'
         selected: false
         title: 子意图Query优化LLM（主）
         type: llm
@@ -4941,7 +5046,7 @@ workflow:
             1. 精确标识提取：识别所有型号（如PCS-1000K）、故障码（如E05）、专业缩写（如MPPT、BMS）、版本号（如V3.2）、标准编号（如GB/T 36558、IEC 61400）、带单位参数（如1000kW）。
 
 
-            2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度的同义词，禁止发散联想。
+            2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度词，禁止发散联想。
 
 
             已过滤查询词：{{#1766576863489.text#}}
@@ -4949,9 +5054,9 @@ workflow:
             原始查询：{{#1766562647925.query_fragment#}}
 
 
-            仅输出JSON，禁止其他文字：
+            仅输出单行JSON对象，禁止Markdown、解释、标题或换行。若无法确定，请输出空字段JSON：
 
-            {"exact_terms":"空格分隔的精确标识","synonyms":"空格分隔的同义词","enhanced_query":"原始查询+精确标识+同义词 拼接成的增强检索句"}'
+            {"exact_terms":"空格分隔的精确标识","synonyms":"空格分隔的同义词","enhanced_query":"增强后的检索句；若无增强则输出已过滤查询词"}'
         selected: false
         title: 子意图Query优化LLM（辅）
         type: llm
