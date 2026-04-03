@@ -2831,7 +2831,7 @@ workflow:
         - p5RVyTvVcSN7DLel11Zk+wI+DODQc55cbOH2TcprHLC7R4bWAzdZRglYythMIDU3
         metadata_filtering_mode: manual
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -2872,7 +2872,7 @@ workflow:
         - AjTzJs0t3iUB9puhqqe5xMjX1gKuqirsoqAfE0vYz8GcCK6I/ARlBREoTTyipdAe
         metadata_filtering_mode: disabled
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -2916,7 +2916,7 @@ workflow:
           logical_operator: or
         metadata_filtering_mode: manual
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -2956,7 +2956,7 @@ workflow:
         dataset_ids:
         - n10xEIb1ZzsC1t5PZBZNInV6mAcgZFioX8ecBRjuIimKYa4ZpGZHVsYlkacWBLJP
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -3592,7 +3592,7 @@ workflow:
         dataset_ids:
         - p5RVyTvVcSN7DLel11Zk+wI+DODQc55cbOH2TcprHLC7R4bWAzdZRglYythMIDU3
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -3632,7 +3632,7 @@ workflow:
         dataset_ids:
         - n10xEIb1ZzsC1t5PZBZNInV6mAcgZFioX8ecBRjuIimKYa4ZpGZHVsYlkacWBLJP
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -3672,7 +3672,7 @@ workflow:
         dataset_ids:
         - AjTzJs0t3iUB9puhqqe5xMjX1gKuqirsoqAfE0vYz8GcCK6I/ARlBREoTTyipdAe
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -3712,7 +3712,7 @@ workflow:
         dataset_ids:
         - NdHmYq2ivGADC6ALb2HPHdqHssfEkVKmM7P91bRJJHy4xPcYxTCp0MOlM26Rl7Om
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5616,7 +5616,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5661,7 +5661,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5706,7 +5706,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5751,7 +5751,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5796,7 +5796,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5841,7 +5841,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5886,7 +5886,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -5931,7 +5931,7 @@ workflow:
         isInLoop: false
         iteration_id: '1766561987023'
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -6696,7 +6696,7 @@ workflow:
         dataset_ids:
         - p5RVyTvVcSN7DLel11Zk+wI+DODQc55cbOH2TcprHLC7R4bWAzdZRglYythMIDU3
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -6736,7 +6736,7 @@ workflow:
         dataset_ids:
         - n10xEIb1ZzsC1t5PZBZNInV6mAcgZFioX8ecBRjuIimKYa4ZpGZHVsYlkacWBLJP
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -6776,7 +6776,7 @@ workflow:
         dataset_ids:
         - AjTzJs0t3iUB9puhqqe5xMjX1gKuqirsoqAfE0vYz8GcCK6I/ARlBREoTTyipdAe
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -6816,7 +6816,7 @@ workflow:
         dataset_ids:
         - NdHmYq2ivGADC6ALb2HPHdqHssfEkVKmM7P91bRJJHy4xPcYxTCp0MOlM26Rl7Om
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -6916,7 +6916,7 @@ workflow:
           logical_operator: or
         metadata_filtering_mode: manual
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -6960,7 +6960,7 @@ workflow:
           logical_operator: or
         metadata_filtering_mode: manual
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
@@ -7004,7 +7004,7 @@ workflow:
           logical_operator: or
         metadata_filtering_mode: manual
         multiple_retrieval_config:
-          reranking_enable: false
+          reranking_enable: true
           reranking_mode: weighted_score
           reranking_model:
             model: gte-rerank
