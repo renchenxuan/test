@@ -2845,8 +2845,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -2886,8 +2886,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -2930,8 +2930,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -2970,8 +2970,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -3300,17 +3300,7 @@ workflow:
         prompt_template:
         - id: 27fc90c3-3bd1-49a3-8317-8386d40f50c0
           role: system
-          text: "您是禾望电气智能知识专家，严格基于技术资料回答。\n\n### 回答规则\n1. **语言匹配**：使用与用户提问相同的语言\n\
-            2. **资料限定**：仅基于下方资料回答，无相关信息时：\n   - 中文：\"根据现有资料，暂未查询到该问题的具体信息。\"\n   -\
-            \ 英文：\"Based on available documentation, no specific information was found\
-            \ regarding this query.\"\n3. **统一呈现**：\n   - 不得提及\"主库/辅库/案例\"等来源\n  \
-            \ - 所有内容以肯定、权威方式呈现\n   - 弱化语气如\"可考虑\"\"建议参考\"等\n4. **操作指导**：\n   - 分步骤编号（1.\
-            \ 2. 3. …）\n   - 图片按出现顺序插入：![图1](url)、![图2](url)…\n5. **风险提醒**（高风险操作前）：\n\
-            \   - 中文：\"⚠️ 操作前请确认您已充分了解其影响，建议在测试环境验证。\"\n   - 英文：\"⚠️ Please ensure\
-            \ you fully understand the impact before proceeding.\"\n6. **专业亲切**：用语礼貌积极，认可用户专业性\n\
-            7. **合规边界**：\n   - 禁止输出整篇文档或内部链接\n   - 禁止竞品对比，聚焦本平台能力\n\n### 技术资料\n【主资料】\n\
-            {{#1766307714396.primary_output#}}\n\n【辅资料】\n{{#1766307714396.supporting_output#}}\n\
-            \n用户问题：{{#1766046797761.resolved_query#}}\n\n直接生成最终回答，不含解释或标题。"
+          text: "您是禾望电气智能知识专家，严格基于技术资料回答。\n\n### 回答规则\n1. **语言匹配**：使用与用户提问相同的语言\n2. **资料限定**：仅基于下方资料回答。\n   - 若资料不足：\n     - 中文：\"根据现有资料，暂未查询到该问题的具体信息。\"\n     - 英文：\"Based on available documentation, no specific information was found regarding this query.\"\n   - 若证据质量标签中 `conflict_risk=高` 或 `source_credibility=低`：\n     - 中文：\"当前证据存在冲突或可信度不足，建议补充更具体的型号/故障码后再查询。\"\n     - 英文：\"Current evidence is conflicting or low-confidence. Please provide a more specific model/error code for a reliable answer.\"\n3. **统一呈现**：\n   - 不得提及\"主库/辅库/案例\"等来源\n   - 所有内容以肯定、权威方式呈现\n   - 弱化语气如\"可考虑\"\"建议参考\"等\n4. **操作指导**：\n   - 分步骤编号（1. 2. 3. …）\n   - 图片按出现顺序插入：![图1](url)、![图2](url)…\n5. **风险提醒**（高风险操作前）：\n   - 中文：\"⚠️ 操作前请确认您已充分了解其影响，建议在测试环境验证。\"\n   - 英文：\"⚠️ Please ensure you fully understand the impact before proceeding.\"\n6. **专业亲切**：用语礼貌积极，认可用户专业性\n7. **合规边界**：\n   - 禁止输出整篇文档或内部链接\n   - 禁止竞品对比，聚焦本平台能力\n\n### 技术资料\n【主资料】\n{{#1766307714396.primary_output#}}\n\n【辅资料】\n{{#1766307714396.supporting_output#}}\n\n用户问题：{{#1766046797761.resolved_query#}}\n\n直接生成最终回答，不含解释或标题。"
         selected: false
         title: 总结LLM
         type: llm
@@ -3606,8 +3596,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -3646,8 +3636,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -3686,8 +3676,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -3726,8 +3716,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -3758,26 +3748,7 @@ workflow:
       type: custom
       width: 242
     - data:
-        code: "import json\n\ndef main(arg1: list, arg2: list, arg3: list):\n    \"\
-          \"\"\n    处理知识库检索结果，保留原始合并结果并提取content内容\n    \n    Args:\n        arg1:\
-          \ 主要知识库的检索结果（多个片段）\n        arg2: 辅助知识库1的检索结果（多个片段）\n        arg3: 辅助知识库2的检索结果（多个片段）\n\
-          \    \n    Returns:\n        output: 三个列表合并后的完整结果\n        primary_output:\
-          \ arg1中所有片段的content合并\n        supporting_output: arg2和arg3中所有片段的content合并\n\
-          \        primary_json: arg1的JSON字符串格式\n        supporting_json: arg2+arg3的JSON字符串格式\n\
-          \    \"\"\"\n    # 如果传入的是 None，就替换成空列表\n    if arg1 is None:\n        arg1\
-          \ = []\n    if arg2 is None:\n        arg2 = []\n    if arg3 is None:\n\
-          \        arg3 = []\n    \n    # 合并所有列表（保留原始结构）\n    merged_output = arg1\
-          \ + arg2 + arg3\n    \n    # 提取arg1中所有片段的content\n    primary_contents =\
-          \ []\n    for item in arg1:\n        if isinstance(item, dict) and 'content'\
-          \ in item:\n            primary_contents.append(item['content'])\n    \n\
-          \    # 提取arg2和arg3中所有片段的content\n    supporting_contents = []\n    for item\
-          \ in arg2 + arg3:  # 合并arg2和arg3再遍历\n        if isinstance(item, dict) and\
-          \ 'content' in item:\n            supporting_contents.append(item['content'])\n\
-          \    \n    # 将所有content合并，用换行符分隔\n    primary_output = '\\n\\n---\\n\\n'.join(primary_contents)\
-          \  # 用分隔符连接\n    supporting_output = '\\n\\n---\\n\\n'.join(supporting_contents)\n\
-          \    \n    return {\n        \"output\": merged_output,  # 保留原始合并结果\n  \
-          \      \"primary_output\": primary_output,\n        \"supporting_output\"\
-          : supporting_output\n    }"
+        code: "import json\nimport re\n\ndef _to_items(items, origin):\n    if items is None:\n        return []\n    out = []\n    for item in items:\n        if item is None:\n            continue\n        if isinstance(item, dict):\n            text = str(item.get('content') or item.get('text') or '').strip()\n            source = str(item.get('kbName') or item.get('source') or item.get('title') or origin)\n        else:\n            text = str(item).strip()\n            source = origin\n        text = re.sub(r'\\s+', ' ', text)\n        if not text:\n            continue\n        out.append({'origin': origin, 'source': source, 'text': text})\n    return out\n\ndef _quality(items):\n    if not items:\n        return '低', '高'\n    src = {}\n    for x in items:\n        s = x['source']\n        src[s] = src.get(s, 0) + 1\n    total = len(items)\n    dominant = max(src.values()) / total if total else 1.0\n    source_credibility = '高' if len(src) >= 2 and dominant <= 0.7 else ('中' if len(src) >= 1 else '低')\n    conflict_risk = '高' if dominant > 0.85 else ('中' if dominant > 0.7 else '低')\n    return source_credibility, conflict_risk\n\ndef main(arg1: list, arg2: list, arg3: list):\n    merged = _to_items(arg1, 'primary') + _to_items(arg2, 'supporting') + _to_items(arg3, 'supporting')\n\n    dedup = []\n    seen = set()\n    for x in merged:\n        k = x['text']\n        if k in seen:\n            continue\n        seen.add(k)\n        dedup.append(x)\n\n    source_credibility, conflict_risk = _quality(dedup)\n    quality_tag = f\"[evidence_quality] source_credibility={source_credibility}; conflict_risk={conflict_risk}\"\n\n    primary_contents = [x['text'] for x in dedup if x['origin'] == 'primary']\n    supporting_contents = [x['text'] for x in dedup if x['origin'] == 'supporting']\n\n    primary_output = quality_tag + \"\\n\" + '\\n\\n---\\n\\n'.join(primary_contents) if primary_contents else quality_tag\n    supporting_output = quality_tag + \"\\n\" + '\\n\\n---\\n\\n'.join(supporting_contents) if supporting_contents else quality_tag\n\n    return {\n        \"output\": [\n            {\"origin\": x[\"origin\"], \"source\": x[\"source\"], \"content\": x[\"text\"]}\n            for x in dedup\n        ],\n        \"primary_output\": primary_output,\n        \"supporting_output\": supporting_output,\n    }\n"
         code_language: python3
         desc: 区分主和辅
         outputs:
@@ -5636,8 +5607,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -5682,7 +5653,7 @@ workflow:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
           score_threshold: null
-          top_k: 3
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -5727,7 +5698,7 @@ workflow:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
           score_threshold: null
-          top_k: 3
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -5772,7 +5743,7 @@ workflow:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
           score_threshold: null
-          top_k: 3
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -5817,7 +5788,7 @@ workflow:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
           score_threshold: null
-          top_k: 3
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -5862,7 +5833,7 @@ workflow:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
           score_threshold: null
-          top_k: 3
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -5907,7 +5878,7 @@ workflow:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
           score_threshold: null
-          top_k: 3
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -5952,7 +5923,7 @@ workflow:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
           score_threshold: null
-          top_k: 3
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -6049,107 +6020,7 @@ workflow:
       width: 242
       zIndex: 1002
     - data:
-        code: "import json\nimport re\n\n# Evidence selection configuration constants\n\
-          MAX_SELECTED_ITEMS = 6      # 最终保留片段总数（建议 5-8）\nMAX_ITEMS_PER_SOURCE = 2\
-          \    # 单一来源最多保留片段数，保证多样性（建议 1-3）\nMIN_SNIPPET_LEN = 500       # 截断后片段最小长度（建议\
-          \ 400-600）\nMAX_SNIPPET_LEN = 800       # 片段无需截断的最大长度阈值（建议 700-900）\nTARGET_SNIPPET_LEN\
-          \ = 700    # 超长片段截断目标长度（建议 500-800，且需介于MIN与MAX之间）\n\n# Evidence quality\
-          \ threshold constants\nMIN_EVIDENCE_COUNT = 3      # 判定“证据充分”至少需要的片段数（建议\
-          \ 2-5）\nMIN_AVG_SCORE = 3.0         # 判定“证据充分”的平均分下限（建议 2.0-4.0）\n\n# Scoring\
-          \ constants\nMAX_TERM_COUNT_WEIGHT = 5    # 单关键词计分次数上限（建议 3-8，越高越偏向重复命中）\n\
-          TERM_HIT_MULTIPLIER = 2.0    # 关键词命中计分系数（建议 1.0-3.0，越高越强调精确词）\nMAX_TEXT_LENGTH_FOR_SCORE\
-          \ = 800  # 长度计分的长度上限（建议 600-1000，防止超长片段过度加分）\nTEXT_LENGTH_DIVISOR = 400.0\
-          \  # 长度得分归一化除数（建议 300-600，越小长度加分越快）\n\nif not (MIN_SNIPPET_LEN <= TARGET_SNIPPET_LEN\
-          \ <= MAX_SNIPPET_LEN):\n    raise ValueError('Invalid snippet length config:\
-          \ require MIN_SNIPPET_LEN <= TARGET_SNIPPET_LEN <= MAX_SNIPPET_LEN')\n\n\
-          def _normalize_items(items, origin):\n    if items is None:\n        return\
-          \ []\n    out = []\n    for item in items:\n        if item is None:\n \
-          \           continue\n        if isinstance(item, str):\n            text\
-          \ = item\n            source = origin\n        elif isinstance(item, dict):\n\
-          \            text = ''\n            for k in ['content', 'text', 'chunk',\
-          \ 'snippet', 'summary', 'body', 'document', 'page_content']:\n         \
-          \       v = item.get(k)\n                if isinstance(v, str) and v.strip():\n\
-          \                    text = v\n                    break\n            if\
-          \ not text:\n                text = json.dumps(item, ensure_ascii=False)\n\
-          \            source = str(\n                item.get('kbName')\n       \
-          \         or item.get('kb_name')\n                or item.get('knowledge_base')\n\
-          \                or item.get('source')\n                or item.get('source_name')\n\
-          \                or item.get('fileName')\n                or item.get('filename')\n\
-          \                or item.get('doc_name')\n                or item.get('title')\n\
-          \                or origin\n            )\n        else:\n            text\
-          \ = str(item)\n            source = origin\n\n        text_norm = re.sub(r'\\\
-          s+', ' ', text).strip()\n        if not text_norm:\n            continue\n\
-          \        out.append({\n            'origin': origin,\n            'source':\
-          \ source,\n            'text': text_norm,\n            'raw': item,\n  \
-          \      })\n    return out\n\ndef _extract_terms(query):\n    if not isinstance(query,\
-          \ str):\n        return []\n    query = query.strip()\n    if not query:\n\
-          \        return []\n\n    terms = []\n    # 故障码/型号样式\n    terms.extend(re.findall(r'[A-Za-z]{1,5}[-_]?[A-Za-z0-9]{2,8}',\
-          \ query))\n    # 中文词组（2-8字）\n    terms.extend(re.findall(r'[一-鿿]{2,8}',\
-          \ query))\n    # 普通分词（含数字、连字符）\n    terms.extend(re.findall(r'[A-Za-z0-9][A-Za-z0-9\\\
-          -_/]{2,}', query))\n\n    uniq = []\n    seen = set()\n    for t in terms:\n\
-          \        t = t.strip(\" ,.;:()[]{}\\\"'\")\n        if len(t) < 2:\n   \
-          \         continue\n        k = t.lower()\n        if k in seen:\n     \
-          \       continue\n        seen.add(k)\n        uniq.append(t)\n    return\
-          \ uniq[:12]\n\ndef _truncate_core(text, terms, min_len=MIN_SNIPPET_LEN,\
-          \ max_len=MAX_SNIPPET_LEN, target_len=TARGET_SNIPPET_LEN):\n    if len(text)\
-          \ <= max_len:\n        return text\n    low = text.lower()\n    if not terms:\n\
-          \        return text[:target_len]\n\n    best_start = 0\n    best_cover\
-          \ = -1\n    step = max(1, target_len // 6)\n    max_start = max(0, len(text)\
-          \ - target_len)\n\n    for start in range(0, max_start + 1, step):\n   \
-          \     window = low[start:start + target_len]\n        cover = 0\n      \
-          \  for t in terms:\n            if t.lower() in window:\n              \
-          \  cover += 1\n        if cover > best_cover:\n            best_cover =\
-          \ cover\n            best_start = start\n            if best_cover == len(terms):\n\
-          \                break\n\n    end = min(len(text), best_start + target_len)\n\
-          \    if end - best_start < min_len:\n        end = min(len(text), best_start\
-          \ + min_len)\n    return text[best_start:end]\n\ndef _score_text(text, terms):\n\
-          \    if not text:\n        return 0.0, []\n    low = text.lower()\n    hits\
-          \ = []\n    score = 0.0\n    for t in terms:\n        c = low.count(t.lower())\n\
-          \        if c > 0:\n            hits.append(t)\n            score += min(c,\
-          \ MAX_TERM_COUNT_WEIGHT) * TERM_HIT_MULTIPLIER\n    score += min(len(text),\
-          \ MAX_TEXT_LENGTH_FOR_SCORE) / TEXT_LENGTH_DIVISOR\n    return score, hits\n\
-          \ndef main(arg1: list, arg2: list, arg3: str):\n    primary = _normalize_items(arg1,\
-          \ 'primary')\n    supporting = _normalize_items(arg2, 'supporting')\n  \
-          \  merged = primary + supporting\n\n    # 去重（跨主辅）\n    deduped = []\n  \
-          \  seen = set()\n    for x in merged:\n        k = x['text']\n        if\
-          \ k in seen:\n            continue\n        seen.add(k)\n        deduped.append(x)\n\
-          \n    terms = _extract_terms(arg3)\n\n    scored = []\n    for x in deduped:\n\
-          \        truncated = _truncate_core(x['text'], terms)\n        score, hit_terms\
-          \ = _score_text(truncated, terms)\n        item = {\n            'origin':\
-          \ x['origin'],\n            'source': x['source'],\n            'text':\
-          \ truncated,\n            'score': round(score, 3),\n            'hit_terms':\
-          \ hit_terms,\n        }\n        scored.append(item)\n\n    # 关键词加权排序\n\
-          \    scored.sort(key=lambda z: (z['score'], len(z['text'])), reverse=True)\n\
-          \n    # Top-N + 同源多样性约束（每源最多2段）\n    top_n = MAX_SELECTED_ITEMS\n    source_cap\
-          \ = MAX_ITEMS_PER_SOURCE\n    selected = []\n    source_count = {}\n   \
-          \ for x in scored:\n        src = x['source']\n        if source_count.get(src,\
-          \ 0) >= source_cap:\n            continue\n        selected.append(x)\n\
-          \        source_count[src] = source_count.get(src, 0) + 1\n        if len(selected)\
-          \ >= top_n:\n            break\n\n    # 若约束后不足N，放宽同源限制补足\n    if len(selected)\
-          \ < top_n:\n        selected_keys = {(s['source'], s['text']) for s in selected}\n\
-          \        for x in scored:\n            k = (x['source'], x['text'])\n  \
-          \          if k in selected_keys:\n                continue\n          \
-          \  selected.append(x)\n            selected_keys.add(k)\n            if\
-          \ len(selected) >= top_n:\n                break\n\n    avg_score = (sum(x['score']\
-          \ for x in selected) / len(selected)) if selected else 0.0\n    hit_terms\
-          \ = []\n    hit_seen = set()\n    for x in selected:\n        for t in x.get('hit_terms',\
-          \ []):\n            tl = t.lower()\n            if tl not in hit_seen:\n\
-          \                hit_seen.add(tl)\n                hit_terms.append(t)\n\
-          \n    evidence_level = '证据充分' if (len(selected) >= MIN_EVIDENCE_COUNT and\
-          \ avg_score >= MIN_AVG_SCORE) else '证据不足，仅供参考'\n    evidence_score = f\"\
-          {avg_score:.2f}\"\n    hit_terms_str = ', '.join(hit_terms[:10]) if hit_terms\
-          \ else '无'\n\n    primary_selected = [x for x in selected if x['origin']\
-          \ == 'primary']\n    supporting_selected = [x for x in selected if x['origin']\
-          \ == 'supporting']\n\n    evidence_pack = (\n        f\"[{evidence_level}]\\\
-          n\"\n        f\"evidence_level: {evidence_level}\\n\"\n        f\"evidence_score:\
-          \ {evidence_score}\\n\"\n        f\"hit_terms: {hit_terms_str}\\n\"\n  \
-          \      f\"top_n: {len(selected)}\\n\"\n        f\"snippets: {json.dumps(selected,\
-          \ ensure_ascii=False)}\"\n    )\n\n    return {\n        'output': selected,\n\
-          \        'primary_output': json.dumps(primary_selected, ensure_ascii=False),\n\
-          \        'supporting_output': json.dumps(supporting_selected, ensure_ascii=False),\n\
-          \        'evidence_level': evidence_level,\n        'evidence_score': evidence_score,\n\
-          \        'hit_terms': hit_terms_str,\n        'evidence_pack': evidence_pack,\n\
-          \    }"
+        code: "import json\nimport re\n\n# Evidence selection configuration constants\nMAX_SELECTED_ITEMS = 6      # 最终保留片段总数（建议 5-8）\nMAX_ITEMS_PER_SOURCE = 2    # 单一来源最多保留片段数，保证多样性（建议 1-3）\nMIN_SNIPPET_LEN = 500       # 截断后片段最小长度（建议 400-600）\nMAX_SNIPPET_LEN = 800       # 片段无需截断的最大长度阈值（建议 700-900）\nTARGET_SNIPPET_LEN = 700    # 超长片段截断目标长度（建议 500-800，且需介于MIN与MAX之间）\n\n# Evidence quality threshold constants\nMIN_EVIDENCE_COUNT = 3      # 判定“证据充分”至少需要的片段数（建议 2-5）\nMIN_AVG_SCORE = 3.0         # 判定“证据充分”的平均分下限（建议 2.0-4.0）\n\n# Scoring constants\nMAX_TERM_COUNT_WEIGHT = 5    # 单关键词计分次数上限（建议 3-8，越高越偏向重复命中）\nTERM_HIT_MULTIPLIER = 2.0    # 关键词命中计分系数（建议 1.0-3.0，越高越强调精确词）\nMAX_TEXT_LENGTH_FOR_SCORE = 800  # 长度计分的长度上限（建议 600-1000，防止超长片段过度加分）\nTEXT_LENGTH_DIVISOR = 400.0  # 长度得分归一化除数（建议 300-600，越小长度加分越快）\n\nif not (MIN_SNIPPET_LEN <= TARGET_SNIPPET_LEN <= MAX_SNIPPET_LEN):\n    raise ValueError('Invalid snippet length config: require MIN_SNIPPET_LEN <= TARGET_SNIPPET_LEN <= MAX_SNIPPET_LEN')\n\ndef _normalize_items(items, origin):\n    if items is None:\n        return []\n    out = []\n    for item in items:\n        if item is None:\n            continue\n        if isinstance(item, str):\n            text = item\n            source = origin\n        elif isinstance(item, dict):\n            text = ''\n            for k in ['content', 'text', 'chunk', 'snippet', 'summary', 'body', 'document', 'page_content']:\n                v = item.get(k)\n                if isinstance(v, str) and v.strip():\n                    text = v\n                    break\n            if not text:\n                text = json.dumps(item, ensure_ascii=False)\n            source = str(\n                item.get('kbName')\n                or item.get('kb_name')\n                or item.get('knowledge_base')\n                or item.get('source')\n                or item.get('source_name')\n                or item.get('fileName')\n                or item.get('filename')\n                or item.get('doc_name')\n                or item.get('title')\n                or origin\n            )\n        else:\n            text = str(item)\n            source = origin\n\n        text_norm = re.sub(r'\\s+', ' ', text).strip()\n        if not text_norm:\n            continue\n        out.append({\n            'origin': origin,\n            'source': source,\n            'text': text_norm,\n            'raw': item,\n        })\n    return out\n\ndef _extract_terms(query):\n    if not isinstance(query, str):\n        return []\n    query = query.strip()\n    if not query:\n        return []\n\n    terms = []\n    # 故障码/型号样式\n    terms.extend(re.findall(r'[A-Za-z]{1,5}[-_]?[A-Za-z0-9]{2,8}', query))\n    # 中文词组（2-8字）\n    terms.extend(re.findall(r'[一-鿿]{2,8}', query))\n    # 普通分词（含数字、连字符）\n    terms.extend(re.findall(r'[A-Za-z0-9][A-Za-z0-9\\-_/]{2,}', query))\n\n    uniq = []\n    seen = set()\n    for t in terms:\n        t = t.strip(\" ,.;:()[]{}\\\"'\")\n        if len(t) < 2:\n            continue\n        k = t.lower()\n        if k in seen:\n            continue\n        seen.add(k)\n        uniq.append(t)\n    return uniq[:12]\n\ndef _truncate_core(text, terms, min_len=MIN_SNIPPET_LEN, max_len=MAX_SNIPPET_LEN, target_len=TARGET_SNIPPET_LEN):\n    if len(text) <= max_len:\n        return text\n    low = text.lower()\n    if not terms:\n        return text[:target_len]\n\n    best_start = 0\n    best_cover = -1\n    step = max(1, target_len // 6)\n    max_start = max(0, len(text) - target_len)\n\n    for start in range(0, max_start + 1, step):\n        window = low[start:start + target_len]\n        cover = 0\n        for t in terms:\n            if t.lower() in window:\n                cover += 1\n        if cover > best_cover:\n            best_cover = cover\n            best_start = start\n            if best_cover == len(terms):\n                break\n\n    end = min(len(text), best_start + target_len)\n    if end - best_start < min_len:\n        end = min(len(text), best_start + min_len)\n    return text[best_start:end]\n\ndef _score_text(text, terms):\n    if not text:\n        return 0.0, []\n    low = text.lower()\n    hits = []\n    score = 0.0\n    for t in terms:\n        c = low.count(t.lower())\n        if c > 0:\n            hits.append(t)\n            score += min(c, MAX_TERM_COUNT_WEIGHT) * TERM_HIT_MULTIPLIER\n    score += min(len(text), MAX_TEXT_LENGTH_FOR_SCORE) / TEXT_LENGTH_DIVISOR\n    return score, hits\n\ndef main(arg1: list, arg2: list, arg3: str):\n    primary = _normalize_items(arg1, 'primary')\n    supporting = _normalize_items(arg2, 'supporting')\n    merged = primary + supporting\n\n    # 去重（跨主辅）\n    deduped = []\n    seen = set()\n    for x in merged:\n        k = x['text']\n        if k in seen:\n            continue\n        seen.add(k)\n        deduped.append(x)\n\n    terms = _extract_terms(arg3)\n\n    scored = []\n    for x in deduped:\n        truncated = _truncate_core(x['text'], terms)\n        score, hit_terms = _score_text(truncated, terms)\n        item = {\n            'origin': x['origin'],\n            'source': x['source'],\n            'text': truncated,\n            'score': round(score, 3),\n            'hit_terms': hit_terms,\n        }\n        scored.append(item)\n\n    # 关键词加权排序\n    scored.sort(key=lambda z: (z['score'], len(z['text'])), reverse=True)\n\n    # Top-N + 同源多样性约束（每源最多2段）\n    top_n = MAX_SELECTED_ITEMS\n    source_cap = MAX_ITEMS_PER_SOURCE\n    selected = []\n    source_count = {}\n    for x in scored:\n        src = x['source']\n        if source_count.get(src, 0) >= source_cap:\n            continue\n        selected.append(x)\n        source_count[src] = source_count.get(src, 0) + 1\n        if len(selected) >= top_n:\n            break\n\n    # 若约束后不足N，放宽同源限制补足\n    if len(selected) < top_n:\n        selected_keys = {(s['source'], s['text']) for s in selected}\n        for x in scored:\n            k = (x['source'], x['text'])\n            if k in selected_keys:\n                continue\n            selected.append(x)\n            selected_keys.add(k)\n            if len(selected) >= top_n:\n                break\n\n    avg_score = (sum(x['score'] for x in selected) / len(selected)) if selected else 0.0\n    hit_terms = []\n    hit_seen = set()\n    for x in selected:\n        for t in x.get('hit_terms', []):\n            tl = t.lower()\n            if tl not in hit_seen:\n                hit_seen.add(tl)\n                hit_terms.append(t)\n\n    evidence_score = f\"{avg_score:.2f}\"\n    hit_terms_str = ', '.join(hit_terms[:10]) if hit_terms else '无'\n\n    source_count = {}\n    for x in selected:\n        src = x['source']\n        source_count[src] = source_count.get(src, 0) + 1\n    dominant_ratio = (max(source_count.values()) / len(selected)) if selected else 1.0\n    source_credibility = '高' if (len(source_count) >= 2 and dominant_ratio <= 0.7) else ('中' if source_count else '低')\n    conflict_risk = '高' if ((len(hit_terms) == 0 and len(selected) >= MIN_EVIDENCE_COUNT) or dominant_ratio > 0.85) else ('中' if dominant_ratio > 0.7 else '低')\n\n    evidence_level = '证据充分' if (len(selected) >= MIN_EVIDENCE_COUNT and avg_score >= MIN_AVG_SCORE and conflict_risk != '高') else '证据不足，仅供参考'\n\n    primary_selected = [x for x in selected if x['origin'] == 'primary']\n    supporting_selected = [x for x in selected if x['origin'] == 'supporting']\n\n    evidence_pack = (\n        f\"[{evidence_level}]\\n\"\n        f\"evidence_level: {evidence_level}\\n\"\n        f\"evidence_score: {evidence_score}\\n\"\n        f\"source_credibility: {source_credibility}\\n\"\n        f\"conflict_risk: {conflict_risk}\\n\"\n        f\"hit_terms: {hit_terms_str}\\n\"\n        f\"top_n: {len(selected)}\\n\"\n        f\"snippets: {json.dumps(selected, ensure_ascii=False)}\"\n    )\n\n    return {\n        'output': selected,\n        'primary_output': json.dumps(primary_selected, ensure_ascii=False),\n        'supporting_output': json.dumps(supporting_selected, ensure_ascii=False),\n        'evidence_level': evidence_level,\n        'evidence_score': evidence_score,\n        'hit_terms': hit_terms_str,\n        'evidence_pack': evidence_pack,\n    }"
         code_language: python3
         isInIteration: true
         isInLoop: false
@@ -6414,32 +6285,7 @@ workflow:
         prompt_template:
         - id: fee94bdd-13ce-47a2-9e54-c201e6426365
           role: system
-          text: "# 角色\n你是一个禾望电气智能汇总助手，负责将多个子意图分支的回答整合成一份结构清晰、信息完整的最终回答。\n\n# 任务\n\
-            请根据以下所有子意图分支的回答内容，按如下规则生成最终汇总答案：\n\n# 核心规则\n\n## 1. 语言一致性\n- 判断用户的原始输入使用的是哪种语言（如中文、英文、日文等）；\n\
-            - **整个回答（包括闲聊、标题、正文、图注等）必须使用与用户输入完全相同的语言**；\n- 不得混合语言或默认使用中文。\n\n## 2.\
-            \ 闲聊内容处理\n- 如果任意子意图分支属于闲聊（如问候、寒暄、表达情绪、非任务型对话），请将其**原样放在整个回答的最开头**；\n-\
-            \ 闲聊部分**不加任何标题**，结束后空一行。\n\n## 3. 子意图证据强约束（新增）\n- 每个子意图内容中若出现 `evidence_level\
-            \ / evidence_score / hit_terms`，必须据此判断可信度。\n- **证据不足规则**：若子意图标记为“证据不足，仅供参考”，或内容明显与子问题不相关，必须直接输出“未找到相关资料”或“证据不足，无法给出可靠结论”，禁止补全推断。\n\
-            - **证据充分规则**：仅对证据充分的子意图给出结论性回答。\n- 在最终回答中对每个子意图增加简短可信度标注（如：高/中/低）。\n\n\
-            ## 4. 图片重编号（重要！）\n- 忽略子分支中所有原始图号（如“图1-2”、“Fig.3-2”、“示意图A”等）；\n- **按图片在最终回答中首次出现的顺序，从\
-            \ 1 开始连续编号**：\n  - 中文输出：图1、图2、图3……\n  - 英文输出：Figure 1, Figure 2, Figure\
-            \ 3…\n- 正文中引用时使用新编号（如“见图1”、“as shown in Figure 2”）；\n- **每张图片及图注必须用以下格式居中显示**：\n\
-            \  ```html\n  <div align=\"center\">\n    <img src=\"https://example.com/image.png\"\
-            \ alt=\"image\" /><br>\n    图1. 原始说明文字（若无则仅写“图1.”）\n  </div>\n  ```\n\
-            - 必须使用 <div align=\"center\"> 包裹整个图片和图注，确保图片和文字都居中显示；\n- 保留原始图片 URL 不变；\n\
-            - 不得省略图注行，不得使用原始乱序编号；\n- 确保图片在最终回答中居中显示。\n\n## 5. 文章/文件列表识别与处理\n以下任一特征即视为“文章或技术资料列表”：\n\
-            - 包含 ≥2 个明确文档条目；\n- 每个条目含标题 + 可访问链接（URL）或 [下载] 标记；\n- 内容为列表形式（项目符号、编号、换行列举）；\n\
-            - 含常见文档关键词（如“白皮书”“指南”“手册”“.pdf”“参考文献”等）。\n\n✅ 处理方式：\n- 严格检测原则：仅在子分支回答中明确存在符合上述特征的文档列表时，才创建文件列表部分。\n\
-            - 无文件列表处理：如果未检测到任何文件列表，则必须向用户明确说明。使用用户的语言，生成如“未找到相关文档列表”或“当前查询无文件存档”等自然提示，不得生成虚假示例。\n\
-            - 存在列表处理：若检测到文件列表，则：\n  - 将其归入一个独立逻辑块；\n  - 生成一个自然、简洁的小标题（如“参考资料”“相关文档”“技术指南”等，使用用户语言）；\n\
-            \  - 用一两句话概括这些文档的共同主题或用途；\n  - 逐条保留原始条目中：\n    - 保留原始文档标题\n    - 将原始URL或链接替换为“[下载]”超链接，格式为：[文档标题]\
-            \ - [下载](原始URL或链接)\n  - 保持清晰列表格式（如使用 \"-\" 或 \"•\"）。\n\n## 6. 其他内容处理\n\
-            - 非闲聊、非文章列表、非图片说明的内容（如问答、解释、计算、分析等）：\n- 按语义聚合成合理块；\n- 每块配一个简明、自然的**加粗标题**（如\
-            \ **问题解答**、**性能分析**）；\n- **必须原样保留所有数学公式**（如 `$x = y$`、`$$\\int_0^1 f(x)\\\
-            ,dx$$`）；\n- 基于事实总结，不得添加子分支未提供的信息。\n\n## 7. 输出格式要求\n- 每个逻辑块以 **加粗标题** 开头（如\
-            \ **实验结果**）；\n- 块与块之间用**空行**分隔；\n- 避免使用“综上所述”“根据以上内容”“接下来是”等冗余引导语；\n-\
-            \ 标题长度建议：中文 4–8 字，英文 2–5 个词；\n- 全文保持专业、流畅、易读。\n\n# 用户意图拆解之后的子问题：\n{{#1766583988064.sub_intents#}}\n\
-            \n# 子意图分支回答如下：\n{{#1766583988064.result#}}"
+          text: "# 角色\n你是一个禾望电气智能汇总助手，负责将多个子意图分支的回答整合成一份结构清晰、信息完整的最终回答。\n\n# 任务\n请根据以下所有子意图分支的回答内容，按如下规则生成最终汇总答案：\n\n# 核心规则\n\n## 1. 语言一致性\n- 判断用户的原始输入使用的是哪种语言（如中文、英文、日文等）；\n- **整个回答（包括闲聊、标题、正文、图注等）必须使用与用户输入完全相同的语言**；\n- 不得混合语言或默认使用中文。\n\n## 2. 闲聊内容处理\n- 如果任意子意图分支属于闲聊（如问候、寒暄、表达情绪、非任务型对话），请将其**原样放在整个回答的最开头**；\n- 闲聊部分**不加任何标题**，结束后空一行。\n\n## 3. 子意图证据强约束（新增）\n- 每个子意图内容中若出现 `evidence_level / evidence_score / hit_terms / source_credibility / conflict_risk`，必须据此判断可信度。\n- **证据不足规则**：若子意图标记为“证据不足，仅供参考”，或内容明显与子问题不相关，必须直接输出“未找到相关资料”或“证据不足，无法给出可靠结论”，禁止补全推断。\n- **冲突门控规则**：若子意图出现 `conflict_risk=高` 或 `source_credibility=低`，该子意图必须按“不可靠”处理，不得给出确定性结论。\n- **证据充分规则**：仅对证据充分且冲突风险非高的子意图给出结论性回答。\n- 在最终回答中对每个子意图增加简短可信度标注（如：高/中/低）。\n\n## 4. 图片重编号（重要！）\n- 忽略子分支中所有原始图号（如“图1-2”、“Fig.3-2”、“示意图A”等）；\n- **按图片在最终回答中首次出现的顺序，从 1 开始连续编号**：\n  - 中文输出：图1、图2、图3……\n  - 英文输出：Figure 1, Figure 2, Figure 3…\n- 正文中引用时使用新编号（如“见图1”、“as shown in Figure 2”）；\n- **每张图片及图注必须用以下格式居中显示**：\n  ```html\n  <div align=\"center\">\n    <img src=\"https://example.com/image.png\" alt=\"image\" /><br>\n    图1. 原始说明文字（若无则仅写“图1.”）\n  </div>\n  ```\n- 必须使用 <div align=\"center\"> 包裹整个图片和图注，确保图片和文字都居中显示；\n- 保留原始图片 URL 不变；\n- 不得省略图注行，不得使用原始乱序编号；\n- 确保图片在最终回答中居中显示。\n\n## 5. 文章/文件列表识别与处理\n以下任一特征即视为“文章或技术资料列表”：\n- 包含 ≥2 个明确文档条目；\n- 每个条目含标题 + 可访问链接（URL）或 [下载] 标记；\n- 内容为列表形式（项目符号、编号、换行列举）；\n- 含常见文档关键词（如“白皮书”“指南”“手册”“.pdf”“参考文献”等）。\n\n✅ 处理方式：\n- 严格检测原则：仅在子分支回答中明确存在符合上述特征的文档列表时，才创建文件列表部分。\n- 无文件列表处理：如果未检测到任何文件列表，则必须向用户明确说明。使用用户的语言，生成如“未找到相关文档列表”或“当前查询无文件存档”等自然提示，不得生成虚假示例。\n- 存在列表处理：若检测到文件列表，则：\n  - 将其归入一个独立逻辑块；\n  - 生成一个自然、简洁的小标题（如“参考资料”“相关文档”“技术指南”等，使用用户语言）；\n  - 用一两句话概括这些文档的共同主题或用途；\n  - 逐条保留原始条目中：\n    - 保留原始文档标题\n    - 将原始URL或链接替换为“[下载]”超链接，格式为：[文档标题] - [下载](原始URL或链接)\n  - 保持清晰列表格式（如使用 \"-\" 或 \"•\"）。\n\n## 6. 其他内容处理\n- 非闲聊、非文章列表、非图片说明的内容（如问答、解释、计算、分析等）：\n- 按语义聚合成合理块；\n- 每块配一个简明、自然的**加粗标题**（如 **问题解答**、**性能分析**）；\n- **必须原样保留所有数学公式**（如 `$x = y$`、`$$\\int_0^1 f(x)\\,dx$$`）；\n- 基于事实总结，不得添加子分支未提供的信息。\n\n## 7. 输出格式要求\n- 每个逻辑块以 **加粗标题** 开头（如 **实验结果**）；\n- 块与块之间用**空行**分隔；\n- 避免使用“综上所述”“根据以上内容”“接下来是”等冗余引导语；\n- 标题长度建议：中文 4–8 字，英文 2–5 个词；\n- 全文保持专业、流畅、易读。\n\n# 用户意图拆解之后的子问题：\n{{#1766583988064.sub_intents#}}\n\n# 子意图分支回答如下：\n{{#1766583988064.result#}}"
         selected: false
         title: 总结LLM
         type: llm
@@ -6716,8 +6562,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -6756,8 +6602,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -6796,8 +6642,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -6836,8 +6682,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -6936,8 +6782,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -6980,8 +6826,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
@@ -7024,8 +6870,8 @@ workflow:
           reranking_model:
             model: gte-rerank
             provider: langgenius/tongyi/tongyi
-          score_threshold: 0.7
-          top_k: 3
+          score_threshold: 0.6
+          top_k: 5
           weights:
             keyword_setting:
               keyword_weight: 0.3
