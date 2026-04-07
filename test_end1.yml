@@ -2749,16 +2749,14 @@ workflow:
               if retrieval_mode == 'es_recall_only':
                   optimized_query = dedup_join([cleaned_query or original_query, exact_match_terms, exact_terms])
               else:
-                  if enhanced_query:
-                      optimized_query = enhanced_query
-                  else:
-                      optimized_query = dedup_join([
-                          cleaned_query or original_query,
-                          hyde_answer,
-                          exact_match_terms,
-                          exact_terms,
-                          synonyms,
-                      ])
+                  base_query = enhanced_query or cleaned_query or original_query
+                  optimized_query = dedup_join([
+                      base_query,
+                      hyde_answer,
+                      exact_match_terms,
+                      exact_terms,
+                      synonyms,
+                  ])
           
               if not optimized_query:
                   optimized_query = cleaned_query or original_query
@@ -5222,16 +5220,14 @@ workflow:
               if not exact_match_terms:
                   exact_match_terms = dedup_join([product_series, fault_codes, component_names, exact_terms])
           
-              if enhanced_query:
-                  optimized_query = enhanced_query
-              else:
-                  optimized_query = dedup_join([
-                      original_query,
-                      hyde_answer,
-                      exact_match_terms,
-                      exact_terms,
-                      synonyms,
-                  ])
+              base_query = enhanced_query or original_query
+              optimized_query = dedup_join([
+                  base_query,
+                  hyde_answer,
+                  exact_match_terms,
+                  exact_terms,
+                  synonyms,
+              ])
           
               if not optimized_query:
                   optimized_query = cleaned_query or original_query
@@ -5394,16 +5390,14 @@ workflow:
               if not exact_match_terms:
                   exact_match_terms = dedup_join([product_series, fault_codes, component_names, exact_terms])
           
-              if enhanced_query:
-                  optimized_query = enhanced_query
-              else:
-                  optimized_query = dedup_join([
-                      original_query,
-                      hyde_answer,
-                      exact_match_terms,
-                      exact_terms,
-                      synonyms,
-                  ])
+              base_query = enhanced_query or original_query
+              optimized_query = dedup_join([
+                  base_query,
+                  hyde_answer,
+                  exact_match_terms,
+                  exact_terms,
+                  synonyms,
+              ])
           
               if not optimized_query:
                   optimized_query = cleaned_query or original_query
