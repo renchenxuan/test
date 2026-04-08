@@ -2683,6 +2683,19 @@ workflow:
                       t = re.sub(r'^```(?:json)?\s*', '', t)
                       t = re.sub(r'\s*```$', '', t)
                   return t.strip()
+
+              def is_placeholder_query(text: str) -> bool:
+                  t = str(text or '').strip()
+                  if not t:
+                      return False
+                  markers = [
+                      '原始查询+精确标识+同义词',
+                      '拼接成的增强检索句',
+                      'original query + exact terms + synonyms',
+                      'enhanced retrieval query'
+                  ]
+                  lower_t = t.lower()
+                  return any(m in t for m in markers[:2]) or any(m in lower_t for m in markers[2:])
           
               def as_dict(obj):
                   if isinstance(obj, dict):
@@ -2777,6 +2790,9 @@ workflow:
               exact_terms = str(data.get('exact_terms', '') or '').strip()
               synonyms = str(data.get('synonyms', '') or '').strip()
               enhanced_query = str(data.get('enhanced_query', '') or '').strip()
+              if is_placeholder_query(enhanced_query):
+                  enhanced_query = ''
+                  fallback_reason = 'vector_invalid_enhanced_query'
           
               if retrieval_mode == 'es_recall_only':
                   parts = [cleaned_query or original_query]
