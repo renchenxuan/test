@@ -2666,8 +2666,9 @@ workflow:
         code: |
           import json
           import re
+          from typing import Any
           
-          def main(llm_output, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:
+          def main(llm_output: Any, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:
               cleaned_query = str(cleaned_query or '').strip()
               original_query = str(original_query or '').strip()
               retrieval_mode = str(retrieval_mode or '').strip()
@@ -5229,8 +5230,9 @@ workflow:
         code: |
           import json
           import re
+          from typing import Any
           
-          def main(llm_output, cleaned_query: str, original_query: str) -> dict:
+          def main(llm_output: Any, cleaned_query: str, original_query: str) -> dict:
               cleaned_query = str(cleaned_query or '').strip()
               original_query = str(original_query or '').strip()
           
@@ -5395,8 +5397,9 @@ workflow:
         code: |
           import json
           import re
+          from typing import Any
           
-          def main(llm_output, cleaned_query: str, original_query: str) -> dict:
+          def main(llm_output: Any, cleaned_query: str, original_query: str) -> dict:
               cleaned_query = str(cleaned_query or '').strip()
               original_query = str(original_query or '').strip()
           
