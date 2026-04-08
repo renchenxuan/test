@@ -2697,6 +2697,19 @@ workflow:
                       except Exception:
                           return None
                   return None
+
+              def extract_field(text: str, key: str) -> str:
+                  pattern = rf'\\?"{re.escape(key)}\\?"\s*:\s*\\?"((?:\\.|[^"\\])*)\\?"'
+                  m = re.search(pattern, text)
+                  if not m:
+                      return ''
+                  raw = str(m.group(1) or '').strip()
+                  if not raw:
+                      return ''
+                  try:
+                      return json.loads(f'"{raw}"').strip()
+                  except Exception:
+                      return raw.replace(r'\"', '"').strip()
           
               def parse_json_like(value):
                   if isinstance(value, dict):
@@ -2730,12 +2743,25 @@ workflow:
                               return obj, 'json_in_text'
                       except Exception:
                           pass
-          
+
+                  extracted = {
+                      'exact_terms': extract_field(t, 'exact_terms'),
+                      'synonyms': extract_field(t, 'synonyms'),
+                      'enhanced_query': extract_field(t, 'enhanced_query')
+                  }
+                  if any(extracted.values()):
+                      return extracted, 'regex_extract'
+           
                   return None, 'parse_failed'
-          
+           
               data, parse_status = parse_json_like(llm_output)
               if data is None:
                   data = {}
+              elif 'llm_output' in data and not any(k in data for k in ('exact_terms', 'synonyms', 'enhanced_query')):
+                  nested_data, nested_status = parse_json_like(data.get('llm_output'))
+                  if nested_data is not None:
+                      data = nested_data
+                      parse_status = f'{parse_status}+nested_llm_output_{nested_status}'
               elif 'text' in data and not any(k in data for k in ('exact_terms', 'synonyms', 'enhanced_query')):
                   nested = as_dict(data.get('text'))
                   if nested is not None:
