@@ -2699,13 +2699,15 @@ workflow:
                   return None
 
               def extract_field(text: str, key: str) -> str:
-                  pattern = rf'\\?"{re.escape(key)}\\?"\s*:\s*\\?"((?:\\.|[^"\\])*)\\?"'
+                  pattern = rf'(?:\\)?"{re.escape(key)}(?:\\)?"\s*:\s*(?:\\)?"((?:\\.|[^"\\])*)(?:\\)?"(?=\s*(?:,|(?:\\)?\}}|$))'
                   m = re.search(pattern, text)
                   if not m:
                       return ''
                   raw = str(m.group(1) or '').strip()
                   if not raw:
                       return ''
+                  if raw.endswith(r'\"}'):
+                      raw = raw[:-2].rstrip()
                   try:
                       return json.loads(f'"{raw}"').strip()
                   except Exception:
@@ -2715,7 +2717,7 @@ workflow:
                   if isinstance(value, dict):
                       return value, 'dict_input'
                   t = clean_text(str(value or ''))
-               
+
                   if not t:
                       return None, 'empty'
           
@@ -5309,7 +5311,7 @@ workflow:
               if enhanced_query:
                   optimized_query = enhanced_query
               else:
-                  parts = [original_query or cleaned_query]
+                  parts = [cleaned_query or original_query]
                   if exact_terms:
                       parts.append(exact_terms)
                   if synonyms:
@@ -5485,7 +5487,7 @@ workflow:
               if enhanced_query:
                   optimized_query = enhanced_query
               else:
-                  parts = [original_query or cleaned_query]
+                  parts = [cleaned_query or original_query]
                   if exact_terms:
                       parts.append(exact_terms)
                   if synonyms:
