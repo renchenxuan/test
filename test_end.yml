@@ -2702,7 +2702,7 @@ workflow:
                   if isinstance(value, dict):
                       return value, 'dict_input'
                   t = clean_text(str(value or ''))
-              
+               
                   if not t:
                       return None, 'empty'
           
@@ -2710,6 +2710,15 @@ workflow:
                       obj = json.loads(t)
                       if isinstance(obj, dict):
                           return obj, 'json'
+                      if isinstance(obj, str):
+                          nested = clean_text(obj)
+                          if nested:
+                              try:
+                                  nested_obj = json.loads(nested)
+                                  if isinstance(nested_obj, dict):
+                                      return nested_obj, 'json_string'
+                              except Exception:
+                                  pass
                   except Exception:
                       pass
           
@@ -5245,6 +5254,15 @@ workflow:
                       obj = json.loads(t)
                       if isinstance(obj, dict):
                           return obj
+                      if isinstance(obj, str):
+                          nested = clean_text(obj)
+                          if nested:
+                              try:
+                                  nested_obj = json.loads(nested)
+                                  if isinstance(nested_obj, dict):
+                                      return nested_obj
+                              except Exception:
+                                  pass
                   except Exception:
                       pass
                   m = re.search(r'\{[\s\S]*\}', t)
@@ -5412,6 +5430,15 @@ workflow:
                       obj = json.loads(t)
                       if isinstance(obj, dict):
                           return obj
+                      if isinstance(obj, str):
+                          nested = clean_text(obj)
+                          if nested:
+                              try:
+                                  nested_obj = json.loads(nested)
+                                  if isinstance(nested_obj, dict):
+                                      return nested_obj
+                              except Exception:
+                                  pass
                   except Exception:
                       pass
                   m = re.search(r'\{[\s\S]*\}', t)
