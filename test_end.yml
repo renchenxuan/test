@@ -2701,12 +2701,7 @@ workflow:
               def parse_json_like(value):
                   if isinstance(value, dict):
                       return value, 'dict_input'
-                  if isinstance(value, str):
-                      t = clean_text(value)
-                  elif value is None:
-                      t = ''
-                  else:
-                      t = clean_text(str(value))
+                  t = clean_text(str(value or ''))
               
                   if not t:
                       return None, 'empty'
