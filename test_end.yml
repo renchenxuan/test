@@ -2663,37 +2663,120 @@ workflow:
       type: custom
       width: 242
     - data:
-        code: "import json\nimport re\n\ndef main(llm_output: str, cleaned_query:\
-          \ str, original_query: str, retrieval_mode: str) -> dict:\n    raw = str(llm_output\
-          \ or '').strip()\n    cleaned_query = str(cleaned_query or '').strip()\n\
-          \    original_query = str(original_query or '').strip()\n\n    def normalize_json_text(text:\
-          \ str) -> str:\n        t = text.strip()\n        if t.startswith('```'):\n\
-          \            t = re.sub(r'^```(?:json)?\\s*', '', t)\n            t = re.sub(r'\\\
-          s*```$', '', t)\n        return t.strip()\n\n    def try_parse_json(text:\
-          \ str):\n        if not text:\n            return None\n        t = normalize_json_text(text)\n\
-          \        try:\n            obj = json.loads(t)\n            return obj if\
-          \ isinstance(obj, dict) else None\n        except Exception:\n         \
-          \   pass\n        m = re.search(r'\\{[\\s\\S]*\\}', t)\n        if not m:\n\
-          \            return None\n        try:\n            obj = json.loads(m.group(0))\n\
-          \            return obj if isinstance(obj, dict) else None\n        except\
-          \ Exception:\n            return None\n\n    data = try_parse_json(raw)\
-          \ or {}\n    exact_terms = str(data.get('exact_terms', '') or '').strip()\n\
-          \    synonyms = str(data.get('synonyms', '') or '').strip()\n    enhanced_query\
-          \ = str(data.get('enhanced_query', '') or '').strip()\n\n    if retrieval_mode\
-          \ == 'es_recall_only':\n        parts = []\n        if exact_terms:\n  \
-          \          parts.append(exact_terms)\n        parts.append(cleaned_query\
-          \ or original_query)\n        optimized_query = ' '.join([p for p in parts\
-          \ if p]).strip()\n    else:\n        if enhanced_query:\n            optimized_query\
-          \ = enhanced_query\n        else:\n            parts = [cleaned_query or\
-          \ original_query]\n            if exact_terms:\n                parts.append(exact_terms)\n\
-          \            if synonyms:\n                parts.append(synonyms)\n    \
-          \        optimized_query = ' '.join([p for p in parts if p]).strip()\n\n\
-          \    if not optimized_query:\n        optimized_query = cleaned_query or\
-          \ original_query\n\n    return {'optimized_query': optimized_query}\n"
+        code: |
+          import json
+          import re
+          
+          def main(llm_output: str, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:
+              raw = str(llm_output or '').strip()
+              cleaned_query = str(cleaned_query or '').strip()
+              original_query = str(original_query or '').strip()
+              retrieval_mode = str(retrieval_mode or '').strip()
+          
+              parse_status = 'empty_input'
+              fallback_reason = ''
+          
+              def clean_text(text: str) -> str:
+                  t = str(text or '').strip()
+                  if t.startswith('```'):
+                      t = re.sub(r'^```(?:json)?\s*', '', t)
+                      t = re.sub(r'\s*```$', '', t)
+                  return t.strip()
+          
+              def as_dict(obj):
+                  if isinstance(obj, dict):
+                      return obj
+                  if isinstance(obj, str):
+                      s = clean_text(obj)
+                      if not s:
+                          return None
+                      try:
+                          inner = json.loads(s)
+                          return inner if isinstance(inner, dict) else None
+                      except Exception:
+                          return None
+                  return None
+          
+              def parse_json_like(text: str):
+                  t = clean_text(text)
+                  if not t:
+                      return None, 'empty'
+          
+                  try:
+                      obj = json.loads(t)
+                      if isinstance(obj, dict):
+                          return obj, 'json'
+                  except Exception:
+                      pass
+          
+                  m = re.search(r'\{[\s\S]*\}', t)
+                  if m:
+                      try:
+                          obj = json.loads(m.group(0))
+                          if isinstance(obj, dict):
+                              return obj, 'json_in_text'
+                      except Exception:
+                          pass
+          
+                  return None, 'parse_failed'
+          
+              data, parse_status = parse_json_like(raw)
+              if data is None:
+                  data = {}
+              elif 'text' in data and not any(k in data for k in ('exact_terms', 'synonyms', 'enhanced_query')):
+                  nested = as_dict(data.get('text'))
+                  if nested is not None:
+                      data = nested
+                      parse_status = f'{parse_status}+nested_text_json'
+          
+              exact_terms = str(data.get('exact_terms', '') or '').strip()
+              synonyms = str(data.get('synonyms', '') or '').strip()
+              enhanced_query = str(data.get('enhanced_query', '') or '').strip()
+          
+              if retrieval_mode == 'es_recall_only':
+                  parts = [original_query or cleaned_query]
+                  if exact_terms:
+                      parts.append(exact_terms)
+                  if synonyms:
+                      parts.append(synonyms)
+                  optimized_query = ' '.join([p for p in parts if p]).strip()
+                  if not optimized_query:
+                      fallback_reason = 'es_empty_parts'
+              else:
+                  if enhanced_query:
+                      optimized_query = enhanced_query
+                  else:
+                      parts = [original_query or cleaned_query]
+                      if exact_terms:
+                          parts.append(exact_terms)
+                      if synonyms:
+                          parts.append(synonyms)
+                      optimized_query = ' '.join([p for p in parts if p]).strip()
+                      if not optimized_query:
+                          fallback_reason = 'vector_no_enhanced_or_terms'
+          
+              if not optimized_query:
+                  optimized_query = original_query or cleaned_query
+                  fallback_reason = fallback_reason or 'final_fallback'
+          
+              if not optimized_query:
+                  parse_status = 'empty_result'
+          
+              return {
+                  'optimized_query': optimized_query,
+                  'parse_status': parse_status,
+                  'fallback_reason': fallback_reason
+              }
         code_language: python3
-        desc: 解析LLM输出，按retrieval_mode组装最终query，解析失败回退到原始查询
+        desc: 增强鲁棒性解析LLM输出并按retrieval_mode做最小损失回退，输出可观测状态
         outputs:
           optimized_query:
+            children: null
+            type: string
+          parse_status:
+            children: null
+            type: string
+          fallback_reason:
             children: null
             type: string
         selected: false
