@@ -3,7 +3,7 @@ app:
   icon: 🤖
   icon_background: '#FFEAD5'
   mode: advanced-chat
-  name: test_终
+  name: test_end
   use_icon_as_answer_icon: false
 dependencies:
 - current_identifier: null
@@ -1798,6 +1798,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-true-17727146279350-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 'true'
       target: '17727146279350'
@@ -1809,6 +1810,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-7d50f4d4-dc4a-40f6-803d-73b8a14c17b4-17727146279350-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 7d50f4d4-dc4a-40f6-803d-73b8a14c17b4
       target: '17727146279350'
@@ -1820,6 +1822,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-8f584f08-c660-446b-9251-54cb394fc97b-17727146380080-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 8f584f08-c660-446b-9251-54cb394fc97b
       target: '17727146380080'
@@ -1831,6 +1834,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-53b9c5eb-341c-4327-ab6c-27a853708ab1-17727146461830-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 53b9c5eb-341c-4327-ab6c-27a853708ab1
       target: '17727146461830'
@@ -1842,6 +1846,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-6c827d63-db16-4430-84f7-6147a151af5d-17727146729190-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 6c827d63-db16-4430-84f7-6147a151af5d
       target: '17727146729190'
@@ -1853,6 +1858,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-ac4fad4c-6aed-44e4-b186-f2a9ad16851d-17727146729190-target
+      selected: false
       source: '17727142590310'
       sourceHandle: ac4fad4c-6aed-44e4-b186-f2a9ad16851d
       target: '17727146729190'
@@ -1864,6 +1870,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-73700a06-95a3-4197-bc00-90142042b857-17727146729190-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 73700a06-95a3-4197-bc00-90142042b857
       target: '17727146729190'
@@ -1875,6 +1882,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-961c1951-c8ce-4195-b4b4-0926a125416a-17727146729190-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 961c1951-c8ce-4195-b4b4-0926a125416a
       target: '17727146729190'
@@ -1886,6 +1894,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-d5753383-341e-4549-a4ee-6abb52f274e6-17727146729190-target
+      selected: false
       source: '17727142590310'
       sourceHandle: d5753383-341e-4549-a4ee-6abb52f274e6
       target: '17727146729190'
@@ -1897,6 +1906,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: variable-aggregator
       id: 17727146279350-source-17727148206320-target
+      selected: false
       source: '17727146279350'
       sourceHandle: source
       target: '17727148206320'
@@ -1908,6 +1918,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: variable-aggregator
       id: 17727146380080-source-17727148206320-target
+      selected: false
       source: '17727146380080'
       sourceHandle: source
       target: '17727148206320'
@@ -1919,6 +1930,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: variable-aggregator
       id: 17727146461830-source-17727148206320-target
+      selected: false
       source: '17727146461830'
       sourceHandle: source
       target: '17727148206320'
@@ -1930,6 +1942,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: variable-aggregator
       id: 17727146729190-source-17727148206320-target
+      selected: false
       source: '17727146729190'
       sourceHandle: source
       target: '17727148206320'
@@ -1941,6 +1954,7 @@ workflow:
         sourceType: variable-aggregator
         targetType: code
       id: 17727148206320-source-1766307714396-target
+      selected: false
       source: '17727148206320'
       sourceHandle: source
       target: '1766307714396'
@@ -1952,6 +1966,7 @@ workflow:
         sourceType: code
         targetType: if-else
       id: 1772708654860-source-17661121664810-target
+      selected: false
       source: '1772708654860'
       sourceHandle: source
       target: '17661121664810'
@@ -1963,6 +1978,7 @@ workflow:
         sourceType: code
         targetType: if-else
       id: 1772708654860-source-17663007785200-target
+      selected: false
       source: '1772708654860'
       sourceHandle: source
       target: '17663007785200'
@@ -1974,6 +1990,7 @@ workflow:
         sourceType: code
         targetType: if-else
       id: 1772708654860-source-17727142590310-target
+      selected: false
       source: '1772708654860'
       sourceHandle: source
       target: '17727142590310'
@@ -1985,6 +2002,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17661121664810-93b36b41-4a87-4032-907c-7ddef1fff3eb-17744369112980-target
+      selected: false
       source: '17661121664810'
       sourceHandle: 93b36b41-4a87-4032-907c-7ddef1fff3eb
       target: '17744369112980'
@@ -1996,6 +2014,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: variable-aggregator
       id: 17744369112980-source-1766124693724-target
+      selected: false
       source: '17744369112980'
       sourceHandle: source
       target: '1766124693724'
@@ -2007,6 +2026,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17663007785200-93b36b41-4a87-4032-907c-7ddef1fff3eb-17744371101860-target
+      selected: false
       source: '17663007785200'
       sourceHandle: 93b36b41-4a87-4032-907c-7ddef1fff3eb
       target: '17744371101860'
@@ -2018,6 +2038,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: variable-aggregator
       id: 17744371101860-source-17663078003070-target
+      selected: false
       source: '17744371101860'
       sourceHandle: source
       target: '17663078003070'
@@ -2029,6 +2050,7 @@ workflow:
         sourceType: if-else
         targetType: knowledge-retrieval
       id: 17727142590310-93b36b41-4a87-4032-907c-7ddef1fff3eb-17744371388840-target
+      selected: false
       source: '17727142590310'
       sourceHandle: 93b36b41-4a87-4032-907c-7ddef1fff3eb
       target: '17744371388840'
@@ -2040,6 +2062,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: variable-aggregator
       id: 17744371388840-source-17727148206320-target
+      selected: false
       source: '17744371388840'
       sourceHandle: source
       target: '17727148206320'
@@ -2052,6 +2075,7 @@ workflow:
         sourceType: code
         targetType: answer
       id: 1768549808142-source-1774441797704-target
+      selected: false
       source: '1768549808142'
       sourceHandle: source
       target: '1774441797704'
@@ -2063,6 +2087,7 @@ workflow:
         sourceType: answer
         targetType: code
       id: 1774441797704-source-1765885847821-target
+      selected: false
       source: '1774441797704'
       sourceHandle: source
       target: '1765885847821'
@@ -2151,7 +2176,7 @@ workflow:
           required: false
           type: paragraph
           variable: kb_mapping
-      height: 420
+      height: 421
       id: '1765884761572'
       position:
         x: -1219.5966057408716
@@ -2194,7 +2219,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: llm
       position:
         x: 12.09128743584506
@@ -2213,7 +2238,7 @@ workflow:
         title: 直接回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: answer
       position:
         x: 1633.012593961086
@@ -2310,7 +2335,7 @@ workflow:
           - kbNames
           value_type: array[string]
           variable: selected_knowledge_bases
-      height: 51
+      height: 52
       id: '1765885847821'
       position:
         x: -299.08163446415955
@@ -2448,7 +2473,7 @@ workflow:
           - text
           value_type: string
           variable: arg1
-      height: 515
+      height: 516
       id: '1766046797761'
       position:
         x: 340.8107723673504
@@ -2489,108 +2514,69 @@ workflow:
         selected: false
         title: 查知识条件分支（单意图）
         type: if-else
-      height: 199
+      height: 200
       id: '1766056191029'
       position:
-        x: 1271.7608655630152
-        y: 588.0828478209576
+        x: 1709.3312747925274
+        y: 577.9067917923642
       positionAbsolute:
-        x: 1271.7608655630152
-        y: 588.0828478209576
+        x: 1709.3312747925274
+        y: 577.9067917923642
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 242
     - data:
-        code: |
-          import re
-          
-          def main(resolved_query: str) -> dict:
-              STOP_WORDS = {
-                  '请问', '怎么', '如何', '什么', '为什么', '哪里', '哪个', '哪些',
-                  '多少', '几个', '是否', '能否', '可否', '怎样', '何时', '何处',
-                  '谁', '啥', '咋', '咋样', '咋回事', '怎么回事', '怎么办',
-                  '吗', '呢', '吧', '啊', '呀', '了', '的', '地', '得',
-                  '嘛', '哦', '噢', '哈', '呐', '嗯', '哇', '唉', '喂',
-                  '么', '罢了', '而已', '罢', '矣',
-                  '这', '那', '这个', '那个', '这些', '那些', '这种', '那种',
-                  '这样', '那样', '它', '其', '他', '她', '我', '你', '您',
-                  '自己', '本身', '我们', '你们', '他们', '大家',
-                  '请', '想', '要', '能', '可以', '应该', '需要', '会',
-                  '必须', '得', '可能', '也许', '或许', '大约', '大概',
-                  '比较', '一般', '通常', '似乎', '好像',
-                  '非常', '特别', '十分', '稍微', '有点', '很', '太', '极',
-                  '更', '最', '挺', '蛮', '颇', '甚', '尤其', '格外',
-                  '总是', '经常', '偶尔', '有时', '从来', '一直', '始终',
-                  '已经', '正在', '将要', '刚刚', '刚才', '马上', '立刻',
-                  '帮我', '告诉我', '看看', '查一下', '找一下', '说说',
-                  '讲讲', '介绍', '解释', '描述', '说明一下', '分析一下',
-                  '看一下', '问一下', '了解一下', '确认一下', '查查',
-                  '搞', '弄', '做', '搞定', '处理', '解决',
-                  '和', '与', '以及', '还有', '并且', '或者', '但是', '不过',
-                  '因为', '所以', '如果', '虽然', '然后', '而且', '而',
-                  '不但', '不仅', '即使', '尽管', '无论', '不管',
-                  '那么', '因此', '于是', '故而', '进而', '从而',
-                  '是', '在', '有', '被', '把', '对', '给', '从', '到',
-                  '上', '下', '中', '内', '外', '里', '间', '前', '后',
-                  '左', '右', '之', '所', '者', '等', '等等',
-                  '一下', '一些', '一点', '一般来说', '总的来说',
-                  '具体', '详细', '简单', '快速', '完整', '全部',
-                  '目前', '现在', '当前', '最近', '以前', '之前',
-                  '关于', '对于', '至于', '按照', '根据', '通过',
-                  '进行', '实现', '完成', '开始', '结束',
-                  '好', '好的', '行', '行的', '没问题',
-                  '谢谢', '感谢', '麻烦', '拜托',
-              }
-          
-              original_query = str(resolved_query or '').strip()
-              if not original_query:
-                  return {'cleaned_query': '', 'original_query': ''}
-          
-              normalized = original_query
-              for sw in sorted(STOP_WORDS, key=len, reverse=True):
-                  if len(sw) <= 1:
-                      continue
-                  normalized = normalized.replace(sw, ' ')
-          
-              tokens = re.findall(r'[一-鿿]+|[A-Za-z][A-Za-z0-9_.-]*|\d+\.?\d*', normalized)
-          
-              def strip_particle(token: str) -> str:
-                  return re.sub(r'(吗|呢|吧|啊|呀|嘛|么|哦|噢|哈|呐|哇)+$', '', token)
-          
-              filtered = []
-              for t in tokens:
-                  t = strip_particle(t.strip())
-                  if not t:
-                      continue
-                  if t in STOP_WORDS:
-                      continue
-                  if len(t) == 1 and re.match(r'[一-鿿]', t):
-                      continue
-                  filtered.append(t)
-          
-              cleaned_query = ' '.join(filtered).strip()
-              if not cleaned_query:
-                  cleaned_query = original_query
-          
-              llm_task_query = f"\"{cleaned_query}\"。请对这句话做标识提取和同义词拓展。"
-          
-              return {
-                  'cleaned_query': cleaned_query,
-                  'original_query': original_query,
-                  'llm_task_query': llm_task_query
-              }
+        code: "import re\n\ndef main(resolved_query: str) -> dict:\n    STOP_WORDS\
+          \ = {\n        '请问', '怎么', '如何', '什么', '为什么', '哪里', '哪个', '哪些',\n      \
+          \  '多少', '几个', '是否', '能否', '可否', '怎样', '何时', '何处',\n        '谁', '啥', '咋',\
+          \ '咋样', '咋回事', '怎么回事', '怎么办',\n        '吗', '呢', '吧', '啊', '呀', '了', '的',\
+          \ '地', '得',\n        '嘛', '哦', '噢', '哈', '呐', '嗯', '哇', '唉', '喂',\n    \
+          \    '么', '罢了', '而已', '罢', '矣',\n        '这', '那', '这个', '那个', '这些', '那些',\
+          \ '这种', '那种',\n        '这样', '那样', '它', '其', '他', '她', '我', '你', '您',\n\
+          \        '自己', '本身', '我们', '你们', '他们', '大家',\n        '请', '想', '要', '能',\
+          \ '可以', '应该', '需要', '会',\n        '必须', '得', '可能', '也许', '或许', '大约', '大概',\n\
+          \        '比较', '一般', '通常', '似乎', '好像',\n        '非常', '特别', '十分', '稍微',\
+          \ '有点', '很', '太', '极',\n        '更', '最', '挺', '蛮', '颇', '甚', '尤其', '格外',\n\
+          \        '总是', '经常', '偶尔', '有时', '从来', '一直', '始终',\n        '已经', '正在',\
+          \ '将要', '刚刚', '刚才', '马上', '立刻',\n        '帮我', '告诉我', '看看', '查一下', '找一下',\
+          \ '说说',\n        '讲讲', '介绍', '解释', '描述', '说明一下', '分析一下',\n        '看一下',\
+          \ '问一下', '了解一下', '确认一下', '查查',\n        '搞', '弄', '做', '搞定', '处理', '解决',\n\
+          \        '和', '与', '以及', '还有', '并且', '或者', '但是', '不过',\n        '因为', '所以',\
+          \ '如果', '虽然', '然后', '而且', '而',\n        '不但', '不仅', '即使', '尽管', '无论', '不管',\n\
+          \        '那么', '因此', '于是', '故而', '进而', '从而',\n        '是', '在', '有', '被',\
+          \ '把', '对', '给', '从', '到',\n        '上', '下', '中', '内', '外', '里', '间', '前',\
+          \ '后',\n        '左', '右', '之', '所', '者', '等', '等等',\n        '一下', '一些',\
+          \ '一点', '一般来说', '总的来说',\n        '具体', '详细', '简单', '快速', '完整', '全部',\n \
+          \       '目前', '现在', '当前', '最近', '以前', '之前',\n        '关于', '对于', '至于', '按照',\
+          \ '根据', '通过',\n        '进行', '实现', '完成', '开始', '结束',\n        '好', '好的',\
+          \ '行', '行的', '没问题',\n        '谢谢', '感谢', '麻烦', '拜托',\n    }\n\n    original_query\
+          \ = str(resolved_query or '').strip()\n    if not original_query:\n    \
+          \    return {'cleaned_query': '', 'original_query': ''}\n\n    normalized\
+          \ = original_query\n    for sw in sorted(STOP_WORDS, key=len, reverse=True):\n\
+          \        if len(sw) <= 1:\n            continue\n        normalized = normalized.replace(sw,\
+          \ ' ')\n\n    tokens = re.findall(r'[一-鿿]+|[A-Za-z][A-Za-z0-9_.-]*|\\d+\\\
+          .?\\d*', normalized)\n\n    def strip_particle(token: str) -> str:\n   \
+          \     return re.sub(r'(吗|呢|吧|啊|呀|嘛|么|哦|噢|哈|呐|哇)+$', '', token)\n\n    filtered\
+          \ = []\n    for t in tokens:\n        t = strip_particle(t.strip())\n  \
+          \      if not t:\n            continue\n        if t in STOP_WORDS:\n  \
+          \          continue\n        if len(t) == 1 and re.match(r'[一-鿿]', t):\n\
+          \            continue\n        filtered.append(t)\n\n    cleaned_query =\
+          \ ' '.join(filtered).strip()\n    if not cleaned_query:\n        cleaned_query\
+          \ = original_query\n\n    llm_task_query = f\"\\\"{cleaned_query}\\\"。请对这句话做标识提取和同义词拓展。\"\
+          \n\n    return {\n        'cleaned_query': cleaned_query,\n        'original_query':\
+          \ original_query,\n        'llm_task_query': llm_task_query\n    }\n"
         code_language: python3
         desc: 停用词过滤：150+停用词，去除疑问词/语气词/连接词等噪声
         outputs:
           cleaned_query:
             children: null
             type: string
-          original_query:
+          llm_task_query:
             children: null
             type: string
-          llm_task_query:
+          original_query:
             children: null
             type: string
         selected: false
@@ -2602,14 +2588,14 @@ workflow:
           - resolved_query
           value_type: string
           variable: resolved_query
-      height: 95
+      height: 96
       id: stopword_filter
       position:
-        x: 900
-        y: 588.0828478209576
+        x: 1133.9309200148662
+        y: 834.8671150893877
       positionAbsolute:
-        x: 900
-        y: 588.0828478209576
+        x: 1133.9309200148662
+        y: 834.8671150893877
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -2630,9 +2616,9 @@ workflow:
         model:
           completion_params:
             enable_thinking: false
-            temperature: 0.1
+            temperature: 0.5
           mode: chat
-          name: GLM-4.6V-Flash
+          name: chatgpt-oss-120b
           provider: yangyaofei/vllm/vllm
         prompt_template:
         - id: query-opt-llm-001
@@ -2663,80 +2649,47 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: query_optimizer_llm
       position:
-        x: 1200
-        y: 588.0828478209576
+        x: 1187.3203026505514
+        y: 577.9067917923642
       positionAbsolute:
-        x: 1200
-        y: 588.0828478209576
+        x: 1187.3203026505514
+        y: 577.9067917923642
       selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 242
     - data:
-        code: |
-          import json
-          import re
-          
-          def main(llm_output: str, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:
-              raw = str(llm_output or '').strip()
-              cleaned_query = str(cleaned_query or '').strip()
-              original_query = str(original_query or '').strip()
-          
-              def normalize_json_text(text: str) -> str:
-                  t = text.strip()
-                  if t.startswith('```'):
-                      t = re.sub(r'^```(?:json)?\s*', '', t)
-                      t = re.sub(r'\s*```$', '', t)
-                  return t.strip()
-          
-              def try_parse_json(text: str):
-                  if not text:
-                      return None
-                  t = normalize_json_text(text)
-                  try:
-                      obj = json.loads(t)
-                      return obj if isinstance(obj, dict) else None
-                  except Exception:
-                      pass
-                  m = re.search(r'\{[\s\S]*\}', t)
-                  if not m:
-                      return None
-                  try:
-                      obj = json.loads(m.group(0))
-                      return obj if isinstance(obj, dict) else None
-                  except Exception:
-                      return None
-          
-              data = try_parse_json(raw) or {}
-              exact_terms = str(data.get('exact_terms', '') or '').strip()
-              synonyms = str(data.get('synonyms', '') or '').strip()
-              enhanced_query = str(data.get('enhanced_query', '') or '').strip()
-          
-              if retrieval_mode == 'es_recall_only':
-                  parts = []
-                  if exact_terms:
-                      parts.append(exact_terms)
-                  parts.append(cleaned_query or original_query)
-                  optimized_query = ' '.join([p for p in parts if p]).strip()
-              else:
-                  if enhanced_query:
-                      optimized_query = enhanced_query
-                  else:
-                      parts = [cleaned_query or original_query]
-                      if exact_terms:
-                          parts.append(exact_terms)
-                      if synonyms:
-                          parts.append(synonyms)
-                      optimized_query = ' '.join([p for p in parts if p]).strip()
-          
-              if not optimized_query:
-                  optimized_query = cleaned_query or original_query
-          
-              return {'optimized_query': optimized_query}
+        code: "import json\nimport re\n\ndef main(llm_output: str, cleaned_query:\
+          \ str, original_query: str, retrieval_mode: str) -> dict:\n    raw = str(llm_output\
+          \ or '').strip()\n    cleaned_query = str(cleaned_query or '').strip()\n\
+          \    original_query = str(original_query or '').strip()\n\n    def normalize_json_text(text:\
+          \ str) -> str:\n        t = text.strip()\n        if t.startswith('```'):\n\
+          \            t = re.sub(r'^```(?:json)?\\s*', '', t)\n            t = re.sub(r'\\\
+          s*```$', '', t)\n        return t.strip()\n\n    def try_parse_json(text:\
+          \ str):\n        if not text:\n            return None\n        t = normalize_json_text(text)\n\
+          \        try:\n            obj = json.loads(t)\n            return obj if\
+          \ isinstance(obj, dict) else None\n        except Exception:\n         \
+          \   pass\n        m = re.search(r'\\{[\\s\\S]*\\}', t)\n        if not m:\n\
+          \            return None\n        try:\n            obj = json.loads(m.group(0))\n\
+          \            return obj if isinstance(obj, dict) else None\n        except\
+          \ Exception:\n            return None\n\n    data = try_parse_json(raw)\
+          \ or {}\n    exact_terms = str(data.get('exact_terms', '') or '').strip()\n\
+          \    synonyms = str(data.get('synonyms', '') or '').strip()\n    enhanced_query\
+          \ = str(data.get('enhanced_query', '') or '').strip()\n\n    if retrieval_mode\
+          \ == 'es_recall_only':\n        parts = []\n        if exact_terms:\n  \
+          \          parts.append(exact_terms)\n        parts.append(cleaned_query\
+          \ or original_query)\n        optimized_query = ' '.join([p for p in parts\
+          \ if p]).strip()\n    else:\n        if enhanced_query:\n            optimized_query\
+          \ = enhanced_query\n        else:\n            parts = [cleaned_query or\
+          \ original_query]\n            if exact_terms:\n                parts.append(exact_terms)\n\
+          \            if synonyms:\n                parts.append(synonyms)\n    \
+          \        optimized_query = ' '.join([p for p in parts if p]).strip()\n\n\
+          \    if not optimized_query:\n        optimized_query = cleaned_query or\
+          \ original_query\n\n    return {'optimized_query': optimized_query}\n"
         code_language: python3
         desc: 解析LLM输出，按retrieval_mode组装最终query，解析失败回退到原始查询
         outputs:
@@ -2767,14 +2720,14 @@ workflow:
           - retrieval_mode
           value_type: string
           variable: retrieval_mode
-      height: 95
+      height: 96
       id: query_optimizer_parse
       position:
-        x: 1617.9416174920557
-        y: 588.0828478209576
+        x: 1443.2526556678706
+        y: 577.9067917923642
       positionAbsolute:
-        x: 1617.9416174920557
-        y: 588.0828478209576
+        x: 1443.2526556678706
+        y: 577.9067917923642
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -2822,7 +2775,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766060591761'
       position:
         x: 1264.3759936502822
@@ -2863,7 +2816,7 @@ workflow:
         selected: false
         title: 检索CBB
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766111137253'
       position:
         x: 3286.727668928731
@@ -2904,7 +2857,7 @@ workflow:
         selected: false
         title: 检索专利
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17661111542640'
       position:
         x: 3286.727668928731
@@ -2948,7 +2901,7 @@ workflow:
         selected: false
         title: 检索学术论文
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17661111554310'
       position:
         x: 3270.716817893455
@@ -2988,7 +2941,7 @@ workflow:
         selected: false
         title: 检索认证标准
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17661111557560'
       position:
         x: 3286.727668928731
@@ -3117,7 +3070,7 @@ workflow:
         selected: false
         title: 主库执行条件判断
         type: if-else
-      height: 583
+      height: 584
       id: '17661121664810'
       position:
         x: 2754.117774832373
@@ -3147,7 +3100,7 @@ workflow:
         selected: false
         title: 复杂度判断（投票路由）
         type: if-else
-      height: 183
+      height: 184
       id: voting_complexity_check
       position:
         x: 4450
@@ -3244,7 +3197,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: multi_perspective_llm
       position:
         x: 4800
@@ -3263,7 +3216,7 @@ workflow:
         title: 多视角融合回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: multi_perspective_answer
       position:
         x: 5150
@@ -3316,7 +3269,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766114600959'
       position:
         x: 4813.698509538828
@@ -3335,7 +3288,7 @@ workflow:
         title: 直接回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: '17661146701100'
       position:
         x: 5162.187707886145
@@ -3391,7 +3344,7 @@ workflow:
           - result
         - - '17744369112980'
           - result
-      height: 213
+      height: 212
       id: '1766124693724'
       position:
         x: 3735.630034676695
@@ -3436,14 +3389,14 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 147
+      height: 148
       id: '17661324932410'
       position:
-        x: 1303.678885578099
-        y: 941.7055704884206
+        x: 1376.607287116351
+        y: 1009.5459440123761
       positionAbsolute:
-        x: 1303.678885578099
-        y: 941.7055704884206
+        x: 1376.607287116351
+        y: 1009.5459440123761
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -3455,14 +3408,14 @@ workflow:
         title: 直接回复 (1)
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: '17661325478120'
       position:
-        x: 1576.3007251571821
-        y: 941.7055704884206
+        x: 1815.438041829125
+        y: 1053.642186802947
       positionAbsolute:
-        x: 1576.3007251571821
-        y: 941.7055704884206
+        x: 1815.438041829125
+        y: 1053.642186802947
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -3584,7 +3537,7 @@ workflow:
         selected: false
         title: 辅库执行条件判断
         type: if-else
-      height: 583
+      height: 584
       id: '17663007785200'
       position:
         x: 2792.23981376134
@@ -3624,14 +3577,14 @@ workflow:
         selected: false
         title: 检索CBB （辅库）
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17663008066090'
       position:
-        x: 3366.1651687454914
-        y: 527.0962347185889
+        x: 3224.9817230715744
+        y: 525.0793283518187
       positionAbsolute:
-        x: 3366.1651687454914
-        y: 527.0962347185889
+        x: 3224.9817230715744
+        y: 525.0793283518187
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -3664,7 +3617,7 @@ workflow:
         selected: false
         title: 检索认证标准 (辅库)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17663008113020'
       position:
         x: 3236.8533934897478
@@ -3704,7 +3657,7 @@ workflow:
         selected: false
         title: 检索专利 (辅库)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17663008166570'
       position:
         x: 3236.8533934897478
@@ -3744,7 +3697,7 @@ workflow:
         selected: false
         title: 检索学术论文 (辅库)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17663008214150'
       position:
         x: 3243.503296881612
@@ -3809,7 +3762,7 @@ workflow:
           - output
           value_type: array[object]
           variable: arg3
-      height: 79
+      height: 80
       id: '1766307714396'
       position:
         x: 4087.771036403922
@@ -3865,7 +3818,7 @@ workflow:
           - result
         - - '17744371101860'
           - result
-      height: 213
+      height: 212
       id: '17663078003070'
       position:
         x: 3772.1931583351325
@@ -3927,7 +3880,7 @@ workflow:
         type: http-request
         url: '{{#1766381309970.url#}}'
         variables: []
-      height: 160
+      height: 161
       id: '1766372892978'
       position:
         x: 2839.0603973756747
@@ -3966,7 +3919,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766373796662'
       position:
         x: 2221.6939685433654
@@ -4008,7 +3961,7 @@ workflow:
           - text
           value_type: string
           variable: arg2
-      height: 51
+      height: 52
       id: '1766381309970'
       position:
         x: 2532.6304283804843
@@ -4063,7 +4016,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766395827513'
       position:
         x: 3153.7615286853766
@@ -4082,7 +4035,7 @@ workflow:
         title: 直接回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: '1766398670077'
       position:
         x: 3474.8536065433477
@@ -4101,7 +4054,7 @@ workflow:
         title: 异常回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: '1766472328840'
       position:
         x: 3611.1766260765658
@@ -4136,7 +4089,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766472358174'
       position:
         x: 3153.7615286853766
@@ -4155,7 +4108,7 @@ workflow:
         title: 直接回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: '1766477938283'
       position:
         x: 655.1310351108251
@@ -4218,7 +4171,7 @@ workflow:
         selected: false
         title: 意图分流
         type: if-else
-      height: 295
+      height: 296
       id: '1766543031078'
       position:
         x: 655.1310351108251
@@ -4284,7 +4237,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766552843017'
       position:
         x: 1271.7608655630152
@@ -4303,7 +4256,7 @@ workflow:
         title: 直接回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: '1766552944978'
       position:
         x: 1645.760865563015
@@ -4338,11 +4291,11 @@ workflow:
       height: 1811
       id: '1766561987023'
       position:
-        x: 606.5123694423692
-        y: 3047.5052284170897
+        x: 1921.5424243200714
+        y: 5895.271089050434
       positionAbsolute:
-        x: 606.5123694423692
-        y: 3047.5052284170897
+        x: 1921.5424243200714
+        y: 5895.271089050434
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4363,8 +4316,8 @@ workflow:
         x: 24
         y: 68
       positionAbsolute:
-        x: 630.5123694423692
-        y: 3115.5052284170897
+        x: 1945.5424243200714
+        y: 5963.271089050434
       selectable: false
       sourcePosition: right
       targetPosition: left
@@ -4418,15 +4371,15 @@ workflow:
           - item
           value_type: object
           variable: obj
-      height: 51
+      height: 52
       id: '1766562647925'
       parentId: '1766561987023'
       position:
         x: 132.63901582154563
         y: 323.9845346899406
       positionAbsolute:
-        x: 739.1513852639148
-        y: 3371.4897631070303
+        x: 2054.181440141617
+        y: 6219.255623740375
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4489,15 +4442,15 @@ workflow:
         selected: false
         title: 子意图条件
         type: if-else
-      height: 299
+      height: 300
       id: '1766573655896'
       parentId: '1766561987023'
       position:
         x: 451.54958297657913
         y: 395.74799155407845
       positionAbsolute:
-        x: 1058.0619524189483
-        y: 3443.253219971168
+        x: 2373.0920072966505
+        y: 6291.019080604512
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4564,15 +4517,15 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766574039316'
       parentId: '1766561987023'
       position:
         x: 894.3237983218414
         y: 1430.1641230581567
       positionAbsolute:
-        x: 1500.8361677642106
-        y: 4477.669351475246
+        x: 2815.866222641913
+        y: 7325.43521210859
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4611,15 +4564,15 @@ workflow:
           - text
           value_type: string
           variable: arg2
-      height: 51
+      height: 52
       id: '1766574153128'
       parentId: '1766561987023'
       position:
         x: 1279.5915526657118
         y: 1429.4078420146361
       positionAbsolute:
-        x: 1886.103922108081
-        y: 4476.913070431726
+        x: 3201.133976985783
+        y: 7324.67893106507
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4676,15 +4629,15 @@ workflow:
         type: http-request
         url: '{{#1766574153128.url#}}'
         variables: []
-      height: 160
+      height: 161
       id: '1766574275096'
       parentId: '1766561987023'
       position:
         x: 1629.1487775511662
         y: 1430.1418784376629
       positionAbsolute:
-        x: 2235.661146993535
-        y: 4477.647106854753
+        x: 3550.6912018712374
+        y: 7325.412967488097
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4723,15 +4676,15 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766575235291'
       parentId: '1766561987023'
       position:
         x: 898.0812322545819
         y: 94.59378186513459
       positionAbsolute:
-        x: 1504.593601696951
-        y: 3142.0990102822243
+        x: 2819.623656574653
+        y: 5989.864870915569
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4856,15 +4809,15 @@ workflow:
         selected: false
         title: 主库执行条件判断
         type: if-else
-      height: 555
+      height: 556
       id: '1766575823559'
       parentId: '1766561987023'
       position:
         x: 895.0934766941721
         y: 227.22813855354252
       positionAbsolute:
-        x: 1501.6058461365412
-        y: 3274.7333669706322
+        x: 2816.6359010142432
+        y: 6122.499227603977
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -4989,15 +4942,15 @@ workflow:
         selected: false
         title: 辅库执行条件判断（子）
         type: if-else
-      height: 555
+      height: 556
       id: '1766575890999'
       parentId: '1766561987023'
       position:
         x: 889.1365013854149
         y: 838.0812049567317
       positionAbsolute:
-        x: 1495.648870827784
-        y: 3885.5864333738214
+        x: 2810.678925705486
+        y: 6733.352294007165
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5020,17 +4973,18 @@ workflow:
           u4e00-\\u9fff]+|[A-Za-z][A-Za-z0-9_.-]*|\\d+\\.?\\d*', query_fragment)\n\
           \    filtered = [t for t in tokens if t not in STOP_WORDS and not (len(t)\
           \ == 1 and re.match(r'[\\u4e00-\\u9fff]', t))]\n    text = ' '.join(filtered)\
-          \ if filtered else query_fragment\n    prompt_text = f'\"{text}\"。请对这句话做标识提取和同义词拓展。'\n    return {'text': text, 'prompt_text': prompt_text}"
+          \ if filtered else query_fragment\n    prompt_text = f'\"{text}\"。请对这句话做标识提取和同义词拓展。'\n\
+          \    return {'text': text, 'prompt_text': prompt_text}"
         code_language: python3
         desc: 代码替代LLM：停用词过滤子意图query_fragment（主）
         isInIteration: true
         isInLoop: false
         iteration_id: '1766561987023'
         outputs:
-          text:
+          prompt_text:
             children: null
             type: string
-          prompt_text:
+          text:
             children: null
             type: string
         selected: false
@@ -5042,15 +4996,15 @@ workflow:
           - query_fragment
           value_type: string
           variable: query_fragment
-      height: 95
+      height: 96
       id: '1766576792406'
       parentId: '1766561987023'
       position:
         x: 1314.9269515705082
         y: 480.35280516077864
       positionAbsolute:
-        x: 1921.4393210128774
-        y: 3527.8580335778684
+        x: 3236.4693758905796
+        y: 6375.623894211212
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5073,17 +5027,18 @@ workflow:
           u4e00-\\u9fff]+|[A-Za-z][A-Za-z0-9_.-]*|\\d+\\.?\\d*', query_fragment)\n\
           \    filtered = [t for t in tokens if t not in STOP_WORDS and not (len(t)\
           \ == 1 and re.match(r'[\\u4e00-\\u9fff]', t))]\n    text = ' '.join(filtered)\
-          \ if filtered else query_fragment\n    prompt_text = f'\"{text}\"。请对这句话做标识提取和同义词拓展。'\n    return {'text': text, 'prompt_text': prompt_text}"
+          \ if filtered else query_fragment\n    prompt_text = f'\"{text}\"。请对这句话做标识提取和同义词拓展。'\n\
+          \    return {'text': text, 'prompt_text': prompt_text}"
         code_language: python3
         desc: 代码替代LLM：停用词过滤子意图query_fragment（辅）
         isInIteration: true
         isInLoop: false
         iteration_id: '1766561987023'
         outputs:
-          text:
+          prompt_text:
             children: null
             type: string
-          prompt_text:
+          text:
             children: null
             type: string
         selected: false
@@ -5095,15 +5050,15 @@ workflow:
           - query_fragment
           value_type: string
           variable: query_fragment
-      height: 95
+      height: 96
       id: '1766576863489'
       parentId: '1766561987023'
       position:
         x: 1326.9423892596105
         y: 1196.7480370347348
       positionAbsolute:
-        x: 1933.4547587019797
-        y: 4244.2532654518245
+        x: 3248.484813579682
+        y: 7092.019126085169
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5128,9 +5083,9 @@ workflow:
         model:
           completion_params:
             enable_thinking: false
-            temperature: 0.1
+            temperature: 0.5
           mode: chat
-          name: GLM-4.6V-Flash
+          name: chatgpt-oss-120b
           provider: yangyaofei/vllm/vllm
         prompt_template:
         - id: sub-query-opt-main-001
@@ -5161,15 +5116,15 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: sub_query_opt_llm_main
       parentId: '1766561987023'
       position:
         x: 1480
         y: 480
       positionAbsolute:
-        x: 2086.512369442369
-        y: 3527.5052284170897
+        x: 3401.5424243200714
+        y: 6375.271089050434
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5219,15 +5174,15 @@ workflow:
           - query_fragment
           value_type: string
           variable: original_query
-      height: 95
+      height: 96
       id: sub_query_opt_parse_main
       parentId: '1766561987023'
       position:
         x: 1650
         y: 480
       positionAbsolute:
-        x: 2256.512369442369
-        y: 3527.5052284170897
+        x: 3571.5424243200714
+        y: 6375.271089050434
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5252,9 +5207,9 @@ workflow:
         model:
           completion_params:
             enable_thinking: false
-            temperature: 0.1
+            temperature: 0.5
           mode: chat
-          name: GLM-4.6V-Flash
+          name: chatgpt-oss-120b
           provider: yangyaofei/vllm/vllm
         prompt_template:
         - id: sub-query-opt-aux-001
@@ -5285,15 +5240,15 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: sub_query_opt_llm_aux
       parentId: '1766561987023'
       position:
         x: 1321.5597974801062
         y: 1032.8834831011163
       positionAbsolute:
-        x: 1928.0721669224754
-        y: 4080.388711518206
+        x: 3243.1022218001776
+        y: 6928.15457215155
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5343,15 +5298,15 @@ workflow:
           - query_fragment
           value_type: string
           variable: original_query
-      height: 95
+      height: 96
       id: sub_query_opt_parse_aux
       parentId: '1766561987023'
       position:
         x: 1317.4496848208792
         y: 850.0678648089297
       positionAbsolute:
-        x: 1923.9620542632483
-        y: 3897.5730932260194
+        x: 3238.9921091409506
+        y: 6745.338953859364
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5476,15 +5431,15 @@ workflow:
         selected: false
         title: 条件分支 10
         type: if-else
-      height: 555
+      height: 556
       id: '1766577034519'
       parentId: '1766561987023'
       position:
         x: 1624.3289278091438
         y: 224.76068778231183
       positionAbsolute:
-        x: 2230.841297251513
-        y: 3272.2659161994015
+        x: 3545.871352129215
+        y: 6120.031776832746
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5609,15 +5564,15 @@ workflow:
         selected: false
         title: 条件分支 11
         type: if-else
-      height: 555
+      height: 556
       id: '1766577038031'
       parentId: '1766561987023'
       position:
         x: 1628.561039414491
         y: 833.3592796238981
       positionAbsolute:
-        x: 2235.07340885686
-        y: 3880.864508040988
+        x: 3550.1034637345624
+        y: 6728.630368674332
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5654,15 +5609,15 @@ workflow:
         selected: false
         title: 检索CBB
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766577855409'
       parentId: '1766561987023'
       position:
         x: 1997.714073999426
         y: 209.09077764298172
       positionAbsolute:
-        x: 2604.2264434417953
-        y: 3256.5960060600714
+        x: 3919.2564983194975
+        y: 6104.361866693416
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5699,15 +5654,15 @@ workflow:
         selected: false
         title: 检索认证标准
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766577869464'
       parentId: '1766561987023'
       position:
         x: 2002.9373773792026
         y: 348.84160918756425
       positionAbsolute:
-        x: 2609.449746821572
-        y: 3396.346837604654
+        x: 3924.479801699274
+        y: 6244.112698237998
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5744,15 +5699,15 @@ workflow:
         selected: false
         title: 检索专利
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766577872406'
       parentId: '1766561987023'
       position:
         x: 2002.9373773792022
         y: 464.9177492960316
       positionAbsolute:
-        x: 2609.4497468215714
-        y: 3512.4229777131213
+        x: 3924.4798016992736
+        y: 6360.188838346466
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5789,15 +5744,15 @@ workflow:
         selected: false
         title: 检索学术论文
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766577875327'
       parentId: '1766561987023'
       position:
         x: 2003.4936729626052
         y: 588.370160741496
       positionAbsolute:
-        x: 2610.0060424049743
-        y: 3635.8753891585857
+        x: 3925.0360972826766
+        y: 6483.64124979193
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5834,15 +5789,15 @@ workflow:
         selected: false
         title: 检索CBB
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766578524013'
       parentId: '1766561987023'
       position:
         x: 1999.811720462351
         y: 818.1016464833447
       positionAbsolute:
-        x: 2606.3240899047205
-        y: 3865.6068749004344
+        x: 3921.3541447824227
+        y: 6713.372735533779
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5879,15 +5834,15 @@ workflow:
         selected: false
         title: '检索认证标准 '
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766578619878'
       parentId: '1766561987023'
       position:
         x: 2000.9965260055412
         y: 932.3644710888325
       positionAbsolute:
-        x: 2607.5088954479106
-        y: 3979.869699505922
+        x: 3922.538950325613
+        y: 6827.635560139266
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5924,15 +5879,15 @@ workflow:
         selected: false
         title: 检索专利
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766578628823'
       parentId: '1766561987023'
       position:
         x: 1999.8117204623516
         y: 1061.2004373893978
       positionAbsolute:
-        x: 2606.3240899047205
-        y: 4108.705665806488
+        x: 3921.3541447824227
+        y: 6956.471526439832
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -5969,15 +5924,15 @@ workflow:
         selected: false
         title: 检索学术论文
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '1766578632881'
       parentId: '1766561987023'
       position:
         x: 1995.216927042363
         y: 1189.3943409317221
       positionAbsolute:
-        x: 2601.729296484732
-        y: 4236.899569348812
+        x: 3916.7593513624342
+        y: 7084.665429982157
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6008,8 +5963,8 @@ workflow:
         x: 2386.5384611080804
         y: 358.72577171954117
       positionAbsolute:
-        x: 2993.0508305504495
-        y: 3406.231000136631
+        x: 4308.080885428151
+        y: 6253.996860769976
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6040,8 +5995,8 @@ workflow:
         x: 2386.2812581704534
         y: 945.709846209586
       positionAbsolute:
-        x: 2992.7936276128225
-        y: 3993.2150746266757
+        x: 4307.823682490525
+        y: 6840.9809352600205
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6050,27 +6005,27 @@ workflow:
       zIndex: 1002
     - data:
         code: "import json\nimport re\n\n# Evidence selection configuration constants\n\
-          MAX_SELECTED_ITEMS = 6      # 最终保留片段总数（建议 5-8）\nMAX_ITEMS_PER_SOURCE = 2\
-          \    # 单一来源最多保留片段数，保证多样性（建议 1-3）\nMIN_SNIPPET_LEN = 500       # 截断后片段最小长度（建议\
-          \ 400-600）\nMAX_SNIPPET_LEN = 800       # 片段无需截断的最大长度阈值（建议 700-900）\nTARGET_SNIPPET_LEN\
-          \ = 700    # 超长片段截断目标长度（建议 500-800，且需介于MIN与MAX之间）\n\n# Evidence quality\
-          \ threshold constants\nMIN_EVIDENCE_COUNT = 3      # 判定“证据充分”至少需要的片段数（建议\
-          \ 2-5）\nMIN_AVG_SCORE = 3.0         # 判定“证据充分”的平均分下限（建议 2.0-4.0）\n\n# Scoring\
-          \ constants\nMAX_TERM_COUNT_WEIGHT = 5    # 单关键词计分次数上限（建议 3-8，越高越偏向重复命中）\n\
-          TERM_HIT_MULTIPLIER = 2.0    # 关键词命中计分系数（建议 1.0-3.0，越高越强调精确词）\nMAX_TEXT_LENGTH_FOR_SCORE\
-          \ = 800  # 长度计分的长度上限（建议 600-1000，防止超长片段过度加分）\nTEXT_LENGTH_DIVISOR = 400.0\
-          \  # 长度得分归一化除数（建议 300-600，越小长度加分越快）\n\nif not (MIN_SNIPPET_LEN <= TARGET_SNIPPET_LEN\
-          \ <= MAX_SNIPPET_LEN):\n    raise ValueError('Invalid snippet length config:\
-          \ require MIN_SNIPPET_LEN <= TARGET_SNIPPET_LEN <= MAX_SNIPPET_LEN')\n\n\
-          def _normalize_items(items, origin):\n    if items is None:\n        return\
-          \ []\n    out = []\n    for item in items:\n        if item is None:\n \
-          \           continue\n        if isinstance(item, str):\n            text\
-          \ = item\n            source = origin\n        elif isinstance(item, dict):\n\
-          \            text = ''\n            for k in ['content', 'text', 'chunk',\
-          \ 'snippet', 'summary', 'body', 'document', 'page_content']:\n         \
-          \       v = item.get(k)\n                if isinstance(v, str) and v.strip():\n\
-          \                    text = v\n                    break\n            if\
-          \ not text:\n                text = json.dumps(item, ensure_ascii=False)\n\
+          MAX_SELECTED_ITEMS = 12     # 最终保留片段总数（建议 10-15，放宽版）\nMAX_ITEMS_PER_SOURCE\
+          \ = 4    # 单一来源最多保留片段数，保证多样性（建议 3-5，放宽版，每源最多4段）\nMIN_SNIPPET_LEN = 250 \
+          \      # 截断后片段最小长度（建议 200-300，放宽版）\nMAX_SNIPPET_LEN = 900       # 片段无需截断的最大长度阈值（建议\
+          \ 700-1000，略微放宽）\nTARGET_SNIPPET_LEN = 800    # 超长片段截断目标长度（建议 500-800，且需介于MIN与MAX之间，略微缩短）\n\
+          \n# Evidence quality threshold constants\nMIN_EVIDENCE_COUNT = 1       #\
+          \ 判定“证据充分”至少需要的片段数（建议 1-2，放宽版）\nMIN_AVG_SCORE = 1.0          # 判定“证据充分”的平均分下限（建议\
+          \ 1.5-2.5，放宽版）\n\n# Scoring constants\nMAX_TERM_COUNT_WEIGHT = 5    # 单关键词计分次数上限（建议\
+          \ 3-8，越高越偏向重复命中）\nTERM_HIT_MULTIPLIER = 2.0    # 关键词命中计分系数（建议 1.0-3.0，越高越强调精确词）\n\
+          MAX_TEXT_LENGTH_FOR_SCORE = 800  # 长度计分的长度上限（建议 600-1000，防止超长片段过度加分）\nTEXT_LENGTH_DIVISOR\
+          \ = 400.0  # 长度得分归一化除数（建议 300-600，越小长度加分越快）\n\nif not (MIN_SNIPPET_LEN <=\
+          \ TARGET_SNIPPET_LEN <= MAX_SNIPPET_LEN):\n    raise ValueError('Invalid\
+          \ snippet length config: require MIN_SNIPPET_LEN <= TARGET_SNIPPET_LEN <=\
+          \ MAX_SNIPPET_LEN')\n\ndef _normalize_items(items, origin):\n    if items\
+          \ is None:\n        return []\n    out = []\n    for item in items:\n  \
+          \      if item is None:\n            continue\n        if isinstance(item,\
+          \ str):\n            text = item\n            source = origin\n        elif\
+          \ isinstance(item, dict):\n            text = ''\n            for k in ['content',\
+          \ 'text', 'chunk', 'snippet', 'summary', 'body', 'document', 'page_content']:\n\
+          \                v = item.get(k)\n                if isinstance(v, str)\
+          \ and v.strip():\n                    text = v\n                    break\n\
+          \            if not text:\n                text = json.dumps(item, ensure_ascii=False)\n\
           \            source = str(\n                item.get('kbName')\n       \
           \         or item.get('kb_name')\n                or item.get('knowledge_base')\n\
           \                or item.get('source')\n                or item.get('source_name')\n\
@@ -6195,15 +6150,15 @@ workflow:
           - resolved_query
           value_type: string
           variable: arg3
-      height: 51
+      height: 52
       id: '1766579029694'
       parentId: '1766561987023'
       position:
         x: 2679.097785706693
         y: 656.1526584446883
       positionAbsolute:
-        x: 3285.610155149062
-        y: 3703.657886861778
+        x: 4600.640210026764
+        y: 6551.423747495122
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6229,15 +6184,15 @@ workflow:
           - text
           value_type: string
           variable: arg1
-      height: 51
+      height: 52
       id: '1766581831340'
       parentId: '1766561987023'
       position:
         x: 1200.081232254582
         y: 94.59378186513459
       positionAbsolute:
-        x: 1806.593601696951
-        y: 3142.0990102822243
+        x: 3121.623656574653
+        y: 5989.864870915569
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6269,15 +6224,15 @@ workflow:
           - body
           value_type: string
           variable: arg1
-      height: 51
+      height: 52
       id: '1766582350681'
       parentId: '1766561987023'
       position:
         x: 1931.1487775511662
         y: 1430.1418784376629
       positionAbsolute:
-        x: 2537.661146993535
-        y: 4477.647106854753
+        x: 3852.6912018712374
+        y: 7325.412967488097
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6299,15 +6254,15 @@ workflow:
         title: 异常处理
         type: code
         variables: []
-      height: 51
+      height: 52
       id: '1766583739687'
       parentId: '1766561987023'
       position:
         x: 1931.1487775511662
         y: 1539.1418784376629
       positionAbsolute:
-        x: 2537.661146993535
-        y: 4586.647106854753
+        x: 3852.6912018712374
+        y: 7434.412967488097
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6345,7 +6300,7 @@ workflow:
           - sub_intents
           value_type: array[object]
           variable: arg2
-      height: 51
+      height: 52
       id: '1766583988064'
       position:
         x: 5353.965025153568
@@ -6382,8 +6337,8 @@ workflow:
         x: 3752.3293896869745
         y: 96.15441472696557
       positionAbsolute:
-        x: 4358.841759129344
-        y: 3143.6596431440553
+        x: 5673.871814007046
+        y: 5991.4255037774
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -6409,8 +6364,8 @@ workflow:
             enable_thinking: false
             temperature: 0.5
           mode: chat
-          name: qwen3-32b
-          provider: langgenius/tongyi/tongyi
+          name: chatgpt-oss-120b
+          provider: yangyaofei/vllm/vllm
         prompt_template:
         - id: fee94bdd-13ce-47a2-9e54-c201e6426365
           role: system
@@ -6419,7 +6374,7 @@ workflow:
             - **整个回答（包括闲聊、标题、正文、图注等）必须使用与用户输入完全相同的语言**；\n- 不得混合语言或默认使用中文。\n\n## 2.\
             \ 闲聊内容处理\n- 如果任意子意图分支属于闲聊（如问候、寒暄、表达情绪、非任务型对话），请将其**原样放在整个回答的最开头**；\n-\
             \ 闲聊部分**不加任何标题**，结束后空一行。\n\n## 3. 子意图证据强约束（新增）\n- 每个子意图内容中若出现 `evidence_level\
-            \ / evidence_score / hit_terms`，必须据此判断可信度。\n- **证据不足规则**：若子意图标记为“证据不足，仅供参考”，或内容明显与子问题不相关，必须直接输出“未找到相关资料”或“证据不足，无法给出可靠结论”，禁止补全推断。\n\
+            \ / evidence_score / hit_terms`，必须据此判断可信度。\n- **证据不足规则**：若子意图标记为“证据不足，仅供参考”，必须直接输出“未找到相关资料”或“证据不足，无法给出可靠结论”，禁止补全推断。\n\
             - **证据充分规则**：仅对证据充分的子意图给出结论性回答。\n- 在最终回答中对每个子意图增加简短可信度标注（如：高/中/低）。\n\n\
             ## 4. 图片重编号（重要！）\n- 忽略子分支中所有原始图号（如“图1-2”、“Fig.3-2”、“示意图A”等）；\n- **按图片在最终回答中首次出现的顺序，从\
             \ 1 开始连续编号**：\n  - 中文输出：图1、图2、图3……\n  - 英文输出：Figure 1, Figure 2, Figure\
@@ -6445,7 +6400,7 @@ workflow:
         type: llm
         vision:
           enabled: false
-      height: 87
+      height: 88
       id: '1766643827180'
       position:
         x: 5703.48795053393
@@ -6464,7 +6419,7 @@ workflow:
         title: 直接回复
         type: answer
         variables: []
-      height: 102
+      height: 103
       id: '1766643838228'
       position:
         x: 6063.575896039393
@@ -6519,7 +6474,7 @@ workflow:
           - kb_mapping
           value_type: string
           variable: kb_mapping
-      height: 51
+      height: 52
       id: '1768549808142'
       position:
         x: -892.150228572997
@@ -6565,7 +6520,7 @@ workflow:
           - supporting_kbs
           value_type: string
           variable: arg1
-      height: 51
+      height: 52
       id: '1772708654860'
       position:
         x: 2005.5301596696636
@@ -6694,7 +6649,7 @@ workflow:
         selected: false
         title: 辅库执行条件判断 (1)
         type: if-else
-      height: 583
+      height: 584
       id: '17727142590310'
       position:
         x: 2817.117774832373
@@ -6734,7 +6689,7 @@ workflow:
         selected: false
         title: 检索CBB （辅库） (1)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17727146279350'
       position:
         x: 3236.8533934897478
@@ -6774,7 +6729,7 @@ workflow:
         selected: false
         title: 检索认证标准 (辅库) (1)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17727146380080'
       position:
         x: 3243.503296881612
@@ -6814,7 +6769,7 @@ workflow:
         selected: false
         title: 检索专利 (辅库) (1)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17727146461830'
       position:
         x: 3236.8533934897478
@@ -6854,7 +6809,7 @@ workflow:
         selected: false
         title: 检索学术论文 (辅库) (1)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17727146729190'
       position:
         x: 3236.8533934897478
@@ -6910,7 +6865,7 @@ workflow:
           - result
         - - '17744371388840'
           - result
-      height: 213
+      height: 212
       id: '17727148206320'
       position:
         x: 3766.073766333944
@@ -6954,7 +6909,7 @@ workflow:
         selected: false
         title: 检索流程规范
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17744369112980'
       position:
         x: 3270.716817893455
@@ -6998,7 +6953,7 @@ workflow:
         selected: false
         title: 检索流程规范（辅库）
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17744371101860'
       position:
         x: 3236.8533934897478
@@ -7042,7 +6997,7 @@ workflow:
         selected: false
         title: 检索流程规范（辅库） (1)
         type: knowledge-retrieval
-      height: 89
+      height: 90
       id: '17744371388840'
       position:
         x: 3236.8533934897478
@@ -7061,7 +7016,7 @@ workflow:
         title: 直接回复 9
         type: answer
         variables: []
-      height: 99
+      height: 100
       id: '1774441797704'
       position:
         x: -579.5709771492527
@@ -7075,7 +7030,7 @@ workflow:
       type: custom
       width: 242
     viewport:
-      x: -794.6710110381542
-      y: -97.151570724654
-      zoom: 0.7578582832551989
+      x: -704.7610469329886
+      y: 6.465482886024006
+      zoom: 0.6597539472091684
   rag_pipeline_variables: []
