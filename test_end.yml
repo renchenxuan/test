@@ -2685,6 +2685,7 @@ workflow:
                   return t.strip()
 
               def is_placeholder_query(text: str) -> bool:
+                  # 识别LLM偶发返回的模板占位文本，避免被当作真实检索query使用
                   t = str(text or '').strip()
                   if not t:
                       return False
@@ -2712,6 +2713,7 @@ workflow:
                   return None
 
               def extract_field(text: str, key: str) -> str:
+                  # 从双重转义/半结构化文本中兜底提取字段值
                   key_pattern = rf'(?:\\)?"{re.escape(key)}(?:\\)?"'
                   value_pattern = r'(?:\\)?"((?:\\.|[^"\\])*)(?:\\)?"'
                   tail_pattern = r'(?=\s*(?:,|(?:\\)?\}|$))'
