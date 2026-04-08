@@ -2673,8 +2673,9 @@ workflow:
               original_query = str(original_query or '').strip()
               retrieval_mode = str(retrieval_mode or '').strip()
           
-              parse_status = 'empty_input'
+              parse_status = ''
               fallback_reason = ''
+              optimized_query = ''
           
               def clean_text(text: str) -> str:
                   t = str(text or '').strip()
