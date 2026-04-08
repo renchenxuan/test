@@ -2633,7 +2633,7 @@ workflow:
             2. 同义词扩展：仅为核心技术词补充1-2个高置信同义词或英文对照；若无高置信同义词则仅给英文对照，禁止输出回答内容或发散联想。
 
 
-            任务边界（必须遵守）：你是“检索query优化器”，不是问答助手；禁止回答用户问题、禁止解释方案、禁止输出推理过程，只能做关键词提取与同义词/英文对照补全。
+            任务边界（必须遵守）：你是“检索query优化器”，不是问答助手；禁止回答用户问题、禁止解释方案、禁止输出推理过程，只能做关键词提取与同义词/英文对照补全。严禁输出任何<think>...</think>标签内容，严禁输出<__filter_complete__>或</__filter_complete__>标签。
 
             待处理句子：{{#stopword_filter.llm_task_query#}}
 
@@ -2679,6 +2679,9 @@ workflow:
           
               def clean_text(text: str) -> str:
                   t = str(text or '').strip()
+                  t = re.sub(r'<think[^>]*>[\s\S]*?</think>', '', t, flags=re.IGNORECASE)
+                  t = re.sub(r'</?think[^>]*>', '', t, flags=re.IGNORECASE)
+                  t = re.sub(r'</?__filter_complete__>', '', t, flags=re.IGNORECASE)
                   if t.startswith('```'):
                       t = re.sub(r'^```(?:json)?\s*', '', t)
                       t = re.sub(r'\s*```$', '', t)
@@ -5246,7 +5249,7 @@ workflow:
             2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度的同义词，禁止发散联想。
 
 
-            任务边界（必须遵守）：你是“检索query优化器”，不是问答助手；禁止回答用户问题、禁止解释方案、禁止输出推理过程，只能做关键词提取与同义词/英文对照补全。
+            任务边界（必须遵守）：你是“检索query优化器”，不是问答助手；禁止回答用户问题、禁止解释方案、禁止输出推理过程，只能做关键词提取与同义词/英文对照补全。严禁输出任何<think>...</think>标签内容，严禁输出<__filter_complete__>或</__filter_complete__>标签。
 
             待处理句子：{{#1766576792406.prompt_text#}}
 
@@ -5289,6 +5292,9 @@ workflow:
           
               def clean_text(text: str) -> str:
                   t = str(text or '').strip()
+                  t = re.sub(r'<think[^>]*>[\s\S]*?</think>', '', t, flags=re.IGNORECASE)
+                  t = re.sub(r'</?think[^>]*>', '', t, flags=re.IGNORECASE)
+                  t = re.sub(r'</?__filter_complete__>', '', t, flags=re.IGNORECASE)
                   if t.startswith('```'):
                       t = re.sub(r'^```(?:json)?\s*', '', t)
                       t = re.sub(r'\s*```$', '', t)
@@ -5422,7 +5428,7 @@ workflow:
             2. 同义词扩展：为核心技术词补充1-2个禾望电气领域的专业同义词或英文对照。只补充高置信度的同义词，禁止发散联想。
 
 
-            任务边界（必须遵守）：你是“检索query优化器”，不是问答助手；禁止回答用户问题、禁止解释方案、禁止输出推理过程，只能做关键词提取与同义词/英文对照补全。
+            任务边界（必须遵守）：你是“检索query优化器”，不是问答助手；禁止回答用户问题、禁止解释方案、禁止输出推理过程，只能做关键词提取与同义词/英文对照补全。严禁输出任何<think>...</think>标签内容，严禁输出<__filter_complete__>或</__filter_complete__>标签。
 
             待处理句子：{{#1766576863489.prompt_text#}}
 
@@ -5465,6 +5471,9 @@ workflow:
           
               def clean_text(text: str) -> str:
                   t = str(text or '').strip()
+                  t = re.sub(r'<think[^>]*>[\s\S]*?</think>', '', t, flags=re.IGNORECASE)
+                  t = re.sub(r'</?think[^>]*>', '', t, flags=re.IGNORECASE)
+                  t = re.sub(r'</?__filter_complete__>', '', t, flags=re.IGNORECASE)
                   if t.startswith('```'):
                       t = re.sub(r'^```(?:json)?\s*', '', t)
                       t = re.sub(r'\s*```$', '', t)
