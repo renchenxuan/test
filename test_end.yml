@@ -2747,7 +2747,7 @@ workflow:
               enhanced_query = str(data.get('enhanced_query', '') or '').strip()
           
               if retrieval_mode == 'es_recall_only':
-                  parts = [original_query or cleaned_query]
+                  parts = [cleaned_query or original_query]
                   if exact_terms:
                       parts.append(exact_terms)
                   if synonyms:
@@ -2759,7 +2759,7 @@ workflow:
                   if enhanced_query:
                       optimized_query = enhanced_query
                   else:
-                      parts = [original_query or cleaned_query]
+                      parts = [cleaned_query or original_query]
                       if exact_terms:
                           parts.append(exact_terms)
                       if synonyms:
@@ -2769,7 +2769,7 @@ workflow:
                           fallback_reason = 'vector_no_enhanced_or_terms'
           
               if not optimized_query:
-                  optimized_query = original_query or cleaned_query
+                  optimized_query = cleaned_query or original_query
                   fallback_reason = fallback_reason or 'final_fallback'
           
               if not optimized_query:
