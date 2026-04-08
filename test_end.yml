@@ -2667,8 +2667,7 @@ workflow:
           import json
           import re
           
-          def main(llm_output: str, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:
-              raw = str(llm_output or '').strip()
+          def main(llm_output, cleaned_query: str, original_query: str, retrieval_mode: str) -> dict:
               cleaned_query = str(cleaned_query or '').strip()
               original_query = str(original_query or '').strip()
               retrieval_mode = str(retrieval_mode or '').strip()
@@ -2698,8 +2697,16 @@ workflow:
                           return None
                   return None
           
-              def parse_json_like(text: str):
-                  t = clean_text(text)
+              def parse_json_like(value):
+                  if isinstance(value, dict):
+                      return value, 'dict_input'
+                  if isinstance(value, str):
+                      t = clean_text(value)
+                  elif value is None:
+                      t = ''
+                  else:
+                      t = clean_text(str(value))
+              
                   if not t:
                       return None, 'empty'
           
@@ -2721,7 +2728,7 @@ workflow:
           
                   return None, 'parse_failed'
           
-              data, parse_status = parse_json_like(raw)
+              data, parse_status = parse_json_like(llm_output)
               if data is None:
                   data = {}
               elif 'text' in data and not any(k in data for k in ('exact_terms', 'synonyms', 'enhanced_query')):
@@ -2759,6 +2766,9 @@ workflow:
               if not optimized_query:
                   optimized_query = original_query or cleaned_query
                   fallback_reason = fallback_reason or 'final_fallback'
+          
+              if parse_status == 'parse_failed' and not fallback_reason:
+                  fallback_reason = 'parse_failure_fallback'
           
               if not optimized_query:
                   parse_status = 'empty_result'
@@ -5216,20 +5226,62 @@ workflow:
       width: 242
       zIndex: 1002
     - data:
-        code: "import json\n\ndef main(llm_output: str, cleaned_query: str, original_query:\
-          \ str) -> dict:\n    try:\n        text = llm_output.strip()\n        if\
-          \ text.startswith('```'):\n            lines = text.split('\\n')\n     \
-          \       text = '\\n'.join(lines[1:-1])\n        result = json.loads(text)\n\
-          \        exact_terms = result.get('exact_terms', '')\n        synonyms =\
-          \ result.get('synonyms', '')\n        enhanced_query = result.get('enhanced_query',\
-          \ '')\n    except Exception:\n        exact_terms = ''\n        synonyms\
-          \ = ''\n        enhanced_query = ''\n\n    if enhanced_query and str(enhanced_query).strip():\n\
-          \        optimized_query = str(enhanced_query).strip()\n    else:\n    \
-          \    parts = [original_query]\n        if exact_terms:\n            parts.append(str(exact_terms).strip())\n\
-          \        if synonyms:\n            parts.append(str(synonyms).strip())\n\
-          \        optimized_query = ' '.join([p for p in parts if p and str(p).strip()]).strip()\n\
-          \n    if not optimized_query:\n        optimized_query = cleaned_query or\
-          \ original_query\n\n    return {'text': optimized_query}"
+        code: |
+          import json
+          import re
+          
+          def main(llm_output, cleaned_query: str, original_query: str) -> dict:
+              cleaned_query = str(cleaned_query or '').strip()
+              original_query = str(original_query or '').strip()
+          
+              def clean_text(text: str) -> str:
+                  t = str(text or '').strip()
+                  if t.startswith('```'):
+                      t = re.sub(r'^```(?:json)?\s*', '', t)
+                      t = re.sub(r'\s*```$', '', t)
+                  return t.strip()
+          
+              def parse_result(value):
+                  if isinstance(value, dict):
+                      return value
+                  t = clean_text(value if isinstance(value, str) else str(value or ''))
+                  if not t:
+                      return {}
+                  try:
+                      obj = json.loads(t)
+                      if isinstance(obj, dict):
+                          return obj
+                  except Exception:
+                      pass
+                  m = re.search(r'\{[\s\S]*\}', t)
+                  if m:
+                      try:
+                          obj = json.loads(m.group(0))
+                          if isinstance(obj, dict):
+                              return obj
+                      except Exception:
+                          pass
+                  return {}
+          
+              result = parse_result(llm_output)
+              exact_terms = str(result.get('exact_terms', '') or '').strip()
+              synonyms = str(result.get('synonyms', '') or '').strip()
+              enhanced_query = str(result.get('enhanced_query', '') or '').strip()
+          
+              if enhanced_query:
+                  optimized_query = enhanced_query
+              else:
+                  parts = [original_query or cleaned_query]
+                  if exact_terms:
+                      parts.append(exact_terms)
+                  if synonyms:
+                      parts.append(synonyms)
+                  optimized_query = ' '.join([p for p in parts if p]).strip()
+          
+              if not optimized_query:
+                  optimized_query = cleaned_query or original_query
+          
+              return {'text': optimized_query}
         code_language: python3
         desc: 解析子意图Query优化LLM输出，失败回退至清洗词/原始子意图
         isInIteration: true
@@ -5340,20 +5392,62 @@ workflow:
       width: 242
       zIndex: 1002
     - data:
-        code: "import json\n\ndef main(llm_output: str, cleaned_query: str, original_query:\
-          \ str) -> dict:\n    try:\n        text = llm_output.strip()\n        if\
-          \ text.startswith('```'):\n            lines = text.split('\\n')\n     \
-          \       text = '\\n'.join(lines[1:-1])\n        result = json.loads(text)\n\
-          \        exact_terms = result.get('exact_terms', '')\n        synonyms =\
-          \ result.get('synonyms', '')\n        enhanced_query = result.get('enhanced_query',\
-          \ '')\n    except Exception:\n        exact_terms = ''\n        synonyms\
-          \ = ''\n        enhanced_query = ''\n\n    if enhanced_query and str(enhanced_query).strip():\n\
-          \        optimized_query = str(enhanced_query).strip()\n    else:\n    \
-          \    parts = [original_query]\n        if exact_terms:\n            parts.append(str(exact_terms).strip())\n\
-          \        if synonyms:\n            parts.append(str(synonyms).strip())\n\
-          \        optimized_query = ' '.join([p for p in parts if p and str(p).strip()]).strip()\n\
-          \n    if not optimized_query:\n        optimized_query = cleaned_query or\
-          \ original_query\n\n    return {'text': optimized_query}"
+        code: |
+          import json
+          import re
+          
+          def main(llm_output, cleaned_query: str, original_query: str) -> dict:
+              cleaned_query = str(cleaned_query or '').strip()
+              original_query = str(original_query or '').strip()
+          
+              def clean_text(text: str) -> str:
+                  t = str(text or '').strip()
+                  if t.startswith('```'):
+                      t = re.sub(r'^```(?:json)?\s*', '', t)
+                      t = re.sub(r'\s*```$', '', t)
+                  return t.strip()
+          
+              def parse_result(value):
+                  if isinstance(value, dict):
+                      return value
+                  t = clean_text(value if isinstance(value, str) else str(value or ''))
+                  if not t:
+                      return {}
+                  try:
+                      obj = json.loads(t)
+                      if isinstance(obj, dict):
+                          return obj
+                  except Exception:
+                      pass
+                  m = re.search(r'\{[\s\S]*\}', t)
+                  if m:
+                      try:
+                          obj = json.loads(m.group(0))
+                          if isinstance(obj, dict):
+                              return obj
+                      except Exception:
+                          pass
+                  return {}
+          
+              result = parse_result(llm_output)
+              exact_terms = str(result.get('exact_terms', '') or '').strip()
+              synonyms = str(result.get('synonyms', '') or '').strip()
+              enhanced_query = str(result.get('enhanced_query', '') or '').strip()
+          
+              if enhanced_query:
+                  optimized_query = enhanced_query
+              else:
+                  parts = [original_query or cleaned_query]
+                  if exact_terms:
+                      parts.append(exact_terms)
+                  if synonyms:
+                      parts.append(synonyms)
+                  optimized_query = ' '.join([p for p in parts if p]).strip()
+          
+              if not optimized_query:
+                  optimized_query = cleaned_query or original_query
+          
+              return {'text': optimized_query}
         code_language: python3
         desc: 解析子意图Query优化LLM输出，失败回退至清洗词/原始子意图
         isInIteration: true
