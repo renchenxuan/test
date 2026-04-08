@@ -2699,15 +2699,19 @@ workflow:
                   return None
 
               def extract_field(text: str, key: str) -> str:
-                  pattern = rf'(?:\\)?"{re.escape(key)}(?:\\)?"\s*:\s*(?:\\)?"((?:\\.|[^"\\])*)(?:\\)?"(?=\s*(?:,|(?:\\)?\}}|$))'
+                  key_pattern = rf'(?:\\)?"{re.escape(key)}(?:\\)?"'
+                  value_pattern = r'(?:\\)?"((?:\\.|[^"\\])*)(?:\\)?"'
+                  tail_pattern = r'(?=\s*(?:,|(?:\\)?\}|$))'
+                  pattern = rf'{key_pattern}\s*:\s*{value_pattern}{tail_pattern}'
                   m = re.search(pattern, text)
                   if not m:
                       return ''
                   raw = str(m.group(1) or '').strip()
                   if not raw:
                       return ''
-                  if raw.endswith(r'\"}'):
-                      raw = raw[:-2].rstrip()
+                  malformed_suffix = r'\"}'
+                  if raw.endswith(malformed_suffix):
+                      raw = raw[:-len(malformed_suffix)].rstrip()
                   try:
                       return json.loads(f'"{raw}"').strip()
                   except Exception:
