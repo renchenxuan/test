@@ -2763,9 +2763,6 @@ workflow:
                   optimized_query = original_query or cleaned_query
                   fallback_reason = fallback_reason or 'final_fallback'
           
-              if parse_status == 'parse_failed' and not fallback_reason:
-                  fallback_reason = 'parse_failure_fallback'
-          
               if not optimized_query:
                   parse_status = 'empty_result'
           
