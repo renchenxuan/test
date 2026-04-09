@@ -10,7 +10,7 @@
 ```yaml
 app:
   mode: advanced-chat
-  name: <workflow_name>  # 替换为你的实际工作流名称，例如 "after_sales_flow"
+  name: demo_workflow  # 替换为你的实际工作流名称，例如 "after_sales_flow"
 kind: app
 version: 0.5.0  # 以目标Dify实例可兼容的导出版本为准，不是固定值
 workflow:
