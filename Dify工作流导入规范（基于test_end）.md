@@ -12,7 +12,7 @@ app:
   mode: advanced-chat
   name: <workflow_name>  # 替换为你的实际工作流名称，例如 "after_sales_flow"
 kind: app
-version: 0.5.0  # 以导出源文件为准；不同工作流可能是其他版本号
+version: 0.5.0  # 以目标Dify实例可兼容的导出版本为准，不是固定值
 workflow:
   conversation_variables: []
   environment_variables: []
@@ -24,7 +24,7 @@ workflow:
 
 ### 必要字段说明
 - `kind: app`
-- `version`（建议与导出源文件保持一致，不要手改成与源文件不一致的值）
+- `version`（按目标 Dify 实例兼容的导出版本填写；不同应用可能不同，如 0.5.0 / 0.1.5）
 - `app.mode`（示例里是 `advanced-chat`）
 - `workflow.graph.nodes`、`workflow.graph.edges` 必须同时存在
 
