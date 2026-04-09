@@ -1,7 +1,7 @@
 # Dify工作流导入规范（基于 `test_end.yml`）
 
 > 目标：把你后续编排的“无关业务工作流”也做成**可直接导入 Dify** 的 YAML。  
-> 依据文件：`/home/runner/work/test/test/test_end.yml`
+> 依据文件：`test_end.yml`
 
 ---
 
@@ -65,44 +65,44 @@ workflow:
 
 ## 4. 常用节点类型与必要参数
 
-## 4.1 start 节点
+### 4.1 start 节点
 - `data.type: start`
 - `data.variables`：入参定义数组（`variable`、`type`、`required`、`default`）
 
 适合统一接接口参数（如 token、部门、用户、知识库映射等）。
 
-## 4.2 llm 节点
+### 4.2 llm 节点
 - `data.type: llm`
 - `data.model.provider` / `data.model.name` / `data.model.mode`
 - `data.model.completion_params`（如 `temperature`、`enable_thinking`）
 - `data.prompt_template`（`role` + `text`）
 - `data.context`、`data.memory`（按需）
 
-## 4.3 code 节点
+### 4.3 code 节点
 - `data.type: code`
 - `data.code`
 - `data.code_language`（示例为 `python3`）
 - `data.variables`（输入映射：`value_selector` + `variable`）
 - `data.outputs`（输出 schema）
 
-## 4.4 if-else 节点
+### 4.4 if-else 节点
 - `data.type: if-else`
 - `data.cases[].conditions[]`
 - 每个条件要有 `variable_selector`、`comparison_operator`、`value`
 
-## 4.5 knowledge-retrieval 节点
+### 4.5 knowledge-retrieval 节点
 - `data.type: knowledge-retrieval`
 - `data.dataset_ids`（必填）
 - `data.query_variable_selector`（必填，指定检索 query 来源）
 - `data.retrieval_mode`（示例为 `multiple`）
 - `data.multiple_retrieval_config`（见下一节）
 
-## 4.6 variable-aggregator 节点
+### 4.6 variable-aggregator 节点
 - `data.type: variable-aggregator`
 - `data.variables`（聚合来源变量列表）
 - `data.output_type`
 
-## 4.7 iteration 节点（循环）
+### 4.7 iteration 节点（循环）
 - `data.type: iteration`
 - `data.start_node_id`（指向 `iteration-start` 节点 id）
 - `data.iterator_selector`（迭代输入数组来源）
