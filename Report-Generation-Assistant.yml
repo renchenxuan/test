@@ -1,5 +1,5 @@
 app:
-  description: 设备故障报告生成工作流（MVP）
+  description: 设备故障报告生成工作流（MVP，当前未接入知识库）
   icon: 🧩
   icon_background: '#E4FBCC'
   mode: workflow
@@ -54,7 +54,7 @@ workflow:
             - { label: device_model, variable: device_model, type: text-input, required: true }
             - { label: device_sn, variable: device_sn, type: text-input, required: false }
             - { label: fault_time, variable: fault_time, type: text-input, required: true }
-            - { label: fault_count, variable: fault_count, type: integer, required: false, default: 1 }
+            - { label: fault_count, variable: fault_count, type: text-input, required: false, default: '1' }
             - { label: fault_description, variable: fault_description, type: paragraph, required: true }
             - { label: fault_cause, variable: fault_cause, type: paragraph, required: false }
             - { label: event_record_text, variable: event_record_text, type: paragraph, required: false }
@@ -193,24 +193,34 @@ workflow:
       - id: retrieve_history_cases
         position: { x: 620, y: 170 }
         data:
-          title: retrieve_history_cases
-          type: knowledge-retrieval
-          dataset_ids: ['{{#env.history_dataset_id#}}']
-          query_variable_selector: [preprocess_input, retrieval_keywords]
-          retrieval_mode: multiple
-          top_k: 5
-          score_threshold_enabled: false
+          title: retrieve_history_cases_placeholder
+          type: code
+          code_language: python3
+          variables:
+            - { variable: retrieval_keywords, value_selector: [preprocess_input, retrieval_keywords] }
+          outputs:
+            result: { type: string }
+          code: |
+            def main(retrieval_keywords):
+                return {
+                    "result": f"【未接入知识库】历史案例检索未启用。检索词: {retrieval_keywords}"
+                }
 
       - id: retrieve_product_knowledge
         position: { x: 620, y: 390 }
         data:
-          title: retrieve_product_knowledge
-          type: knowledge-retrieval
-          dataset_ids: ['{{#env.product_dataset_id#}}']
-          query_variable_selector: [preprocess_input, retrieval_keywords]
-          retrieval_mode: multiple
-          top_k: 5
-          score_threshold_enabled: false
+          title: retrieve_product_knowledge_placeholder
+          type: code
+          code_language: python3
+          variables:
+            - { variable: retrieval_keywords, value_selector: [preprocess_input, retrieval_keywords] }
+          outputs:
+            result: { type: string }
+          code: |
+            def main(retrieval_keywords):
+                return {
+                    "result": f"【未接入知识库】产品知识检索未启用。检索词: {retrieval_keywords}"
+                }
 
       - id: generate_customer_letter_problem_desc
         position: { x: 910, y: 120 }
