@@ -1,0 +1,2449 @@
+app:
+  description: 设备故障报告生成工作流
+  icon: 🤖
+  icon_background: '#E4FBCC'
+  icon_type: emoji
+  mode: workflow
+  name: Report-Generation-Assistant-Accuracy-v2
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.1.36@73e3e28eca163b96da65ef9eab8633f9e7257213ff0d2f2bed93b28b552d2cda
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: code
+      id: 1000000000001-source-1000000000002-target
+      source: '1000000000001'
+      sourceHandle: source
+      target: '1000000000002'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 1000000000002-source-1000000000014-target
+      source: '1000000000002'
+      sourceHandle: source
+      target: '1000000000014'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 1000000000014-source-1000000000015-target
+      source: '1000000000014'
+      sourceHandle: source
+      target: '1000000000015'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 1000000000005-source-1000000000006-target
+      source: '1000000000005'
+      sourceHandle: source
+      target: '1000000000006'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1000000000006-source-1000000000012-target
+      source: '1000000000006'
+      sourceHandle: source
+      target: '1000000000012'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1000000000012-source-1000000000007-target
+      source: '1000000000012'
+      sourceHandle: source
+      target: '1000000000007'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 1000000000007-source-1000000000008-target
+      source: '1000000000007'
+      sourceHandle: source
+      target: '1000000000008'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1000000000008-source-1000000000013-target
+      source: '1000000000008'
+      sourceHandle: source
+      target: '1000000000013'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1000000000013-source-1000000000009-target
+      source: '1000000000013'
+      sourceHandle: source
+      target: '1000000000009'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1000000000009-source-1000000000010-target
+      source: '1000000000009'
+      sourceHandle: source
+      target: '1000000000010'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 1000000000010-source-1000000000011-target
+      source: '1000000000010'
+      sourceHandle: source
+      target: '1000000000011'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: knowledge-retrieval
+      id: 1000000000015-source-1775814799351-target
+      source: '1000000000015'
+      sourceHandle: source
+      target: '1775814799351'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: knowledge-retrieval
+      id: 1000000000015-source-1775814799353-target
+      source: '1000000000015'
+      sourceHandle: source
+      target: '1775814799353'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: knowledge-retrieval
+      id: 1775814799351-source-1775814899352-target
+      source: '1775814799351'
+      sourceHandle: source
+      target: '1775814899352'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: knowledge-retrieval
+      id: 1775814799353-source-1775814899353-target
+      source: '1775814799353'
+      sourceHandle: source
+      target: '1775814899353'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 1775814899352-source-1000000000016-target
+      source: '1775814899352'
+      sourceHandle: source
+      target: '1000000000016'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 1775814899353-source-1000000000016-target
+      source: '1775814899353'
+      sourceHandle: source
+      target: '1000000000016'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1000000000016-source-1000000000003-target
+      source: '1000000000016'
+      sourceHandle: source
+      target: '1000000000003'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: knowledge-retrieval
+      id: 1000000000003-source-1775814743681-target
+      source: '1000000000003'
+      sourceHandle: source
+      target: '1775814743681'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: knowledge-retrieval
+      id: 1775814743681-source-1775814843682-target
+      source: '1775814743681'
+      sourceHandle: source
+      target: '1775814843682'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: code
+      id: 1775814843682-source-1000000000017-target
+      source: '1775814843682'
+      sourceHandle: source
+      target: '1000000000017'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1000000000017-source-1000000000004-target
+      source: '1000000000017'
+      sourceHandle: source
+      target: '1000000000004'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1000000000004-source-1000000000005-target
+      source: '1000000000004'
+      sourceHandle: source
+      target: '1000000000005'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: start_input
+        type: start
+        variables:
+        - label: report_id
+          max_length: 64
+          options: []
+          required: false
+          type: text-input
+          variable: report_id
+        - label: customer_name
+          max_length: 128
+          options: []
+          required: false
+          type: text-input
+          variable: customer_name
+        - label: site_name
+          max_length: 128
+          options: []
+          required: false
+          type: text-input
+          variable: site_name
+        - label: device_model
+          max_length: 128
+          options: []
+          required: true
+          type: text-input
+          variable: device_model
+        - label: device_sn
+          max_length: 128
+          options: []
+          required: false
+          type: text-input
+          variable: device_sn
+        - label: fault_time
+          max_length: 64
+          options: []
+          required: true
+          type: text-input
+          variable: fault_time
+        - label: fault_count
+          max_length: 8
+          options: []
+          required: false
+          type: text-input
+          variable: fault_count
+        - label: fault_description
+          max_length: 4096
+          options: []
+          required: true
+          type: paragraph
+          variable: fault_description
+        - label: fault_cause
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: fault_cause
+        - label: event_record_text
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: event_record_text
+        - label: waveform_analysis_text
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: waveform_analysis_text
+        - label: overall_appearance_text
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: overall_appearance_text
+        - label: upper_board_text
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: upper_board_text
+        - label: lower_board_text
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: lower_board_text
+        - label: power_device_measure_text
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: power_device_measure_text
+        - label: site_research_text
+          max_length: 4096
+          options: []
+          required: false
+          type: paragraph
+          variable: site_research_text
+      height: 497
+      id: '1000000000001'
+      position:
+        x: -299.00678443109234
+        y: -144.48440288115472
+      positionAbsolute:
+        x: -299.00678443109234
+        y: -144.48440288115472
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import re\n\ndef _norm(v, default='无'):\n    if v is None:\n      \
+          \  return default\n    s = str(v).strip()\n    return s if s else default\n\
+          \ndef _to_int(v, default=1):\n    try:\n        n = int(str(v).strip())\n\
+          \        return n if n > 0 else default\n    except (ValueError, TypeError):\n\
+          \        return default\n\ndef _keywords(*parts):\n    tokens = []\n   \
+          \ for p in parts:\n        s = _norm(p, '')\n        if not s:\n       \
+          \     continue\n        for t in re.split(r'[\\s,，;；。.!！？/\\\\|-]+', s):\n\
+          \            t = t.strip()\n            if len(t) >= 2:\n              \
+          \  tokens.append(t)\n    dedup = []\n    seen = set()\n    for t in tokens:\n\
+          \        if t not in seen:\n            seen.add(t)\n            dedup.append(t)\n\
+          \    return dedup[:12]\n\ndef main(\n    report_id: str = '',\n    customer_name:\
+          \ str = '',\n    site_name: str = '',\n    device_model: str = '',\n   \
+          \ device_sn: str = '',\n    fault_time: str = '',\n    fault_count: str\
+          \ = '1',\n    fault_description: str = '',\n    fault_cause: str = '',\n\
+          \    event_record_text: str = '',\n    waveform_analysis_text: str = '',\n\
+          \    overall_appearance_text: str = '',\n    upper_board_text: str = '',\n\
+          \    lower_board_text: str = '',\n    power_device_measure_text: str = '',\n\
+          \    site_research_text: str = ''\n) -> dict:\n    missing = []\n    if\
+          \ not str(device_model).strip():\n        missing.append('device_model')\n\
+          \    if not str(fault_time).strip():\n        missing.append('fault_time')\n\
+          \    if not str(fault_description).strip():\n        missing.append('fault_description')\n\
+          \n    normalized_fault_summary = '；'.join([\n        f\"条码：{_norm(device_sn)}\"\
+          ,\n        f\"机型：{_norm(device_model, '')}\",\n        f\"时间：{_norm(fault_time,\
+          \ '')}\",\n        f\"问题：{_norm(fault_description, '')}\",\n        f\"\
+          导向：{_norm(fault_cause)}\"\n    ])\n\n    retrieval_keywords = _keywords(\n\
+          \        device_model,\n        fault_description,\n        fault_cause,\n\
+          \        event_record_text,\n        waveform_analysis_text\n    )\n\n \
+          \   possible_parts = _keywords(\n        upper_board_text,\n        lower_board_text,\n\
+          \        power_device_measure_text\n    )\n    possible_environment_factors\
+          \ = _keywords(site_research_text, overall_appearance_text)\n\n    fact_summary\
+          \ = '\\n'.join([\n        f\"客户名称：{_norm(customer_name)}\",\n        f\"\
+          现场名称：{_norm(site_name)}\",\n        f\"设备型号：{_norm(device_model, '')}\"\
+          ,\n        f\"设备条码：{_norm(device_sn)}\",\n        f\"故障时间：{_norm(fault_time,\
+          \ '')}\",\n        f\"故障数量：{_to_int(fault_count)}\",\n        f\"故障描述：{_norm(fault_description,\
+          \ '')}\",\n        f\"故障原因导向：{_norm(fault_cause)}\",\n        f\"事件记录分析：{_norm(event_record_text)}\"\
+          ,\n        f\"波形分析：{_norm(waveform_analysis_text)}\",\n        f\"整体外观分析：{_norm(overall_appearance_text)}\"\
+          ,\n        f\"开盖上层板分析：{_norm(upper_board_text)}\",\n        f\"开盖下层板分析：{_norm(lower_board_text)}\"\
+          ,\n        f\"功率器件测量分析：{_norm(power_device_measure_text)}\",\n        f\"\
+          现场调研分析：{_norm(site_research_text)}\"\n    ])\n\n    return {\n        'report_id':\
+          \ _norm(report_id, ''),\n        'customer_name': _norm(customer_name),\n\
+          \        'site_name': _norm(site_name),\n        'device_model': _norm(device_model,\
+          \ ''),\n        'device_sn': _norm(device_sn),\n        'fault_time': _norm(fault_time,\
+          \ ''),\n        'fault_count': _to_int(fault_count),\n        'fault_description':\
+          \ _norm(fault_description, ''),\n        'fault_cause': _norm(fault_cause),\n\
+          \        'normalized_fault_summary': normalized_fault_summary,\n       \
+          \ 'retrieval_keywords': retrieval_keywords,\n        'possible_parts': possible_parts,\n\
+          \        'possible_environment_factors': possible_environment_factors,\n\
+          \        'fact_summary': fact_summary,\n        'missing_required_fields':\
+          \ missing\n    }\n"
+        code_language: python3
+        desc: 输入清洗与关键词提取
+        outputs:
+          customer_name:
+            children: null
+            type: string
+          device_model:
+            children: null
+            type: string
+          device_sn:
+            children: null
+            type: string
+          fact_summary:
+            children: null
+            type: string
+          fault_cause:
+            children: null
+            type: string
+          fault_count:
+            children: null
+            type: number
+          fault_description:
+            children: null
+            type: string
+          fault_time:
+            children: null
+            type: string
+          missing_required_fields:
+            children: null
+            type: array[string]
+          normalized_fault_summary:
+            children: null
+            type: string
+          possible_environment_factors:
+            children: null
+            type: array[string]
+          possible_parts:
+            children: null
+            type: array[string]
+          report_id:
+            children: null
+            type: string
+          retrieval_keywords:
+            children: null
+            type: array[string]
+          site_name:
+            children: null
+            type: string
+        selected: false
+        title: preprocess_input
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000001'
+          - report_id
+          variable: report_id
+        - value_selector:
+          - '1000000000001'
+          - customer_name
+          variable: customer_name
+        - value_selector:
+          - '1000000000001'
+          - site_name
+          variable: site_name
+        - value_selector:
+          - '1000000000001'
+          - device_model
+          variable: device_model
+        - value_selector:
+          - '1000000000001'
+          - device_sn
+          variable: device_sn
+        - value_selector:
+          - '1000000000001'
+          - fault_time
+          variable: fault_time
+        - value_selector:
+          - '1000000000001'
+          - fault_count
+          variable: fault_count
+        - value_selector:
+          - '1000000000001'
+          - fault_description
+          variable: fault_description
+        - value_selector:
+          - '1000000000001'
+          - fault_cause
+          variable: fault_cause
+        - value_selector:
+          - '1000000000001'
+          - event_record_text
+          variable: event_record_text
+        - value_selector:
+          - '1000000000001'
+          - waveform_analysis_text
+          variable: waveform_analysis_text
+        - value_selector:
+          - '1000000000001'
+          - overall_appearance_text
+          variable: overall_appearance_text
+        - value_selector:
+          - '1000000000001'
+          - upper_board_text
+          variable: upper_board_text
+        - value_selector:
+          - '1000000000001'
+          - lower_board_text
+          variable: lower_board_text
+        - value_selector:
+          - '1000000000001'
+          - power_device_measure_text
+          variable: power_device_measure_text
+        - value_selector:
+          - '1000000000001'
+          - site_research_text
+          variable: site_research_text
+      height: 78
+      id: '1000000000002'
+      position:
+        x: 83.6718637793719
+        y: -123.48440288115474
+      positionAbsolute:
+        x: 83.6718637793719
+        y: -123.48440288115474
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import re\n\nACTION_WORDS = ['更换', '复位', '重启', '校准', '紧固', '清洁', '回退',\
+          \ '升级', '调整', '维修', '修复', '处理']\nCONDITION_WORDS = ['上电', '并网', '满载', '轻载',\
+          \ '高温', '低温', '潮湿', '间歇', '夜间', '白天', '雨天']\nDIAGNOSIS_STOPWORDS = ['排查步骤',\
+          \ '临时措施', '纠正措施', '预防措施', '解决方案', '复位', '参数设置', '检查项', '注意事项']\n\n\ndef _to_text(v):\n\
+          \    if v is None:\n        return ''\n    if isinstance(v, list):\n   \
+          \     return ' '.join([str(x).strip() for x in v if str(x).strip()])\n \
+          \   return str(v).strip()\n\n\ndef _split_terms(text):\n    s = _to_text(text)\n\
+          \    if not s:\n        return []\n    chunks = re.split(r'[，,。；;、|/\\s]+',\
+          \ s)\n    return [x.strip() for x in chunks if x and x.strip()]\n\n\ndef\
+          \ _join_unique(items):\n    out = []\n    seen = set()\n    for item in items:\n\
+          \        s = str(item).strip()\n        if not s:\n            continue\n\
+          \        key = s.lower()\n        if key in seen:\n            continue\n\
+          \        seen.add(key)\n        out.append(s)\n    return out\n\n\ndef _contains_any(text,\
+          \ words):\n    s = _to_text(text)\n    return any(w in s for w in words)\n\
+          \n\ndef _pick_action_terms(*sources):\n    terms = []\n    for src in sources:\n\
+          \        for t in _split_terms(src):\n            if _contains_any(t, ACTION_WORDS):\n\
+          \                terms.append(t)\n    return _join_unique(terms)\n\n\ndef\
+          \ _pick_condition_terms(*sources):\n    terms = []\n    for src in sources:\n\
+          \        for t in _split_terms(src):\n            if _contains_any(t, CONDITION_WORDS):\n\
+          \                terms.append(t)\n    return _join_unique(terms)\n\n\ndef\
+          \ _clip_terms(items, n):\n    return [x for x in items if str(x).strip()][:n]\n\
+          \n\ndef main(\n    normalized_fault_summary: str = '',\n    fault_description:\
+          \ str = '',\n    fault_cause: str = '',\n    device_model: str = '',\n  \
+          \  retrieval_keywords: list = None,\n    possible_parts: list = None,\n \
+          \   possible_environment_factors: list = None\n) -> dict:\n    retrieval_keywords\
+          \ = retrieval_keywords or []\n    possible_parts = possible_parts or []\n\
+          \    possible_environment_factors = possible_environment_factors or []\n\n\
+          \    diagnosis_base = _join_unique([\n        _to_text(device_model),\n \
+          \       _to_text(fault_description),\n        _to_text(fault_cause),\n  \
+          \      *[str(x) for x in retrieval_keywords[:6]],\n        *[str(x) for x\
+          \ in possible_environment_factors[:3]]\n    ])\n    diagnosis_terms = [t\
+          \ for t in diagnosis_base if not _contains_any(t, DIAGNOSIS_STOPWORDS)]\n\
+          \    diagnosis_query = '；'.join(_clip_terms(diagnosis_terms, 8)) or _to_text(normalized_fault_summary)\n\
+          \n    action_terms = _pick_action_terms(retrieval_keywords, fault_description,\
+          \ fault_cause, possible_environment_factors)\n    if not action_terms:\n \
+          \       action_terms = ['排查步骤', '复位', '参数设置', '检查项']\n\n    condition_terms\
+          \ = _pick_condition_terms(fault_description, possible_environment_factors,\
+          \ retrieval_keywords)\n    strict_terms = _join_unique([\n        _to_text(device_model),\n\
+          \        *[str(x) for x in possible_parts[:4]],\n        *action_terms[:6],\n\
+          \        *condition_terms[:4],\n        '恢复正常',\n        '告警消失',\n      \
+          \  '波形回稳'\n    ])\n    solution_query_strict = '；'.join(_clip_terms(strict_terms,\
+          \ 12)) + '；排查步骤；临时措施；纠正措施；预防措施；复位；参数设置'\n\n    broad_terms = _join_unique([\n\
+          \        _to_text(device_model),\n        _to_text(normalized_fault_summary),\n\
+          \        *[str(x) for x in retrieval_keywords],\n        *[str(x) for x in\
+          \ possible_parts],\n        *[str(x) for x in possible_environment_factors],\n\
+          \        '排查步骤',\n        '临时措施',\n        '纠正措施',\n        '预防措施',\n    \
+          \    '复位',\n        '参数设置',\n        '检查项',\n        '注意事项'\n    ])\n    solution_query_broad\
+          \ = '；'.join(_clip_terms(broad_terms, 14))\n\n    return {\n        'diagnosis_query':\
+          \ diagnosis_query.strip('；'),\n        'solution_query_strict': solution_query_strict.strip('；'),\n\
+          \        'solution_query_broad': solution_query_broad.strip('；')\n    }\n"
+        code_language: python3
+        desc: 构建双Query检索词（诊断+处置）
+        outputs:
+          diagnosis_query:
+            children: null
+            type: string
+          solution_query_broad:
+            children: null
+            type: string
+          solution_query_strict:
+            children: null
+            type: string
+        selected: false
+        title: build_dual_queries
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000002'
+          - normalized_fault_summary
+          variable: normalized_fault_summary
+        - value_selector:
+          - '1000000000002'
+          - fault_description
+          variable: fault_description
+        - value_selector:
+          - '1000000000002'
+          - fault_cause
+          variable: fault_cause
+        - value_selector:
+          - '1000000000002'
+          - device_model
+          variable: device_model
+        - value_selector:
+          - '1000000000002'
+          - retrieval_keywords
+          variable: retrieval_keywords
+        - value_selector:
+          - '1000000000002'
+          - possible_parts
+          variable: possible_parts
+        - value_selector:
+          - '1000000000002'
+          - possible_environment_factors
+          variable: possible_environment_factors
+      height: 78
+      id: '1000000000015'
+      position:
+        x: 78.0150096934778
+        y: 84.11269747241789
+      positionAbsolute:
+        x: 78.0150096934778
+        y: 84.11269747241789
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import re\n\nACTION_HINTS = ['排查', '措施', '复位', '参数', '更换', '校准', '检查',\
+          \ '临时', '纠正', '预防', '处理']\n\n\ndef _collect_texts(v, out):\n    if v is None:\n\
+          \        return\n    if isinstance(v, list):\n        for item in v:\n  \
+          \          _collect_texts(item, out)\n        return\n    if isinstance(v,\
+          \ dict):\n        for key in ('title', 'document_name', 'content'):\n   \
+          \         val = v.get(key)\n            if isinstance(val, (str, int, float)):\n\
+          \                s = str(val).strip()\n                if s:\n           \
+          \         out.append(s)\n        for key in ('child_chunks', 'result', 'records',\
+          \ 'data', 'documents', 'segments'):\n            if key in v:\n         \
+          \       _collect_texts(v.get(key), out)\n        return\n    s = str(v).strip()\n\
+          \    if s:\n        out.append(s)\n\n\ndef _dedupe(items, limit=200):\n  \
+          \  seen = set()\n    out = []\n    for x in items:\n        s = str(x).strip()\n\
+          \        if not s:\n            continue\n        key = s.lower()\n      \
+          \  if key in seen:\n            continue\n        seen.add(key)\n       \
+          \ out.append(s)\n        if len(out) >= limit:\n            break\n    return\
+          \ out\n\n\ndef _tokens(text):\n    parts = re.split(r'[，,。；;、|/\\s]+', str(text))\n\
+          \    return {p.strip().lower() for p in parts if p and p.strip()}\n\n\ndef\
+          \ _contains_action_hint(text):\n    s = str(text)\n    return any(w in s\
+          \ for w in ACTION_HINTS)\n\n\ndef _is_novel(candidate, primary_items, overlap_threshold=0.72):\n\
+          \    cand = _tokens(candidate)\n    if not cand:\n        return False\n \
+          \   for p in primary_items:\n        base = _tokens(p)\n        if not base:\n\
+          \            continue\n        overlap = len(cand & base) / max(len(cand),\
+          \ 1)\n        if overlap >= overlap_threshold:\n            return False\n\
+          \    return True\n\n\ndef _merge_dual_query(primary_result=None, secondary_result=None):\n\
+          \    primary_texts = []\n    secondary_texts = []\n    _collect_texts(primary_result,\
+          \ primary_texts)\n    _collect_texts(secondary_result, secondary_texts)\n\n\
+          \    primary_unique = _dedupe(primary_texts, limit=160)\n    secondary_unique\
+          \ = _dedupe(secondary_texts, limit=200)\n\n    secondary_action = []\n   \
+          \ secondary_novel = []\n    for s in secondary_unique:\n        if not _is_novel(s,\
+          \ primary_unique):\n            continue\n        if _contains_action_hint(s):\n\
+          \            secondary_action.append(s)\n        else:\n            secondary_novel.append(s)\n\
+          \n    merged_result = _dedupe(primary_unique + secondary_action + secondary_novel,\
+          \ limit=200)\n    return {\n        'merged_result': merged_result,\n    \
+          \    'primary_hits': len(primary_unique),\n        'secondary_hits': len(secondary_unique)\n\
+          \    }\n\n\ndef main(\n    filtered_primary_result=None,\n    filtered_secondary_result=None,\n\
+          \    fallback_primary_result=None,\n    fallback_secondary_result=None,\n \
+          \   primary_query: str = '',\n    secondary_query: str = '',\n    min_filtered_hits:\
+          \ int = 2\n) -> dict:\n    filtered = _merge_dual_query(filtered_primary_result,\
+          \ filtered_secondary_result)\n    fallback = _merge_dual_query(fallback_primary_result,\
+          \ fallback_secondary_result)\n\n    threshold = int(min_filtered_hits) if str(min_filtered_hits).strip()\
+          \ else 2\n    use_filtered = len(filtered.get('merged_result', [])) >= max(1,\
+          \ threshold)\n\n    selected = filtered if use_filtered else fallback\n   \
+          \ mode_label = 'device_model过滤命中' if use_filtered else '过滤命中不足，降级到无过滤兜底'\n\
+          \n    merged_query = (\n        '主查询: ' + str(primary_query).strip() +\n  \
+          \      ' | 补充查询: ' + str(secondary_query).strip() +\n        ' | 合并策略: 诊断优先+处置增量'\
+          \ +\n        ' | 路由: ' + mode_label +\n        f\" | 过滤路命中: {len(filtered.get('merged_result',\
+          \ []))}\" +\n        f\" | 兜底路命中: {len(fallback.get('merged_result', []))}\"\n\
+          \    )\n\n    return {\n        'merged_result': selected.get('merged_result',\
+          \ []),\n        'merged_query': merged_query\n    }\n"
+        code_language: python3
+        desc: 合并历史检索双Query结果
+        outputs:
+          merged_query:
+            children: null
+            type: string
+          merged_result:
+            children: null
+            type: array[string]
+        selected: false
+        title: merge_history_dual_query_results
+        type: code
+        variables:
+        - value_selector:
+          - '1775814799353'
+          - result
+          variable: filtered_primary_result
+        - value_selector:
+          - '1775814899353'
+          - result
+          variable: filtered_secondary_result
+        - value_selector:
+          - '1775814799351'
+          - result
+          variable: fallback_primary_result
+        - value_selector:
+          - '1775814899352'
+          - result
+          variable: fallback_secondary_result
+        - value_selector:
+          - '1000000000015'
+          - diagnosis_query
+          variable: primary_query
+        - value_selector:
+          - '1000000000015'
+          - solution_query_strict
+          variable: secondary_query
+      height: 78
+      id: '1000000000016'
+      position:
+        x: 389.1419844176562
+        y: -123.48440288115474
+      positionAbsolute:
+        x: 389.1419844176562
+        y: -123.48440288115474
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "def _collect_texts(v, out):\n    if v is None:\n        return\n  \
+          \  if isinstance(v, list):\n        for item in v:\n            _collect_texts(item,\
+          \ out)\n        return\n    if isinstance(v, dict):\n        for key in\
+          \ ('title', 'document_name', 'content'):\n            val = v.get(key)\n\
+          \            if isinstance(val, (str, int, float)):\n                s =\
+          \ str(val).strip()\n                if s:\n                    out.append(s)\n\
+          \        for key in ('child_chunks', 'result', 'records', 'data', 'documents',\
+          \ 'segments'):\n            if key in v:\n                _collect_texts(v.get(key),\
+          \ out)\n        return\n    s = str(v).strip()\n    if s:\n        out.append(s)\n\
+          \ndef _dedupe(items, limit=200):\n    seen = set()\n    out = []\n    for\
+          \ x in items:\n        s = str(x).strip()\n        if not s or s in seen:\n\
+          \            continue\n        seen.add(s)\n        out.append(s)\n    \
+          \    if len(out) >= limit:\n            break\n    return out\n\ndef main(primary_result=None,\
+          \ secondary_result=None, primary_query: str = '', secondary_query: str =\
+          \ '') -> dict:\n    texts = []\n    _collect_texts(primary_result, texts)\n\
+          \    _collect_texts(secondary_result, texts)\n    merged_result = _dedupe(texts)\n\
+          \    merged_query = '主查询: ' + str(primary_query).strip() + ' | 补充查询: ' +\
+          \ str(secondary_query).strip()\n    return {\n        'merged_result': merged_result,\n\
+          \        'merged_query': merged_query\n    }\n"
+        code_language: python3
+        desc: 合并产品检索双Query结果
+        outputs:
+          merged_query:
+            children: null
+            type: string
+          merged_result:
+            children: null
+            type: array[string]
+        selected: false
+        title: merge_product_dual_query_results
+        type: code
+        variables:
+        - value_selector:
+          - '1775814743681'
+          - result
+          variable: primary_result
+        - value_selector:
+          - '1775814843682'
+          - result
+          variable: secondary_result
+        - value_selector:
+          - '1000000000002'
+          - fault_description
+          variable: primary_query
+        - value_selector:
+          - '1000000000015'
+          - solution_query_broad
+          variable: secondary_query
+      height: 78
+      id: '1000000000017'
+      position:
+        x: 394.3518879289858
+        y: 306.49241975472165
+      positionAbsolute:
+        x: 394.3518879289858
+        y: 306.49241975472165
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "def main(\n    missing_required_fields: list = None,\n    fault_description:\
+          \ str = '',\n    fault_count: int = 1,\n    event_record_text: str = '',\n\
+          \    waveform_analysis_text: str = '',\n    overall_appearance_text: str\
+          \ = '',\n    upper_board_text: str = '',\n    lower_board_text: str = '',\n\
+          \    power_device_measure_text: str = '',\n    site_research_text: str =\
+          \ '',\n    device_model: str = '',\n    fault_time: str = '',\n    device_sn:\
+          \ str = ''\n) -> dict:\n    quality_score = 100\n    quality_issues = []\n\
+          \n    missing = missing_required_fields or []\n    if missing:\n       \
+          \ quality_score -= len(missing) * 15\n        quality_issues.append('核心必填字段缺失:\
+          \ ' + ', '.join(missing))\n\n    fault_desc_len = len(fault_description.strip())\
+          \ if fault_description else 0\n    if fault_desc_len < 20:\n        quality_score\
+          \ -= 25\n        quality_issues.append(f'故障描述过于简略（{fault_desc_len}字，建议≥20字）')\n\
+          \    elif fault_desc_len < 50:\n        quality_score -= 10\n        quality_issues.append(f'故障描述较短（{fault_desc_len}字），建议补充更多细节')\n\
+          \n    if fault_count > 10:\n        quality_issues.append(f'故障数量异常（{fault_count}），请确认是否准确')\n\
+          \n    analysis_fields = {\n        'event_record_text': '事件记录分析',\n    \
+          \    'waveform_analysis_text': '波形分析',\n        'overall_appearance_text':\
+          \ '整体外观分析',\n        'upper_board_text': '开盖上层板分析',\n        'lower_board_text':\
+          \ '开盖下层板分析',\n        'power_device_measure_text': '功率器件测量分析',\n       \
+          \ 'site_research_text': '现场调研分析'\n    }\n\n    provided_analysis = []\n\
+          \    missing_analysis = []\n    for field, label in analysis_fields.items():\n\
+          \        value = locals().get(field, '')\n        if value and len(value.strip())\
+          \ > 10:\n            provided_analysis.append(label)\n        else:\n  \
+          \          missing_analysis.append(label)\n\n    if len(provided_analysis)\
+          \ == 0:\n        quality_score -= 20\n        quality_issues.append('缺少所有分析数据（事件记录、波形分析、外观分析等），报告质量将严重受限')\n\
+          \    elif len(provided_analysis) <= 2:\n        quality_score -= 10\n  \
+          \      quality_issues.append('分析数据较少（仅' + str(len(provided_analysis)) +\
+          \ '项），建议补充: ' + ', '.join(missing_analysis[:3]))\n\n    if not device_sn\
+          \ or not device_sn.strip():\n        quality_issues.append('设备条码为空，可能影响产品知识检索准确性')\n\
+          \n    if fault_time and len(fault_time.strip()) < 8:\n        quality_issues.append(f'故障时间格式可能不规范（{fault_time}），建议使用YYYY-MM-DD格式')\n\
+          \n    quality_score = max(0, quality_score)\n    if quality_score >= 80:\n\
+          \        quality_level = 'high'\n        recommendation = '输入质量良好，可继续执行工作流'\n\
+          \    elif quality_score >= 60:\n        quality_level = 'medium'\n     \
+          \   recommendation = '输入质量一般，建议补充部分信息以提高报告准确性'\n    elif quality_score >=\
+          \ 40:\n        quality_level = 'low'\n        recommendation = '输入质量较差，强烈建议人工审核并补充关键信息'\n\
+          \    else:\n        quality_level = 'critical'\n        recommendation =\
+          \ '输入质量极差，建议拒绝自动生成并返回人工填写'\n\n    return {\n        'quality_score': quality_score,\n\
+          \        'quality_level': quality_level,\n        'quality_issues': quality_issues,\n\
+          \        'provided_analysis_count': len(provided_analysis),\n        'missing_analysis_fields':\
+          \ missing_analysis,\n        'recommendation': recommendation,\n       \
+          \ 'should_proceed': quality_score >= 40\n    }\n"
+        code_language: python3
+        desc: 输入质量检查：验证必填字段、描述详细度、分析数据完整性
+        outputs:
+          missing_analysis_fields:
+            children: null
+            type: array[string]
+          provided_analysis_count:
+            children: null
+            type: number
+          quality_issues:
+            children: null
+            type: array[string]
+          quality_level:
+            children: null
+            type: string
+          quality_score:
+            children: null
+            type: number
+          recommendation:
+            children: null
+            type: string
+          should_proceed:
+            children: null
+            type: boolean
+        selected: false
+        title: validate_input_quality
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000002'
+          - missing_required_fields
+          variable: missing_required_fields
+        - value_selector:
+          - '1000000000002'
+          - fault_description
+          variable: fault_description
+        - value_selector:
+          - '1000000000002'
+          - fault_count
+          variable: fault_count
+        - value_selector:
+          - '1000000000001'
+          - event_record_text
+          variable: event_record_text
+        - value_selector:
+          - '1000000000001'
+          - waveform_analysis_text
+          variable: waveform_analysis_text
+        - value_selector:
+          - '1000000000001'
+          - overall_appearance_text
+          variable: overall_appearance_text
+        - value_selector:
+          - '1000000000001'
+          - upper_board_text
+          variable: upper_board_text
+        - value_selector:
+          - '1000000000001'
+          - lower_board_text
+          variable: lower_board_text
+        - value_selector:
+          - '1000000000001'
+          - power_device_measure_text
+          variable: power_device_measure_text
+        - value_selector:
+          - '1000000000001'
+          - site_research_text
+          variable: site_research_text
+        - value_selector:
+          - '1000000000002'
+          - device_model
+          variable: device_model
+        - value_selector:
+          - '1000000000002'
+          - fault_time
+          variable: fault_time
+        - value_selector:
+          - '1000000000002'
+          - device_sn
+          variable: device_sn
+      height: 94
+      id: '1000000000014'
+      position:
+        x: 78.0150096934778
+        y: -25.810862725556518
+      positionAbsolute:
+        x: 78.0150096934778
+        y: -25.810862725556518
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import html\nimport re\n\ndef _strip_html(text):\n    s = html.unescape(str(text))\n\
+          \    s = re.sub(r'(?is)<(script|style)[^>]*>.*?</\\1>', ' ', s)\n    s =\
+          \ re.sub(r'(?i)<br\\s*/?>', '\\n', s)\n    s = re.sub(r'(?i)</?(p|div|li|ul|ol|h[1-6]|tr|table|section|article)[^>]*>',\
+          \ '\\n', s)\n    s = re.sub(r'(?is)<[^>]+>', ' ', s)\n    s = re.sub(r'(?i)\\\
+          btdstyle\\s*=', ' ', s)\n    s = re.sub(r'(?i)<td\\s*style\\s*=', ' ', s)\n\
+          \    s = re.sub(r'[ \\t]+', ' ', s)\n    s = re.sub(r'\\n{3,}', '\\n\\n',\
+          \ s)\n    return s.strip()\n\ndef _clean_chunk(text):\n    s = _strip_html(text)\n\
+          \    kept = []\n    for line in s.splitlines():\n        t = line.strip()\n\
+          \        if not t:\n            continue\n        if re.match(r'(?i)^metadata(\\\
+          .|:)', t):\n            continue\n        if re.match(r'(?i)^(dataset_id|document_id|segment_id|segment_position|segment_word_count|score|position|retriever_from)\\\
+          b', t):\n            continue\n        kept.append(t)\n    s = '\\n'.join(kept)\n\
+          \    s = re.sub(r'\\n{3,}', '\\n\\n', s)\n    return s.strip()\n\ndef _extract_evidence_texts(v):\n\
+          \    out = []\n    if v is None:\n        return out\n    if isinstance(v,\
+          \ list):\n        for item in v:\n            out.extend(_extract_evidence_texts(item))\n\
+          \        return out\n    if isinstance(v, dict):\n        title = v.get('title')\
+          \ or v.get('document_name')\n        if isinstance(title, (str, int, float)):\n\
+          \            t = _clean_chunk(title)\n            if t:\n              \
+          \  out.append(f'标题：{t}')\n\n        content = v.get('content')\n       \
+          \ if isinstance(content, (str, int, float)):\n            t = _clean_chunk(content)\n\
+          \            if t:\n                out.append(t)\n\n        child = v.get('child_chunks')\n\
+          \        if isinstance(child, list):\n            for c in child:\n    \
+          \            if isinstance(c, dict) and ('content' in c):\n            \
+          \        t = _clean_chunk(c.get('content', ''))\n                    if\
+          \ t:\n                        out.append(t)\n        elif isinstance(child,\
+          \ dict):\n            t = _clean_chunk(child.get('content', ''))\n     \
+          \       if t:\n                out.append(t)\n\n        for key in ('result',\
+          \ 'records', 'data', 'documents', 'segments'):\n            if key in v:\n\
+          \                out.extend(_extract_evidence_texts(v.get(key)))\n     \
+          \   return out\n\n    t = _clean_chunk(v)\n    if t:\n        out.append(t)\n\
+          \    return out\n\ndef _dedupe(items):\n    seen = set()\n    out = []\n\
+          \    for x in items:\n        s = str(x).strip()\n        if not s or s\
+          \ in seen:\n            continue\n        seen.add(s)\n        out.append(s)\n\
+          \    return out\n\ndef _merge_snippets(snippets, max_chars=12000):\n   \
+          \ merged = []\n    total = 0\n    for s in snippets:\n        piece = str(s).strip()\n\
+          \        if not piece:\n            continue\n        extra = len(piece)\
+          \ + (2 if merged else 0)\n        if total + extra > max_chars:\n      \
+          \      break\n        merged.append(piece)\n        total += extra\n   \
+          \ return '\\n\\n'.join(merged).strip()\n\ndef main(knowledge_result=None,\
+          \ retrieval_query: str = '') -> dict:\n    snippets = _dedupe(_extract_evidence_texts(knowledge_result))\n\
+          \    merged = _merge_snippets(snippets)\n    merged_snippets = [merged]\
+          \ if merged else []\n    if not merged_snippets:\n        status = 'empty'\n\
+          \        notes = ['历史案例检索未命中文档或结果为空。']\n    else:\n        status = 'success'\n\
+          \        notes = [f'历史案例命中 {len(snippets)} 条（已清洗HTML标签并合并为1条）。']\n    if\
+          \ str(retrieval_query).strip():\n        notes.append('检索查询: ' + str(retrieval_query).strip())\n\
+          \    return {\n        'history_cases_snippets': merged_snippets,\n    \
+          \    'history_retrieval_status': status,\n        'history_retrieval_notes':\
+          \ notes\n    }"
+        code_language: python3
+        desc: 历史案例知识检索结果映射
+        outputs:
+          history_cases_snippets:
+            children: null
+            type: array[string]
+          history_retrieval_notes:
+            children: null
+            type: array[string]
+          history_retrieval_status:
+            children: null
+            type: string
+        selected: false
+        title: retrieve_history_cases
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000016'
+          - merged_result
+          variable: knowledge_result
+        - value_selector:
+          - '1000000000016'
+          - merged_query
+          variable: retrieval_query
+      height: 78
+      id: '1000000000003'
+      position:
+        x: 389.1419844176562
+        y: -13.75628651841852
+      positionAbsolute:
+        x: 389.1419844176562
+        y: -13.75628651841852
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import html\nimport re\n\ndef _strip_html(text):\n    s = html.unescape(str(text))\n\
+          \    s = re.sub(r'(?is)<(script|style)[^>]*>.*?</\\1>', ' ', s)\n    s =\
+          \ re.sub(r'(?i)<br\\s*/?>', '\\n', s)\n    s = re.sub(r'(?i)</?(p|div|li|ul|ol|h[1-6]|tr|table|section|article)[^>]*>',\
+          \ '\\n', s)\n    s = re.sub(r'(?is)<[^>]+>', ' ', s)\n    s = re.sub(r'(?i)\\\
+          btdstyle\\s*=', ' ', s)\n    s = re.sub(r'(?i)<td\\s*style\\s*=', ' ', s)\n\
+          \    s = re.sub(r'[ \\t]+', ' ', s)\n    s = re.sub(r'\\n{3,}', '\\n\\n',\
+          \ s)\n    return s.strip()\n\ndef _clean_chunk(text):\n    s = _strip_html(text)\n\
+          \    kept = []\n    for line in s.splitlines():\n        t = line.strip()\n\
+          \        if not t:\n            continue\n        if re.match(r'(?i)^metadata(\\\
+          .|:)', t):\n            continue\n        if re.match(r'(?i)^(dataset_id|document_id|segment_id|segment_position|segment_word_count|score|position|retriever_from)\\\
+          b', t):\n            continue\n        kept.append(t)\n    s = '\\n'.join(kept)\n\
+          \    s = re.sub(r'\\n{3,}', '\\n\\n', s)\n    return s.strip()\n\ndef _extract_evidence_texts(v):\n\
+          \    out = []\n    if v is None:\n        return out\n    if isinstance(v,\
+          \ list):\n        for item in v:\n            out.extend(_extract_evidence_texts(item))\n\
+          \        return out\n    if isinstance(v, dict):\n        title = v.get('title')\
+          \ or v.get('document_name')\n        if isinstance(title, (str, int, float)):\n\
+          \            t = _clean_chunk(title)\n            if t:\n              \
+          \  out.append(f'标题：{t}')\n\n        content = v.get('content')\n       \
+          \ if isinstance(content, (str, int, float)):\n            t = _clean_chunk(content)\n\
+          \            if t:\n                out.append(t)\n\n        child = v.get('child_chunks')\n\
+          \        if isinstance(child, list):\n            for c in child:\n    \
+          \            if isinstance(c, dict) and ('content' in c):\n            \
+          \        t = _clean_chunk(c.get('content', ''))\n                    if\
+          \ t:\n                        out.append(t)\n        elif isinstance(child,\
+          \ dict):\n            t = _clean_chunk(child.get('content', ''))\n     \
+          \       if t:\n                out.append(t)\n\n        for key in ('result',\
+          \ 'records', 'data', 'documents', 'segments'):\n            if key in v:\n\
+          \                out.extend(_extract_evidence_texts(v.get(key)))\n     \
+          \   return out\n\n    t = _clean_chunk(v)\n    if t:\n        out.append(t)\n\
+          \    return out\n\ndef _dedupe(items):\n    seen = set()\n    out = []\n\
+          \    for x in items:\n        s = str(x).strip()\n        if not s or s\
+          \ in seen:\n            continue\n        seen.add(s)\n        out.append(s)\n\
+          \    return out\n\ndef _merge_snippets(snippets, max_chars=12000):\n   \
+          \ merged = []\n    total = 0\n    for s in snippets:\n        piece = str(s).strip()\n\
+          \        if not piece:\n            continue\n        extra = len(piece)\
+          \ + (2 if merged else 0)\n        if total + extra > max_chars:\n      \
+          \      break\n        merged.append(piece)\n        total += extra\n   \
+          \ return '\\n\\n'.join(merged).strip()\n\ndef main(knowledge_result=None,\
+          \ retrieval_query: str = '') -> dict:\n    snippets = _dedupe(_extract_evidence_texts(knowledge_result))\n\
+          \    merged = _merge_snippets(snippets)\n    merged_snippets = [merged]\
+          \ if merged else []\n    if not merged_snippets:\n        status = 'empty'\n\
+          \        notes = ['产品知识检索未命中文档或结果为空。']\n    else:\n        status = 'success'\n\
+          \        notes = [f'产品知识命中 {len(snippets)} 条（已清洗HTML标签并合并为1条）。']\n    if\
+          \ str(retrieval_query).strip():\n        notes.append('检索查询: ' + str(retrieval_query).strip())\n\
+          \    return {\n        'product_knowledge_snippets': merged_snippets,\n\
+          \        'product_retrieval_status': status,\n        'product_retrieval_notes':\
+          \ notes\n    }"
+        code_language: python3
+        desc: 产品知识检索结果映射
+        outputs:
+          product_knowledge_snippets:
+            children: null
+            type: array[string]
+          product_retrieval_notes:
+            children: null
+            type: array[string]
+          product_retrieval_status:
+            children: null
+            type: string
+        selected: false
+        title: retrieve_product_knowledge
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000017'
+          - merged_result
+          variable: knowledge_result
+        - value_selector:
+          - '1000000000017'
+          - merged_query
+          variable: retrieval_query
+      height: 78
+      id: '1000000000004'
+      position:
+        x: 658.8098164445377
+        y: -130.55547048852242
+      positionAbsolute:
+        x: 658.8098164445377
+        y: -130.55547048852242
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 生成客户说明与问题描述
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: qwen3-32b
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: system-prompt
+          role: system
+          text: '你是设备故障报告专业撰写人（精度优先）。
+
+            你的任务是：基于事实与检索证据，生成 customer_letter、problem_description_refined、evidence_citation。
+
+            严格规则：
+
+            - 任务边界（输入）：只使用【事实摘要】与检索证据，不使用未提供的外部信息；
+
+            - 任务边界（输出）：只负责 customer_letter 与 problem_description_refined 的生成，并给出对应
+            evidence_citation；
+
+            - 禁止事项：不要输出 5Y、根因归属、解决措施等下游章节内容；
+
+            - 仅可基于【事实摘要】与证据片段生成，不得新增任何未给定事实；
+
+            - 历史案例仅作参考，不得当作本次已发生事实；
+
+            - 若证据不足必须标注“【证据不足】”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，禁止整段输出全部为“【证据不足】”；
+
+            - 输出必须是合法 JSON，仅包含键：customer_letter, problem_description_refined, evidence_citation；
+
+            - 必须返回全部键且类型严格匹配：customer_letter/problem_description_refined 为字符串，evidence_citation
+            为数组；
+
+            - evidence_citation 必须为数组，数组每项是对象，且仅含键：claim, source, quote；
+
+            - claim/source/quote 必须是字符串；quote 必须是证据原文片段（<=200字），不得填写文件名、标题或路径；无直接片段时写“未找到直接支持文本”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，evidence_citation 至少 2 条，且至少 1 条 source 必须为 history_cases
+            或 product_knowledge；
+
+            - 输出必须是纯 JSON，不得使用 ```json 代码块、不得输出额外说明文字。'
+        - id: user-prompt
+          role: user
+          text: '【事实摘要】
+
+            {{#1000000000002.fact_summary#}}
+
+
+            【历史案例证据】
+
+            {{#1000000000003.history_cases_snippets#}}
+
+
+            【产品知识证据】
+
+            {{#1000000000004.product_knowledge_snippets#}}
+
+
+            【历史检索状态】
+
+            {{#1000000000003.history_retrieval_status#}}
+
+
+            【产品检索状态】
+
+            {{#1000000000004.product_retrieval_status#}}
+
+
+            请输出 JSON。'
+        selected: false
+        structured_output_enabled: true
+        title: generate_customer_letter_problem_desc
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 114
+      id: '1000000000005'
+      position:
+        x: 658.8098164445377
+        y: -25.810862725556518
+      positionAbsolute:
+        x: 658.8098164445377
+        y: -25.810862725556518
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 生成5Y分析
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: qwen3-32b
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: system-prompt
+          role: system
+          text: '你是设备故障分析工程师（精度优先）。
+
+            你的任务是：基于事实与检索证据，生成 five_why_table 与 evidence_citation。
+
+            严格规则：
+
+            - 任务边界（输入）：只使用事实摘要与检索证据进行“为什么链”分析；
+
+            - 任务边界（输出）：只输出 five_why_table 与 evidence_citation；
+
+            - 禁止事项：不要输出责任归属、整改方案、润色后的整报告文本；
+
+            - 仅基于输入事实与证据输出 5Y，禁止臆造；
+
+            - question_index 必须为 1~5 且严格递增；
+
+            - 后一层不得引入与前文和事实摘要冲突的新假设；
+
+            - 证据不足时明确写“【证据不足】”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，five_why_table 不得 5 层都为“【证据不足】”；
+
+            - 输出必须是合法 JSON，仅包含键：five_why_table, evidence_citation；
+
+            - five_why_table 为数组，每项含 question_index, question, analysis；
+
+            - 必须返回全部键且类型严格匹配：five_why_table 为数组，evidence_citation 为数组；question_index
+            必须是整数；
+
+            - evidence_citation 必须为数组，数组每项是对象，且仅含键：claim, source, quote；
+
+            - claim/source/quote 必须是字符串；quote 必须是证据原文片段（<=200字），不得填写文件名、标题或路径；无直接片段时写“未找到直接支持文本”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，evidence_citation 至少 2 条，且至少 1 条 source 必须为 history_cases
+            或 product_knowledge；
+
+            - 输出必须是纯 JSON，不得使用 ```json 代码块、不得输出额外说明文字。'
+        - id: user-prompt
+          role: user
+          text: '【事实摘要】
+
+            {{#1000000000002.fact_summary#}}
+
+
+            【故障摘要】
+
+            {{#1000000000002.normalized_fault_summary#}}
+
+
+            【历史案例证据】
+
+            {{#1000000000003.history_cases_snippets#}}
+
+
+            【产品知识证据】
+
+            {{#1000000000004.product_knowledge_snippets#}}
+
+
+            【历史检索状态】
+
+            {{#1000000000003.history_retrieval_status#}}
+
+
+            【产品检索状态】
+
+            {{#1000000000004.product_retrieval_status#}}
+
+
+            请输出 JSON。'
+        selected: false
+        structured_output_enabled: true
+        title: generate_five_why
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 114
+      id: '1000000000006'
+      position:
+        x: 668.7093110948524
+        y: 112.32653652277236
+      positionAbsolute:
+        x: 668.7093110948524
+        y: 112.32653652277236
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\nimport re\n\ndef _clean_text(text):\n    if text is None:\n\
+          \        return ''\n    if isinstance(text, dict):\n        return json.dumps(text,\
+          \ ensure_ascii=False)\n    s = str(text).strip()\n    if not s:\n      \
+          \  return ''\n    s = re.sub(r'(?is)<\\s*/?\\s*think\\s*>', '', s).strip()\n\
+          \    s = re.sub(r'(?is)^```(?:json)?\\s*', '', s)\n    s = re.sub(r'(?is)\\\
+          s*```$', '', s).strip()\n    return s\n\ndef _extract_json_object(text):\n\
+          \    s = _clean_text(text)\n    if not s:\n        return ''\n    try:\n\
+          \        json.loads(s)\n        return s\n    except Exception:\n      \
+          \  pass\n    start = s.find('{')\n    if start < 0:\n        return ''\n\
+          \    depth = 0\n    in_str = False\n    esc = False\n    for i, ch in enumerate(s[start:],\
+          \ start=start):\n        if in_str:\n            if esc:\n             \
+          \   esc = False\n            elif ch == '\\\\':\n                esc = True\n\
+          \            elif ch == '\"':\n                in_str = False\n        \
+          \    continue\n        if ch == '\"':\n            in_str = True\n     \
+          \   elif ch == '{':\n            depth += 1\n        elif ch == '}':\n \
+          \           depth -= 1\n            if depth == 0:\n                return\
+          \ s[start:i + 1]\n    return ''\n\ndef _parse(text):\n    if isinstance(text,\
+          \ dict):\n        return text\n    candidate = _extract_json_object(text)\n\
+          \    if not candidate:\n        return {}\n    try:\n        parsed = json.loads(candidate)\n\
+          \        return parsed if isinstance(parsed, dict) else {}\n    except Exception:\n\
+          \        return {}\n\ndef main(n6_text: str = '') -> dict:\n    raw = _parse(n6_text)\n\
+          \    table = raw.get('five_why_table', []) if isinstance(raw, dict) else\
+          \ []\n    warnings = []\n    sanitized = []\n    expected = 1\n    for item\
+          \ in table:\n        if not isinstance(item, dict):\n            warnings.append('five_why_table\
+          \ 存在非对象条目，已忽略。')\n            continue\n        idx = item.get('question_index')\n\
+          \        try:\n            idx = int(idx)\n        except Exception:\n \
+          \           idx = expected\n            warnings.append('question_index\
+          \ 非数字，已按顺序重排。')\n        if idx != expected:\n            warnings.append(f'question_index\
+          \ 非递增（期望 {expected}，实际 {idx}），已重排。')\n            idx = expected\n     \
+          \   q = str(item.get('question', '')).strip() or '【证据不足】问题需人工补充。'\n    \
+          \    a = str(item.get('analysis', '')).strip() or '【证据不足】分析需人工补充。'\n   \
+          \     sanitized.append({'question_index': idx, 'question': q, 'analysis':\
+          \ a})\n        expected += 1\n        if expected > 5:\n            break\n\
+          \n    while len(sanitized) < 5:\n        i = len(sanitized) + 1\n      \
+          \  sanitized.append({\n            'question_index': i,\n            'question':\
+          \ '【证据不足】问题需人工补充。',\n            'analysis': '【证据不足】分析需人工补充。'\n        })\n\
+          \        warnings.append('5Y 项不足 5 层，已补齐占位。')\n\n    out = {\n        'five_why_table':\
+          \ sanitized,\n        'evidence_citation': raw.get('evidence_citation',\
+          \ []) if isinstance(raw, dict) else []\n    }\n    return {\n        'validated_five_why_text':\
+          \ json.dumps(out, ensure_ascii=False),\n        'five_why_validation_warnings':\
+          \ warnings\n    }"
+        code_language: python3
+        desc: 5Y 结构校验与重排
+        outputs:
+          five_why_validation_warnings:
+            children: null
+            type: array[string]
+          validated_five_why_text:
+            children: null
+            type: string
+        selected: false
+        title: validate_five_why
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000006'
+          - text
+          variable: n6_text
+      height: 78
+      id: '1000000000012'
+      position:
+        x: 668.7093110948524
+        y: 258.3300574448182
+      positionAbsolute:
+        x: 668.7093110948524
+        y: 258.3300574448182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 生成根因与责任建议
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: qwen3-32b
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: system-prompt
+          role: system
+          text: '你是故障归因审核助手（精度优先）。
+
+            你的任务是：基于事实、已校验5Y与检索证据，生成 root_cause_summary、responsibility_judgement、audit_metrics、evidence_citation。
+
+            严格规则：
+
+            - 任务边界（输入）：以已校验的 5Y 为候选依据，并与事实摘要和检索证据对齐；
+
+            - 任务边界（输出）：只输出 root_cause_summary、responsibility_judgement、audit_metrics、evidence_citation；
+
+            - 禁止事项：不要输出具体整改措施字段（temporary/corrective/preventive 等）；
+
+            - 仅基于输入依据生成，不得新增事实；
+
+            - 5Y 结果仅可作为候选假设，若与事实冲突，以事实为准；
+
+            - 责任归属只允许“建议方向”，并包含“【待人工审核】”；
+
+            - 证据不足时必须降级表达并写“【证据不足】”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，root_cause_summary 不得仅输出“【证据不足】”类空结论；
+
+            - 输出必须是合法 JSON，仅包含键：root_cause_summary, responsibility_judgement, audit_metrics,
+            evidence_citation；
+
+            - 必须返回全部键且类型严格匹配：root_cause_summary/responsibility_judgement 为字符串，audit_metrics
+            为对象，evidence_citation 为数组；
+
+            - audit_metrics 必含键：evidence_sufficiency, responsibility_confidence, risk_tips,
+            hallucination_check；
+
+            - responsibility_confidence 必须是 0~100 整数；
+
+            - evidence_citation 必须为数组，数组每项是对象，且仅含键：claim, source, quote；
+
+            - claim/source/quote 必须是字符串；quote 必须是证据原文片段（<=200字），不得填写文件名、标题或路径；无直接片段时写“未找到直接支持文本”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，evidence_citation 至少 2 条，且至少 1 条 source 必须为 history_cases
+            或 product_knowledge；
+
+            - 输出必须是纯 JSON，不得使用 ```json 代码块、不得输出额外说明文字。'
+        - id: user-prompt
+          role: user
+          text: '【事实摘要】
+
+            {{#1000000000002.fact_summary#}}
+
+
+            【5Y结果（已校验）】
+
+            {{#1000000000012.validated_five_why_text#}}
+
+
+            【5Y校验提示】
+
+            {{#1000000000012.five_why_validation_warnings#}}
+
+
+            【历史案例证据】
+
+            {{#1000000000003.history_cases_snippets#}}
+
+
+            【产品知识证据】
+
+            {{#1000000000004.product_knowledge_snippets#}}
+
+
+            【历史检索状态】
+
+            {{#1000000000003.history_retrieval_status#}}
+
+
+            【产品检索状态】
+
+            {{#1000000000004.product_retrieval_status#}}
+
+
+            请输出 JSON。'
+        selected: false
+        structured_output_enabled: true
+        title: generate_root_cause_and_responsibility
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 114
+      id: '1000000000007'
+      position:
+        x: 978.2589216730269
+        y: -130.55547048852242
+      positionAbsolute:
+        x: 978.2589216730269
+        y: -130.55547048852242
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 生成解决方案
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: qwen3-32b
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: system-prompt
+          role: system
+          text: '你是售后技术方案工程师（精度优先）。
+
+            你的任务是：基于事实、根因责任建议与检索证据，生成措施类字段与 evidence_citation。
+
+            严格规则：
+
+            - 任务边界（输入）：只基于事实摘要、根因责任建议、检索证据制定措施；
+
+            - 任务边界（输出）：只输出 temporary_measures、corrective_actions、preventive_actions、customer_side_actions、internal_quality_actions、evidence_citation；
+
+            - 禁止事项：不要重写 root_cause_summary 与 responsibility_judgement；
+
+            - 仅基于输入依据生成，不得新增未提供事实；
+
+            - 上游“根因与责任建议”仅作候选输入，需与事实/证据二次对齐；
+
+            - 方案必须可执行且与本案事实一致；
+
+            - 无法证明可执行性时写“【证据不足】”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，不得所有措施字段都仅为“【证据不足】”；
+
+            - 存在冲突风险时显式标注“【存在冲突待核】”；
+
+            - 输出必须是合法 JSON，仅包含键：temporary_measures, corrective_actions, preventive_actions,
+            customer_side_actions, internal_quality_actions, evidence_citation；
+
+            - 必须返回全部键且类型严格匹配：5个措施字段均为字符串或字符串数组（保持同一字段内类型一致），evidence_citation 为数组；
+
+            - evidence_citation 必须为数组，数组每项是对象，且仅含键：claim, source, quote；
+
+            - claim/source/quote 必须是字符串；quote 必须是证据原文片段（<=200字），不得填写文件名、标题或路径；无直接片段时写“未找到直接支持文本”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，evidence_citation 至少 2 条，且至少 1 条 source 必须为 history_cases
+            或 product_knowledge；
+
+            - 输出必须是纯 JSON，不得使用 ```json 代码块、不得输出额外说明文字。'
+        - id: user-prompt
+          role: user
+          text: '【事实摘要】
+
+            {{#1000000000002.fact_summary#}}
+
+
+            【根因与责任建议】
+
+            {{#1000000000007.text#}}
+
+
+            【历史案例证据】
+
+            {{#1000000000003.history_cases_snippets#}}
+
+
+            【产品知识证据】
+
+            {{#1000000000004.product_knowledge_snippets#}}
+
+
+            【历史检索状态】
+
+            {{#1000000000003.history_retrieval_status#}}
+
+
+            【产品检索状态】
+
+            {{#1000000000004.product_retrieval_status#}}
+
+
+            请输出 JSON。'
+        selected: false
+        structured_output_enabled: true
+        title: generate_solution
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 114
+      id: '1000000000008'
+      position:
+        x: 978.2589216730269
+        y: 4.723541421968179
+      positionAbsolute:
+        x: 978.2589216730269
+        y: 4.723541421968179
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\nimport re\n\ndef _clean_text(text):\n    if text is None:\n\
+          \        return ''\n    if isinstance(text, dict):\n        return json.dumps(text,\
+          \ ensure_ascii=False)\n    s = str(text).strip()\n    if not s:\n      \
+          \  return ''\n    s = re.sub(r'(?is)<\\s*/?\\s*think\\s*>', '', s).strip()\n\
+          \    s = re.sub(r'(?is)^```(?:json)?\\s*', '', s)\n    s = re.sub(r'(?is)\\\
+          s*```$', '', s).strip()\n    return s\n\ndef _extract_json_object(text):\n\
+          \    s = _clean_text(text)\n    if not s:\n        return ''\n    try:\n\
+          \        json.loads(s)\n        return s\n    except Exception:\n      \
+          \  pass\n    start = s.find('{')\n    if start < 0:\n        return ''\n\
+          \    depth = 0\n    in_str = False\n    esc = False\n    for i, ch in enumerate(s[start:],\
+          \ start=start):\n        if in_str:\n            if esc:\n             \
+          \   esc = False\n            elif ch == '\\\\':\n                esc = True\n\
+          \            elif ch == '\"':\n                in_str = False\n        \
+          \    continue\n        if ch == '\"':\n            in_str = True\n     \
+          \   elif ch == '{':\n            depth += 1\n        elif ch == '}':\n \
+          \           depth -= 1\n            if depth == 0:\n                return\
+          \ s[start:i + 1]\n    return ''\n\ndef _parse(text):\n    if isinstance(text,\
+          \ dict):\n        return text\n    candidate = _extract_json_object(text)\n\
+          \    if not candidate:\n        return {}\n    try:\n        parsed = json.loads(candidate)\n\
+          \        return parsed if isinstance(parsed, dict) else {}\n    except Exception:\n\
+          \        return {}\n\ndef _contains_risk(v):\n    s = str(v)\n    return\
+          \ ('【证据不足】' in s) or ('【存在冲突待核】' in s)\n\ndef main(\n    fact_summary: str\
+          \ = '',\n    n5_text: str = '',\n    n6_validated_text: str = '',\n    n7_text:\
+          \ str = '',\n    n8_text: str = ''\n) -> dict:\n    n5 = _parse(n5_text)\n\
+          \    n6 = _parse(n6_validated_text)\n    n7 = _parse(n7_text)\n    n8 =\
+          \ _parse(n8_text)\n\n    warnings = []\n    if not str(fact_summary).strip():\n\
+          \        warnings.append('事实摘要为空，无法执行有效一致性校验。')\n\n    for key in ['root_cause_summary',\
+          \ 'responsibility_judgement']:\n        if _contains_risk(n7.get(key, '')):\n\
+          \            warnings.append(f'{key} 含证据不足/冲突标记，润色阶段禁止改写为确定性结论。')\n\n  \
+          \  for key in ['temporary_measures', 'corrective_actions', 'preventive_actions',\
+          \ 'customer_side_actions', 'internal_quality_actions']:\n        if _contains_risk(n8.get(key,\
+          \ '')):\n            warnings.append(f'{key} 含证据不足/冲突标记，需在最终稿中保留。')\n\n\
+          \    checked = {\n        'customer_letter': n5.get('customer_letter', '【证据不足】需人工补充。'),\n\
+          \        'problem_description_refined': n5.get('problem_description_refined',\
+          \ '【证据不足】需人工补充。'),\n        'five_why_table': n6.get('five_why_table', []),\n\
+          \        'root_cause_summary': n7.get('root_cause_summary', '【证据不足】需人工审核。'),\n\
+          \        'responsibility_judgement': n7.get('responsibility_judgement',\
+          \ '【证据不足】【待人工审核】仅建议责任方向。'),\n        'temporary_measures': n8.get('temporary_measures',\
+          \ '【证据不足】需人工补充。'),\n        'corrective_actions': n8.get('corrective_actions',\
+          \ '【证据不足】需人工补充。'),\n        'preventive_actions': n8.get('preventive_actions',\
+          \ '【证据不足】需人工补充。'),\n        'customer_side_actions': n8.get('customer_side_actions',\
+          \ '【证据不足】需人工补充。'),\n        'internal_quality_actions': n8.get('internal_quality_actions',\
+          \ '【证据不足】需人工补充。'),\n        'evidence_citation': (\n            (n5.get('evidence_citation',\
+          \ []) if isinstance(n5, dict) else []) +\n            (n6.get('evidence_citation',\
+          \ []) if isinstance(n6, dict) else []) +\n            (n7.get('evidence_citation',\
+          \ []) if isinstance(n7, dict) else []) +\n            (n8.get('evidence_citation',\
+          \ []) if isinstance(n8, dict) else [])\n        )\n    }\n\n    return {\n\
+          \        'checked_sections_text': json.dumps(checked, ensure_ascii=False),\n\
+          \        'consistency_warnings': warnings\n    }"
+        code_language: python3
+        desc: n8->n9 事实一致性校验
+        outputs:
+          checked_sections_text:
+            children: null
+            type: string
+          consistency_warnings:
+            children: null
+            type: array[string]
+        selected: false
+        title: check_fact_consistency_before_polish
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000002'
+          - fact_summary
+          variable: fact_summary
+        - value_selector:
+          - '1000000000005'
+          - text
+          variable: n5_text
+        - value_selector:
+          - '1000000000012'
+          - validated_five_why_text
+          variable: n6_validated_text
+        - value_selector:
+          - '1000000000007'
+          - text
+          variable: n7_text
+        - value_selector:
+          - '1000000000008'
+          - text
+          variable: n8_text
+      height: 78
+      id: '1000000000013'
+      position:
+        x: 984.9860927831337
+        y: 145.70393515838103
+      positionAbsolute:
+        x: 984.9860927831337
+        y: 145.70393515838103
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 润色并规范化章节输出
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: qwen3-32b
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: system-prompt
+          role: system
+          text: '你是报告润色助手（精度优先）。只做表达规范化，不得新增、删改事实结论。
+
+            你的任务是：基于一致性校验结果、事实与检索证据，对既有章节做表达规范化并输出结构化 JSON。
+
+            严格规则：
+
+            - 任务边界（输入）：仅处理“章节一致性校验输出”与给定事实/检索证据；
+
+            - 任务边界（输出）：只做表达规范化与结构整理，不改变字段语义；
+
+            - 禁止事项：不得新增结论、不得删减有效证据引用、不得改写为确定性超范围判断；
+
+            - 事实摘要优先级最高；
+
+            - 仅修正文风与结构，不得补充新事实；
+
+            - 不得把“证据不足”改写成确定性结论；
+
+            - 若存在冲突，保留并显式写“【存在冲突待核】”；
+
+            - 输出必须是合法 JSON，仅包含键：customer_letter, problem_description_refined, five_why_table,
+            root_cause_summary, responsibility_judgement, temporary_measures, corrective_actions,
+            preventive_actions, customer_side_actions, internal_quality_actions, evidence_citation；
+
+            - 必须返回全部键且类型严格匹配：文本字段为字符串，five_why_table/evidence_citation 为数组；
+
+            - evidence_citation 必须为数组，数组每项是对象，且仅含键：claim, source, quote；
+
+            - claim/source/quote 必须是字符串；quote 必须是证据原文片段（<=200字），不得填写文件名、标题或路径；无直接片段时写“未找到直接支持文本”；
+
+            - 若【历史案例证据】或【产品知识证据】非空，evidence_citation 至少 2 条，且至少 1 条 source 必须为 history_cases
+            或 product_knowledge；
+
+            - 输出必须是纯 JSON，不得使用 ```json 代码块、不得输出额外说明文字。'
+        - id: user-prompt
+          role: user
+          text: '【事实摘要】
+
+            {{#1000000000002.fact_summary#}}
+
+
+            【章节一致性校验输出】
+
+            {{#1000000000013.checked_sections_text#}}
+
+
+            【一致性风险提示】
+
+            {{#1000000000013.consistency_warnings#}}
+
+
+            【历史案例证据】
+
+            {{#1000000000003.history_cases_snippets#}}
+
+
+            【产品知识证据】
+
+            {{#1000000000004.product_knowledge_snippets#}}
+
+
+            请整合并润色后输出 JSON。'
+        selected: false
+        structured_output_enabled: true
+        title: polish_report_sections
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 114
+      id: '1000000000009'
+      position:
+        x: 984.9860927831337
+        y: 248.25713389898715
+      positionAbsolute:
+        x: 984.9860927831337
+        y: 248.25713389898715
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\nimport re\n\nDEFAULT_CONFIDENCE = 60\nLOW_EVIDENCE_MAX_CONFIDENCE\
+          \ = 40\nLOW_INPUT_QUALITY_MAX_CONFIDENCE = 35\nCITATION_DEFAULT_CLAIM =\
+          \ '未命名结论'\nCITATION_DEFAULT_SOURCE = '未知来源'\nCITATION_DEFAULT_QUOTE = '未提供引用片段'\n\
+          CITATION_FALLBACK = [{'claim': '用户输入事实', 'source': 'fact_summary', 'quote':\
+          \ '用户输入事实'}]\n\ndef _clean_text(text):\n    if text is None:\n        return\
+          \ ''\n    if isinstance(text, dict):\n        return json.dumps(text, ensure_ascii=False)\n\
+          \    s = str(text).strip()\n    if not s:\n        return ''\n    s = re.sub(r'(?is)<\\\
+          s*/?\\s*think\\s*>', '', s).strip()\n    s = re.sub(r'(?is)^```(?:json)?\\\
+          s*', '', s)\n    s = re.sub(r'(?is)\\s*```$', '', s).strip()\n    return\
+          \ s\n\ndef _extract_json_object(text):\n    s = _clean_text(text)\n    if\
+          \ not s:\n        return ''\n    try:\n        json.loads(s)\n        return\
+          \ s\n    except Exception:\n        pass\n    start = s.find('{')\n    if\
+          \ start < 0:\n        return ''\n    depth = 0\n    in_str = False\n   \
+          \ esc = False\n    for i, ch in enumerate(s[start:], start=start):\n   \
+          \     if in_str:\n            if esc:\n                esc = False\n   \
+          \         elif ch == '\\\\':\n                esc = True\n            elif\
+          \ ch == '\"':\n                in_str = False\n            continue\n  \
+          \      if ch == '\"':\n            in_str = True\n        elif ch == '{':\n\
+          \            depth += 1\n        elif ch == '}':\n            depth -= 1\n\
+          \            if depth == 0:\n                return s[start:i + 1]\n   \
+          \ return ''\n\ndef _parse_json(text, fallback):\n    try:\n        if isinstance(text,\
+          \ dict):\n            return text\n        candidate = _extract_json_object(text)\n\
+          \        if not candidate:\n            return fallback\n        parsed\
+          \ = json.loads(candidate)\n        return parsed if isinstance(parsed, dict)\
+          \ else fallback\n    except (json.JSONDecodeError, TypeError, ValueError):\n\
+          \        return fallback\n\ndef _ensure_list(v):\n    if isinstance(v, list):\n\
+          \        return v\n    if v is None:\n        return []\n    return [v]\n\
+          \ndef _normalize_confidence(v):\n    corrected = False\n    score = DEFAULT_CONFIDENCE\n\
+          \    try:\n        if isinstance(v, str):\n            score = round(float(v.strip()))\n\
+          \        else:\n            score = round(float(v))\n    except (ValueError,\
+          \ TypeError):\n        score = DEFAULT_CONFIDENCE\n        corrected = True\n\
+          \    bounded = max(0, min(100, score))\n    if bounded != score:\n     \
+          \   corrected = True\n    return bounded, corrected\n\ndef _looks_like_filename(text):\n\
+          \    s = str(text).strip()\n    if not s:\n        return True\n    if len(s)\
+          \ <= 200 and re.search(r'\\.(txt|md|pdf|docx?|xlsx?|pptx?)$', s, re.IGNORECASE):\n\
+          \        return True\n    if len(s) <= 200 and (('/' in s) or ('\\\\' in\
+          \ s)):\n        return True\n    return False\n\ndef _normalize_quote(value):\n\
+          \    s = str(value).strip()\n    if (not s) or _looks_like_filename(s):\n\
+          \        return '未找到直接支持文本'\n    if re.search(r'(?i)\\bmetadata\\.', s):\n\
+          \        return '未找到直接支持文本'\n    if re.search(r'(?i)\\b(document_name|dataset_id|segment_id|retriever_from|child_chunks\\\
+          .)\\b', s):\n        return '未找到直接支持文本'\n    return s[:200]\n\ndef _normalize_citations(values):\n\
+          \    out = []\n    for item in _ensure_list(values):\n        if isinstance(item,\
+          \ dict):\n            claim = str(item.get('claim', '')).strip() or CITATION_DEFAULT_CLAIM\n\
+          \            source = str(item.get('source', '')).strip() or CITATION_DEFAULT_SOURCE\n\
+          \            quote = _normalize_quote(item.get('quote', ''))\n         \
+          \   out.append({'claim': claim, 'source': source, 'quote': quote})\n   \
+          \     else:\n            s = str(item).strip()\n            if s:\n    \
+          \            out.append({'claim': s, 'source': CITATION_DEFAULT_SOURCE,\
+          \ 'quote': _normalize_quote(s)})\n    return out\n\ndef _dedupe_citations(values):\n\
+          \    out = []\n    seen = set()\n    for item in _ensure_list(values):\n\
+          \        if not isinstance(item, dict):\n            continue\n        claim\
+          \ = str(item.get('claim', '')).strip()\n        source = str(item.get('source',\
+          \ '')).strip()\n        quote = str(item.get('quote', '')).strip()\n   \
+          \     key = (claim, source, quote)\n        if key in seen:\n          \
+          \  continue\n        seen.add(key)\n        out.append({'claim': claim,\
+          \ 'source': source, 'quote': quote})\n    return out\n\ndef main(\n    report_id:\
+          \ str,\n    customer_name: str,\n    site_name: str,\n    device_model:\
+          \ str,\n    device_sn: str,\n    fault_time: str,\n    fault_count: int,\n\
+          \    fault_description: str,\n    missing_required_fields: list,\n    history_cases_snippets:\
+          \ list,\n    product_knowledge_snippets: list,\n    history_retrieval_status:\
+          \ str,\n    product_retrieval_status: str,\n    history_retrieval_notes:\
+          \ list,\n    product_retrieval_notes: list,\n    n5_text: str,\n    n6_text:\
+          \ str,\n    n6_validated_text: str,\n    n7_text: str,\n    n8_text: str,\n\
+          \    n9_text: str,\n    consistency_warnings: list,\n    input_quality_score:\
+          \ int = 100,\n    input_quality_level: str = 'high',\n    input_quality_issues:\
+          \ list = None,\n    input_quality_recommendation: str = '',\n    input_quality_should_proceed:\
+          \ bool = True\n) -> dict:\n    citation_fallback = CITATION_FALLBACK\n\n\
+          \    n5 = _parse_json(n5_text, {\n        'customer_letter': '【证据不足】需人工补充。',\n\
+          \        'problem_description_refined': fault_description,\n        'evidence_citation':\
+          \ citation_fallback\n    })\n    n6 = _parse_json(n6_validated_text or n6_text,\
+          \ {\n        'five_why_table': [],\n        'evidence_citation': citation_fallback\n\
+          \    })\n    n7 = _parse_json(n7_text, {\n        'root_cause_summary':\
+          \ '【证据不足】需人工审核。',\n        'responsibility_judgement': '【证据不足】【待人工审核】仅建议责任方向。',\n\
+          \        'audit_metrics': {\n            'evidence_sufficiency': '低',\n\
+          \            'responsibility_confidence': DEFAULT_CONFIDENCE,\n        \
+          \    'risk_tips': ['根因与责任节点输出解析失败，已使用兜底。'],\n            'hallucination_check':\
+          \ '疑似'\n        },\n        'evidence_citation': citation_fallback\n   \
+          \ })\n    n8 = _parse_json(n8_text, {\n        'temporary_measures': '【证据不足】需人工补充。',\n\
+          \        'corrective_actions': '【证据不足】需人工补充。',\n        'preventive_actions':\
+          \ '【证据不足】需人工补充。',\n        'customer_side_actions': '【证据不足】需人工补充。',\n  \
+          \      'internal_quality_actions': '【证据不足】需人工补充。',\n        'evidence_citation':\
+          \ citation_fallback\n    })\n    n9 = _parse_json(n9_text, {})\n\n    audit_metrics_raw\
+          \ = n7.get('audit_metrics', {}) if isinstance(n7, dict) else {}\n    audit_metrics\
+          \ = audit_metrics_raw if isinstance(audit_metrics_raw, dict) else {}\n \
+          \   audit_metrics.setdefault('evidence_sufficiency', '中')\n    audit_metrics.setdefault('responsibility_confidence',\
+          \ DEFAULT_CONFIDENCE)\n    audit_metrics.setdefault('risk_tips', [])\n \
+          \   audit_metrics.setdefault('hallucination_check', '无')\n    audit_metrics['risk_tips']\
+          \ = [str(x) for x in _ensure_list(audit_metrics.get('risk_tips', []))]\n\
+          \n    normalized_score, corrected = _normalize_confidence(audit_metrics.get('responsibility_confidence'))\n\
+          \    if str(audit_metrics.get('evidence_sufficiency')) == '低' and normalized_score\
+          \ > LOW_EVIDENCE_MAX_CONFIDENCE:\n        normalized_score = LOW_EVIDENCE_MAX_CONFIDENCE\n\
+          \        audit_metrics['risk_tips'].append(f'evidence_sufficiency=低，responsibility_confidence\
+          \ 已按上限 {LOW_EVIDENCE_MAX_CONFIDENCE} 限制。')\n    audit_metrics['responsibility_confidence']\
+          \ = normalized_score\n    if corrected:\n        audit_metrics['risk_tips'].append('responsibility_confidence\
+          \ 非法或越界，已自动校正到 0~100 整数范围。')\n\n    if history_retrieval_status in ('failed',\
+          \ 'no_knowledge_base', 'empty') or product_retrieval_status in ('failed',\
+          \ 'no_knowledge_base', 'empty'):\n        audit_metrics['risk_tips'].append('检索证据不足：知识库检索失败或未命中，仅基于输入事实。')\n\
+          \n    if missing_required_fields:\n        audit_metrics['risk_tips'].append('核心字段缺失：'\
+          \ + ', '.join(missing_required_fields))\n\n    if str(input_quality_level).strip()\
+          \ in ('low', 'critical'):\n        audit_metrics['risk_tips'].append(f'输入质量等级为{input_quality_level}，建议人工重点复核。')\n\
+          \        if normalized_score > LOW_INPUT_QUALITY_MAX_CONFIDENCE:\n     \
+          \       normalized_score = LOW_INPUT_QUALITY_MAX_CONFIDENCE\n          \
+          \  audit_metrics['responsibility_confidence'] = normalized_score\n     \
+          \       audit_metrics['risk_tips'].append(\n                f'输入质量较低，responsibility_confidence\
+          \ 已按上限 {LOW_INPUT_QUALITY_MAX_CONFIDENCE} 限制。'\n            )\n\n    if\
+          \ not bool(input_quality_should_proceed):\n        audit_metrics['risk_tips'].append('输入质量门控建议暂停自动生成并转人工处理。')\n\
+          \n    for issue in _ensure_list(input_quality_issues):\n        issue_text\
+          \ = str(issue).strip()\n        if issue_text:\n            audit_metrics['risk_tips'].append('输入质量问题：'\
+          \ + issue_text)\n\n    if str(input_quality_recommendation).strip():\n \
+          \       audit_metrics['risk_tips'].append('输入质量建议：' + str(input_quality_recommendation).strip())\n\
+          \n    for tip in _ensure_list(consistency_warnings):\n        if str(tip).strip():\n\
+          \            audit_metrics['risk_tips'].append(str(tip).strip())\n\n   \
+          \ sections = {\n        'customer_letter': n9.get('customer_letter', n5.get('customer_letter',\
+          \ '【证据不足】需人工补充。')),\n        'problem_description_refined': n9.get('problem_description_refined',\
+          \ n5.get('problem_description_refined', fault_description)),\n        'five_why_table':\
+          \ n9.get('five_why_table', n6.get('five_why_table', [])),\n        'root_cause_summary':\
+          \ n9.get('root_cause_summary', n7.get('root_cause_summary', '【证据不足】需人工审核。')),\n\
+          \        'responsibility_judgement': n9.get('responsibility_judgement',\
+          \ n7.get('responsibility_judgement', '【证据不足】【待人工审核】仅建议责任方向。')),\n      \
+          \  'temporary_measures': n9.get('temporary_measures', n8.get('temporary_measures',\
+          \ '【证据不足】需人工补充。')),\n        'corrective_actions': n9.get('corrective_actions',\
+          \ n8.get('corrective_actions', '【证据不足】需人工补充。')),\n        'preventive_actions':\
+          \ n9.get('preventive_actions', n8.get('preventive_actions', '【证据不足】需人工补充。')),\n\
+          \        'customer_side_actions': n9.get('customer_side_actions', n8.get('customer_side_actions',\
+          \ '【证据不足】需人工补充。')),\n        'internal_quality_actions': n9.get('internal_quality_actions',\
+          \ n8.get('internal_quality_actions', '【证据不足】需人工补充。'))\n    }\n\n    evidence_citation\
+          \ = []\n    evidence_citation.extend(_normalize_citations(n5.get('evidence_citation',\
+          \ [])))\n    evidence_citation.extend(_normalize_citations(n6.get('evidence_citation',\
+          \ [])))\n    evidence_citation.extend(_normalize_citations(n7.get('evidence_citation',\
+          \ [])))\n    evidence_citation.extend(_normalize_citations(n8.get('evidence_citation',\
+          \ [])))\n    evidence_citation.extend(_normalize_citations(n9.get('evidence_citation',\
+          \ [])))\n    evidence_citation = _dedupe_citations(evidence_citation)\n\
+          \    if not evidence_citation:\n        evidence_citation = citation_fallback\n\
+          \n    final_json = {\n        'report_id': report_id,\n        'basic_info':\
+          \ {\n            'customer_name': customer_name,\n            'site_name':\
+          \ site_name,\n            'device_model': device_model,\n            'device_sn':\
+          \ device_sn,\n            'fault_time': fault_time,\n            'fault_count':\
+          \ fault_count,\n            'fault_description': fault_description\n   \
+          \     },\n        'sections': sections,\n        'evidence_citation': evidence_citation,\n\
+          \        'audit_metrics': audit_metrics,\n        'ext_info': {\n      \
+          \      'missing_required_fields': missing_required_fields,\n           \
+          \ 'history_retrieval_status': history_retrieval_status,\n            'product_retrieval_status':\
+          \ product_retrieval_status,\n            'history_retrieval_notes': history_retrieval_notes,\n\
+          \            'product_retrieval_notes': product_retrieval_notes,\n     \
+          \       'history_cases_snippets': history_cases_snippets,\n            'product_knowledge_snippets':\
+          \ product_knowledge_snippets,\n            'consistency_warnings': _ensure_list(consistency_warnings),\n\
+          \            'input_quality': {\n                'score': input_quality_score,\n\
+          \                'level': input_quality_level,\n                'issues':\
+          \ _ensure_list(input_quality_issues),\n                'recommendation':\
+          \ input_quality_recommendation,\n                'should_proceed': bool(input_quality_should_proceed)\n\
+          \            }\n        }\n    }\n\n    return {\n        'final_json':\
+          \ json.dumps(final_json, ensure_ascii=False, indent=2)\n    }"
+        code_language: python3
+        desc: 汇总最终 JSON（含输入质量门控、证据门控、置信度约束）
+        outputs:
+          final_json:
+            children: null
+            type: string
+        selected: false
+        title: assemble_final_json
+        type: code
+        variables:
+        - value_selector:
+          - '1000000000014'
+          - quality_score
+          variable: input_quality_score
+        - value_selector:
+          - '1000000000014'
+          - quality_level
+          variable: input_quality_level
+        - value_selector:
+          - '1000000000014'
+          - quality_issues
+          variable: input_quality_issues
+        - value_selector:
+          - '1000000000014'
+          - recommendation
+          variable: input_quality_recommendation
+        - value_selector:
+          - '1000000000014'
+          - should_proceed
+          variable: input_quality_should_proceed
+        - value_selector:
+          - '1000000000002'
+          - report_id
+          variable: report_id
+        - value_selector:
+          - '1000000000002'
+          - customer_name
+          variable: customer_name
+        - value_selector:
+          - '1000000000002'
+          - site_name
+          variable: site_name
+        - value_selector:
+          - '1000000000002'
+          - device_model
+          variable: device_model
+        - value_selector:
+          - '1000000000002'
+          - device_sn
+          variable: device_sn
+        - value_selector:
+          - '1000000000002'
+          - fault_time
+          variable: fault_time
+        - value_selector:
+          - '1000000000002'
+          - fault_count
+          variable: fault_count
+        - value_selector:
+          - '1000000000002'
+          - fault_description
+          variable: fault_description
+        - value_selector:
+          - '1000000000002'
+          - missing_required_fields
+          variable: missing_required_fields
+        - value_selector:
+          - '1000000000003'
+          - history_cases_snippets
+          variable: history_cases_snippets
+        - value_selector:
+          - '1000000000004'
+          - product_knowledge_snippets
+          variable: product_knowledge_snippets
+        - value_selector:
+          - '1000000000003'
+          - history_retrieval_status
+          variable: history_retrieval_status
+        - value_selector:
+          - '1000000000004'
+          - product_retrieval_status
+          variable: product_retrieval_status
+        - value_selector:
+          - '1000000000003'
+          - history_retrieval_notes
+          variable: history_retrieval_notes
+        - value_selector:
+          - '1000000000004'
+          - product_retrieval_notes
+          variable: product_retrieval_notes
+        - value_selector:
+          - '1000000000005'
+          - text
+          variable: n5_text
+        - value_selector:
+          - '1000000000006'
+          - text
+          variable: n6_text
+        - value_selector:
+          - '1000000000012'
+          - validated_five_why_text
+          variable: n6_validated_text
+        - value_selector:
+          - '1000000000007'
+          - text
+          variable: n7_text
+        - value_selector:
+          - '1000000000008'
+          - text
+          variable: n8_text
+        - value_selector:
+          - '1000000000009'
+          - text
+          variable: n9_text
+        - value_selector:
+          - '1000000000013'
+          - consistency_warnings
+          variable: consistency_warnings
+      height: 94
+      id: '1000000000010'
+      position:
+        x: 1280.9207917995134
+        y: 248.25713389898715
+      positionAbsolute:
+        x: 1280.9207917995134
+        y: 248.25713389898715
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        desc: 输出结构化报告 JSON
+        outputs:
+        - value_selector:
+          - '1000000000010'
+          - final_json
+          variable: final_json
+        selected: false
+        title: 输出结果
+        type: end
+      height: 115
+      id: '1000000000011'
+      position:
+        x: 1579.5935801064077
+        y: 248.25713389898715
+      positionAbsolute:
+        x: 1579.5935801064077
+        y: 248.25713389898715
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        dataset_ids:
+        - V8TVVCBnENUPPuLgu7SLiOTu7BFgzA2B3UgJ+kIKCzCF85eH3+WIn8h8GccrSAfn
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 6
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+            weight_type: customized
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1000000000002'
+        - fault_description
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索
+        type: knowledge-retrieval
+      height: 88
+      id: '1775814743681'
+      position:
+        x: 389.1419844176562
+        y: 92.59797860125911
+      positionAbsolute:
+        x: 389.1419844176562
+        y: 92.59797860125911
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        dataset_ids:
+        - VCfgQcEKd+OwWScPPTmqzIL39Aczzu49Ibjvf4/QUQ4JbKow/SqvnNVp7rG+gqVz
+        metadata_filtering_conditions:
+          conditions:
+          - comparison_operator: is
+            id: f632b6e1-dc72-4547-967d-0fb7b5d3aa8e
+            name: device_type
+          logical_operator: and
+        metadata_filtering_mode: disabled
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.15
+          top_k: 6
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1000000000015'
+        - diagnosis_query
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 2（历史-诊断导向-无过滤兜底）
+        type: knowledge-retrieval
+      height: 88
+      id: '1775814799351'
+      position:
+        x: 83.6718637793719
+        y: 183.3767408067207
+      positionAbsolute:
+        x: 83.6718637793719
+        y: 183.3767408067207
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        dataset_ids:
+        - V8TVVCBnENUPPuLgu7SLiOTu7BFgzA2B3UgJ+kIKCzCF85eH3+WIn8h8GccrSAfn
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: null
+          top_k: 6
+          weights:
+            keyword_setting:
+              keyword_weight: 0
+            vector_setting:
+              embedding_model_name: Qwen-Embedding
+              embedding_provider_name: langgenius/openai_api_compatible/openai_api_compatible
+              vector_weight: 1
+            weight_type: customized
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1000000000015'
+        - solution_query_broad
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索（产品-处置导向）
+        type: knowledge-retrieval
+      height: 88
+      id: '1775814843682'
+      position:
+        x: 389.1419844176562
+        y: 197.10689450382603
+      positionAbsolute:
+        x: 389.1419844176562
+        y: 197.10689450382603
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        dataset_ids:
+        - VCfgQcEKd+OwWScPPTmqzIL39Aczzu49Ibjvf4/QUQ4JbKow/SqvnNVp7rG+gqVz
+        metadata_filtering_conditions:
+          conditions:
+          - comparison_operator: is
+            id: f632b6e1-dc72-4547-967d-0fb7b5d3aa8e
+            name: device_type
+          logical_operator: and
+        metadata_filtering_mode: disabled
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.15
+          top_k: 10
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1000000000015'
+        - solution_query_strict
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 2（历史-处置导向-无过滤兜底）
+        type: knowledge-retrieval
+      height: 88
+      id: '1775814899352'
+      position:
+        x: 83.6718637793719
+        y: 298.00713862588043
+      positionAbsolute:
+        x: 83.6718637793719
+        y: 298.00713862588043
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        dataset_ids:
+        - VCfgQcEKd+OwWScPPTmqzIL39Aczzu49Ibjvf4/QUQ4JbKow/SqvnNVp7rG+gqVz
+        metadata_filtering_conditions:
+          conditions:
+          - comparison_operator: is
+            id: 8cbe34cb-1c75-4f56-b4ec-e5ff55d22001
+            name: device_model
+            value: '{{#1000000000002.device_model#}}'
+          logical_operator: and
+        metadata_filtering_mode: manual
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.05
+          top_k: 6
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1000000000015'
+        - diagnosis_query
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 2（历史-诊断导向-按机型过滤）
+        type: knowledge-retrieval
+      height: 88
+      id: '1775814799353'
+      position:
+        x: 82.0
+        y: 402.0
+      positionAbsolute:
+        x: 82.0
+        y: 402.0
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        dataset_ids:
+        - VCfgQcEKd+OwWScPPTmqzIL39Aczzu49Ibjvf4/QUQ4JbKow/SqvnNVp7rG+gqVz
+        metadata_filtering_conditions:
+          conditions:
+          - comparison_operator: is
+            id: 8cbe34cb-1c75-4f56-b4ec-e5ff55d22002
+            name: device_model
+            value: '{{#1000000000002.device_model#}}'
+          logical_operator: and
+        metadata_filtering_mode: manual
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: langgenius/tongyi/tongyi
+          score_threshold: 0.05
+          top_k: 10
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1000000000015'
+        - solution_query_strict
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 2（历史-处置导向-按机型过滤）
+        type: knowledge-retrieval
+      height: 88
+      id: '1775814899353'
+      position:
+        x: 82.0
+        y: 516.0
+      positionAbsolute:
+        x: 82.0
+        y: 516.0
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    viewport:
+      x: -443.8817282597464
+      y: 212.69571371817693
+      zoom: 0.5946035795255906
+  rag_pipeline_variables: []
